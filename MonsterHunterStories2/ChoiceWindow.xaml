@@ -1,0 +1,28 @@
+﻿<Window x:Class="MonsterHunterStories2.ChoiceWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MonsterHunterStories2"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
+        Title="ChoiceWindow" Height="300" Width="300"
+        Loaded="Window_Loaded">
+    <Grid>
+        <DockPanel>
+            <DockPanel DockPanel.Dock="Top">
+                <Label Content="Filter"/>
+                <TextBox x:Name="TextBoxFilter" TextChanged="TextBoxFilter_TextChanged" TabIndex="0"/>
+            </DockPanel>
+            <Grid DockPanel.Dock="Bottom">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Button x:Name="ButtonDecision" Content="OK" IsEnabled="False" Click="ButtonDecision_Click"/>
+                <Button Content="Cancel" Grid.Column="1" IsCancel="True"/>
+            </Grid>
+            <ListBox x:Name="ListBoxItem" SelectionChanged="ListBoxItem_SelectionChanged" DisplayMemberPath="Name" MouseDoubleClick="ListBoxItem_MouseDoubleClick"/>
+        </DockPanel>
+    </Grid>
+</Window>
