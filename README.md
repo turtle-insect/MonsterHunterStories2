@@ -1,4 +1,4 @@
-# MonsterHunterStories2
+# Monster Hunter Stories 2
 Switch Monster Hunter Stories 2 SaveDate Editor  
 **Tested with demo version.**  
 **Do not connect to the network**
