@@ -23,7 +23,7 @@ namespace MonsterHunterStories2
 			get { return SaveData.Instance().ReadNumber(mAddress, 2); }
 			set
 			{
-				Util.WriteNumber(mAddress, 2, value, 0, 99);
+				SaveData.Instance().WriteNumber(mAddress, 2, value);
 				PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(ID)));
 			}
 		}
