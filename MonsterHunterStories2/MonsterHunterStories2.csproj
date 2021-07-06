@@ -55,6 +55,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Character.cs" />
     <Compile Include="ChoiceWindow.xaml.cs">
       <DependentUpon>ChoiceWindow.xaml</DependentUpon>
     </Compile>
@@ -62,10 +63,12 @@
     <Compile Include="Info.cs" />
     <Compile Include="Item.cs" />
     <Compile Include="ItemID2NameConverter.cs" />
+    <Compile Include="Monster.cs" />
     <Compile Include="NameValueInfo.cs" />
     <Compile Include="SaveData.cs" />
     <Compile Include="Util.cs" />
     <Compile Include="ViewModel.cs" />
+    <Compile Include="Weapon.cs" />
     <Page Include="ChoiceWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

@@ -38,6 +38,76 @@
                     <TextBox Grid.Column="1" Text="{Binding Money, UpdateSourceTrigger=PropertyChanged}"/>
                 </Grid>
             </TabItem>
+            <TabItem Header="Character">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="150"/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <ListBox x:Name="ListBoxCharacter" ItemsSource="{Binding Characters}" DisplayMemberPath="Name"/>
+                    <Grid Grid.Column="1">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition Height="11*"/>
+                        </Grid.RowDefinitions>
+                        <Label Content="Lv"/>
+                        <TextBox Grid.Column="1" Text="{Binding ElementName=ListBoxCharacter, Path=SelectedItem.Lv, UpdateSourceTrigger=PropertyChanged}"/>
+                        <Label Grid.Row="1" Content="Name"/>
+                        <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding ElementName=ListBoxCharacter, Path=SelectedItem.Name, UpdateSourceTrigger=PropertyChanged}"/>
+                    </Grid>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Monster">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="150"/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <ListBox x:Name="ListBoxMonster" ItemsSource="{Binding Monsters}" DisplayMemberPath="Name"/>
+                    <Grid Grid.Column="1">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition Height="10*"/>
+                        </Grid.RowDefinitions>
+                        <Label Content="Type"/>
+                        <TextBox Grid.Column="1" Text="{Binding ElementName=ListBoxMonster, Path=SelectedItem.ID, UpdateSourceTrigger=PropertyChanged}"/>
+                        <Label Grid.Row="1" Content="Lv"/>
+                        <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding ElementName=ListBoxMonster, Path=SelectedItem.Lv, UpdateSourceTrigger=PropertyChanged}"/>
+                        <Label Grid.Row="2" Content="Name"/>
+                        <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding ElementName=ListBoxMonster, Path=SelectedItem.Name, UpdateSourceTrigger=PropertyChanged}"/>
+                    </Grid>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Weapon">
+                <DockPanel>
+                    <ListBox x:Name="ListBoxWeapon" ItemsSource="{Binding Weapons}">
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal">
+                                    <Label Content="Lv:"/>
+                                    <TextBox Text="{Binding Lv, UpdateSourceTrigger=PropertyChanged}" Width="60"/>
+                                    <Label Content=" ID:"/>
+                                    <TextBox Text="{Binding ID, UpdateSourceTrigger=PropertyChanged}" Width="60"/>
+                                    <Label Content="    ID=32767 is None" Foreground="Gray"/>
+                                </StackPanel>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+                </DockPanel>
+            </TabItem>
             <TabItem Header="Item">
                 <DockPanel>
                     <Button DockPanel.Dock="Bottom" Content="Append/Search Item" Click="ButtonItemAppend_Click"/>
@@ -49,7 +119,7 @@
                             <DataTemplate>
                                 <StackPanel Orientation="Horizontal">
                                     <Label Content="Count:"/>
-                                    <TextBox Text="{Binding Count, UpdateSourceTrigger=PropertyChanged}" Width="50"/>
+                                    <TextBox Text="{Binding Count, UpdateSourceTrigger=PropertyChanged}" Width="60"/>
                                     <Label Content=" Name:"/>
                                     <Label Content="{Binding ID, Converter={StaticResource ItemID2NameConverter}}"/>
                                 </StackPanel>
