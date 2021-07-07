@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:MonsterHunterStories2"
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
-        Title="Monster Hunter Stories 2" Height="400" Width="600">
+        Title="Monster Hunter Stories 2" Height="450" Width="600">
     <Window.DataContext>
         <local:ViewModel/>
     </Window.DataContext>
@@ -32,7 +32,7 @@
                     </Grid.ColumnDefinitions>
                     <Grid.RowDefinitions>
                         <RowDefinition/>
-                        <RowDefinition Height="12*"/>
+                        <RowDefinition Height="13*"/>
                     </Grid.RowDefinitions>
                     <Label Content="Money"/>
                     <TextBox Grid.Column="1" Text="{Binding Money, UpdateSourceTrigger=PropertyChanged}"/>
@@ -49,18 +49,54 @@
                     <Grid Grid.Column="1">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition/>
+                            <ColumnDefinition Width="20"/>
                             <ColumnDefinition/>
                         </Grid.ColumnDefinitions>
                         <Grid.RowDefinitions>
                             <RowDefinition/>
                             <RowDefinition/>
-                            <RowDefinition Height="11*"/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition Height="2*"/>
                         </Grid.RowDefinitions>
                         <Label Content="Lv"/>
-                        <TextBox Grid.Column="1" Text="{Binding ElementName=ListBoxCharacter, Path=SelectedItem.Lv, UpdateSourceTrigger=PropertyChanged}"/>
+                        <TextBox Grid.Column="3" Text="{Binding ElementName=ListBoxCharacter, Path=SelectedItem.Lv, UpdateSourceTrigger=PropertyChanged}"/>
                         <Label Grid.Row="1" Content="Name"/>
-                        <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding ElementName=ListBoxCharacter, Path=SelectedItem.Name, UpdateSourceTrigger=PropertyChanged}"/>
+                        <TextBox Grid.Row="1" Grid.Column="2" Text="{Binding ElementName=ListBoxCharacter, Path=SelectedItem.Name, UpdateSourceTrigger=PropertyChanged}"/>
+                        <Label Grid.Row="2" Content="Body Type"/>
+                        <ComboBox Grid.Row="2" Grid.Column="2" SelectedIndex="{Binding ElementName=ListBoxCharacter, Path=SelectedItem.BodyType}">
+                            <ComboBoxItem Content="male"/>
+                            <ComboBoxItem Content="woman"/>
+                        </ComboBox>
+                        <Label Grid.Row="3" Content="Face Shape"/>
+                        <TextBox Grid.Row="3" Grid.Column="2" Text="{Binding ElementName=ListBoxCharacter, Path=SelectedItem.FaceShape, UpdateSourceTrigger=PropertyChanged}"/>
+                        <Label Grid.Row="4" Content="Skin"/>
+                        <Label Grid.Row="4" Grid.Column="1" Content="R"/>
+                        <TextBox Grid.Row="4" Grid.Column="2" Text="{Binding ElementName=ListBoxCharacter, Path=SelectedItem.SkinR, UpdateSourceTrigger=PropertyChanged}"/>
+                        <Label Grid.Row="5" Grid.Column="1" Content="G"/>
+                        <TextBox Grid.Row="5" Grid.Column="2" Text="{Binding ElementName=ListBoxCharacter, Path=SelectedItem.SkinG, UpdateSourceTrigger=PropertyChanged}"/>
+                        <Label Grid.Row="6" Grid.Column="1" Content="B"/>
+                        <TextBox Grid.Row="6" Grid.Column="2" Text="{Binding ElementName=ListBoxCharacter, Path=SelectedItem.SkinB, UpdateSourceTrigger=PropertyChanged}"/>
+                        <Label Grid.Row="7" Content="Hairstyle"/>
+                        <TextBox Grid.Row="7" Grid.Column="2" Text="{Binding ElementName=ListBoxCharacter, Path=SelectedItem.HairStyle, UpdateSourceTrigger=PropertyChanged}"/>
+                        <Label Grid.Row="8" Content="Eyes"/>
+                        <TextBox Grid.Row="8" Grid.Column="2" Text="{Binding ElementName=ListBoxCharacter, Path=SelectedItem.Eyes, UpdateSourceTrigger=PropertyChanged}"/>
+                        <Label Grid.Row="9" Content="Mouth"/>
+                        <TextBox Grid.Row="9" Grid.Column="2" Text="{Binding ElementName=ListBoxCharacter, Path=SelectedItem.Mouth, UpdateSourceTrigger=PropertyChanged}"/>
+                        <Label Grid.Row="10" Content="Makeup"/>
+                        <TextBox Grid.Row="10" Grid.Column="2" Text="{Binding ElementName=ListBoxCharacter, Path=SelectedItem.Makeup, UpdateSourceTrigger=PropertyChanged}"/>
+                        <Label Grid.Row="11" Content="Voice"/>
+                        <TextBox Grid.Row="11" Grid.Column="2" Text="{Binding ElementName=ListBoxCharacter, Path=SelectedItem.Voice, UpdateSourceTrigger=PropertyChanged}"/>
                     </Grid>
+                    <TextBlock Grid.Column="2" Text="Do not set anything but the Lv and Name, except for the main character." Foreground="Red" TextWrapping="Wrap"/>
                 </Grid>
             </TabItem>
             <TabItem Header="Monster">
