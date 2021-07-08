@@ -34,6 +34,12 @@ namespace MonsterHunterStories2
 			set { Util.WriteNumber(mAddress + 234, 1, value, 1, 0xFF); }
 		}
 
+		public uint Exp
+		{
+			get { return SaveData.Instance().ReadNumber(mAddress + 336, 4); }
+			set { Util.WriteNumber(mAddress + 336, 4, value, 1, 9999999); }
+		}
+
 		public uint SkinR
 		{
 			get { return SaveData.Instance().ReadNumber(mAddress + 64, 1); }
@@ -89,7 +95,7 @@ namespace MonsterHunterStories2
 		public uint Makeup
 		{
 			get { return SaveData.Instance().ReadNumber(mAddress + 170, 1); }
-			set { Util.WriteNumber(mAddress + 170, 1, value, 0, 1); }
+			set { SaveData.Instance().WriteNumber(mAddress + 170, 1, value); }
 		}
 
 		public uint BodyType

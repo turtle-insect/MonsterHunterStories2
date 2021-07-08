@@ -65,36 +65,39 @@
                             <RowDefinition/>
                             <RowDefinition/>
                             <RowDefinition/>
-                            <RowDefinition Height="2*"/>
+                            <RowDefinition/>
+                            <RowDefinition Height="1*"/>
                         </Grid.RowDefinitions>
                         <Label Content="Lv"/>
                         <TextBox Grid.Column="3" Text="{Binding ElementName=ListBoxCharacter, Path=SelectedItem.Lv, UpdateSourceTrigger=PropertyChanged}"/>
-                        <Label Grid.Row="1" Content="Name"/>
-                        <TextBox Grid.Row="1" Grid.Column="2" Text="{Binding ElementName=ListBoxCharacter, Path=SelectedItem.Name, UpdateSourceTrigger=PropertyChanged}"/>
-                        <Label Grid.Row="2" Content="Body Type"/>
-                        <ComboBox Grid.Row="2" Grid.Column="2" SelectedIndex="{Binding ElementName=ListBoxCharacter, Path=SelectedItem.BodyType}">
+                        <Label Grid.Row="1" Content="Exp"/>
+                        <TextBox Grid.Row="1" Grid.Column="2" Text="{Binding ElementName=ListBoxCharacter, Path=SelectedItem.Exp, UpdateSourceTrigger=PropertyChanged}"/>
+                        <Label Grid.Row="2" Content="Name"/>
+                        <TextBox Grid.Row="2" Grid.Column="2" Text="{Binding ElementName=ListBoxCharacter, Path=SelectedItem.Name, UpdateSourceTrigger=PropertyChanged}"/>
+                        <Label Grid.Row="3" Content="Body Type"/>
+                        <ComboBox Grid.Row="3" Grid.Column="2" SelectedIndex="{Binding ElementName=ListBoxCharacter, Path=SelectedItem.BodyType}">
                             <ComboBoxItem Content="male"/>
                             <ComboBoxItem Content="woman"/>
                         </ComboBox>
-                        <Label Grid.Row="3" Content="Face Shape"/>
-                        <TextBox Grid.Row="3" Grid.Column="2" Text="{Binding ElementName=ListBoxCharacter, Path=SelectedItem.FaceShape, UpdateSourceTrigger=PropertyChanged}"/>
-                        <Label Grid.Row="4" Content="Skin"/>
-                        <Label Grid.Row="4" Grid.Column="1" Content="R"/>
-                        <TextBox Grid.Row="4" Grid.Column="2" Text="{Binding ElementName=ListBoxCharacter, Path=SelectedItem.SkinR, UpdateSourceTrigger=PropertyChanged}"/>
-                        <Label Grid.Row="5" Grid.Column="1" Content="G"/>
-                        <TextBox Grid.Row="5" Grid.Column="2" Text="{Binding ElementName=ListBoxCharacter, Path=SelectedItem.SkinG, UpdateSourceTrigger=PropertyChanged}"/>
-                        <Label Grid.Row="6" Grid.Column="1" Content="B"/>
-                        <TextBox Grid.Row="6" Grid.Column="2" Text="{Binding ElementName=ListBoxCharacter, Path=SelectedItem.SkinB, UpdateSourceTrigger=PropertyChanged}"/>
-                        <Label Grid.Row="7" Content="Hairstyle"/>
-                        <TextBox Grid.Row="7" Grid.Column="2" Text="{Binding ElementName=ListBoxCharacter, Path=SelectedItem.HairStyle, UpdateSourceTrigger=PropertyChanged}"/>
-                        <Label Grid.Row="8" Content="Eyes"/>
-                        <TextBox Grid.Row="8" Grid.Column="2" Text="{Binding ElementName=ListBoxCharacter, Path=SelectedItem.Eyes, UpdateSourceTrigger=PropertyChanged}"/>
-                        <Label Grid.Row="9" Content="Mouth"/>
-                        <TextBox Grid.Row="9" Grid.Column="2" Text="{Binding ElementName=ListBoxCharacter, Path=SelectedItem.Mouth, UpdateSourceTrigger=PropertyChanged}"/>
-                        <Label Grid.Row="10" Content="Makeup"/>
-                        <TextBox Grid.Row="10" Grid.Column="2" Text="{Binding ElementName=ListBoxCharacter, Path=SelectedItem.Makeup, UpdateSourceTrigger=PropertyChanged}"/>
-                        <Label Grid.Row="11" Content="Voice"/>
-                        <TextBox Grid.Row="11" Grid.Column="2" Text="{Binding ElementName=ListBoxCharacter, Path=SelectedItem.Voice, UpdateSourceTrigger=PropertyChanged}"/>
+                        <Label Grid.Row="4" Content="Face Shape"/>
+                        <TextBox Grid.Row="4" Grid.Column="2" Text="{Binding ElementName=ListBoxCharacter, Path=SelectedItem.FaceShape, UpdateSourceTrigger=PropertyChanged}"/>
+                        <Label Grid.Row="5" Content="Skin"/>
+                        <Label Grid.Row="5" Grid.Column="1" Content="R"/>
+                        <TextBox Grid.Row="5" Grid.Column="2" Text="{Binding ElementName=ListBoxCharacter, Path=SelectedItem.SkinR, UpdateSourceTrigger=PropertyChanged}"/>
+                        <Label Grid.Row="6" Grid.Column="1" Content="G"/>
+                        <TextBox Grid.Row="6" Grid.Column="2" Text="{Binding ElementName=ListBoxCharacter, Path=SelectedItem.SkinG, UpdateSourceTrigger=PropertyChanged}"/>
+                        <Label Grid.Row="7" Grid.Column="1" Content="B"/>
+                        <TextBox Grid.Row="7" Grid.Column="2" Text="{Binding ElementName=ListBoxCharacter, Path=SelectedItem.SkinB, UpdateSourceTrigger=PropertyChanged}"/>
+                        <Label Grid.Row="8" Content="Hairstyle"/>
+                        <TextBox Grid.Row="8" Grid.Column="2" Text="{Binding ElementName=ListBoxCharacter, Path=SelectedItem.HairStyle, UpdateSourceTrigger=PropertyChanged}"/>
+                        <Label Grid.Row="9" Content="Eyes"/>
+                        <TextBox Grid.Row="9" Grid.Column="2" Text="{Binding ElementName=ListBoxCharacter, Path=SelectedItem.Eyes, UpdateSourceTrigger=PropertyChanged}"/>
+                        <Label Grid.Row="10" Content="Mouth"/>
+                        <TextBox Grid.Row="10" Grid.Column="2" Text="{Binding ElementName=ListBoxCharacter, Path=SelectedItem.Mouth, UpdateSourceTrigger=PropertyChanged}"/>
+                        <Label Grid.Row="11" Content="Makeup"/>
+                        <TextBox Grid.Row="11" Grid.Column="2" Text="{Binding ElementName=ListBoxCharacter, Path=SelectedItem.Makeup, UpdateSourceTrigger=PropertyChanged}"/>
+                        <Label Grid.Row="12" Content="Voice"/>
+                        <TextBox Grid.Row="12" Grid.Column="2" Text="{Binding ElementName=ListBoxCharacter, Path=SelectedItem.Voice, UpdateSourceTrigger=PropertyChanged}"/>
                     </Grid>
                     <TextBlock Grid.Column="2" Text="Do not set anything but the Lv and Name, except for the main character." Foreground="Red" TextWrapping="Wrap"/>
                 </Grid>
