@@ -37,7 +37,7 @@ namespace MonsterHunterStories2
 		public uint Exp
 		{
 			get { return SaveData.Instance().ReadNumber(mAddress + 336, 4); }
-			set { Util.WriteNumber(mAddress + 336, 4, value, 1, 9999999); }
+			set { Util.WriteNumber(mAddress + 336, 4, value, 0, 9999999); }
 		}
 
 		public uint SkinR

@@ -119,14 +119,17 @@
                             <RowDefinition/>
                             <RowDefinition/>
                             <RowDefinition/>
+                            <RowDefinition/>
                             <RowDefinition Height="10*"/>
                         </Grid.RowDefinitions>
-                        <Label Content="Type"/>
-                        <TextBox Grid.Column="1" Text="{Binding ElementName=ListBoxMonster, Path=SelectedItem.ID, UpdateSourceTrigger=PropertyChanged}"/>
-                        <Label Grid.Row="1" Content="Lv"/>
-                        <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding ElementName=ListBoxMonster, Path=SelectedItem.Lv, UpdateSourceTrigger=PropertyChanged}"/>
+                        <Label Content="Lv"/>
+                        <TextBox Grid.Column="1" Text="{Binding ElementName=ListBoxMonster, Path=SelectedItem.Lv, UpdateSourceTrigger=PropertyChanged}"/>
+                        <Label Grid.Row="1" Content="Exp"/>
+                        <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding ElementName=ListBoxMonster, Path=SelectedItem.Exp, UpdateSourceTrigger=PropertyChanged}"/>
                         <Label Grid.Row="2" Content="Name"/>
                         <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding ElementName=ListBoxMonster, Path=SelectedItem.Name, UpdateSourceTrigger=PropertyChanged}"/>
+                        <Label Grid.Row="3" Content="Type"/>
+                        <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding ElementName=ListBoxMonster, Path=SelectedItem.ID, UpdateSourceTrigger=PropertyChanged}"/>
                     </Grid>
                 </Grid>
             </TabItem>
