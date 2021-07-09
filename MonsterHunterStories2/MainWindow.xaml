@@ -6,10 +6,15 @@
         xmlns:local="clr-namespace:MonsterHunterStories2"
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
-        Title="Monster Hunter Stories 2" Height="450" Width="600">
+        AllowDrop="True" Drop="Window_Drop" PreviewDragOver="Window_PreviewDragOver"
+        Title="Monster Hunter Stories 2" Height="500" Width="650">
     <Window.DataContext>
         <local:ViewModel/>
     </Window.DataContext>
+    <Window.Resources>
+        <BitmapImage x:Key="Open" UriSource="./resource/Open.png"/>
+        <BitmapImage x:Key="Save" UriSource="./resource/Save.png"/>
+    </Window.Resources>
     <DockPanel>
         <Menu DockPanel.Dock="Top">
             <MenuItem Header="File">
@@ -20,6 +25,14 @@
                 <MenuItem Header="Exit" Click="MenuItemFileExit_Click"/>
             </MenuItem>
         </Menu>
+        <ToolBar DockPanel.Dock="Top">
+            <Button Height="32" ToolTip="Open" Click="MenuItemFileOpen_Click">
+                <Image Source="{StaticResource Open}"/>
+            </Button>
+            <Button Height="32" ToolTip="Save" Click="MenuItemFileSave_Click">
+                <Image Source="{StaticResource Save}"/>
+            </Button>
+        </ToolBar>
         <TabControl>
             <TabItem Header="Basic">
                 <Grid>

@@ -1,17 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using Microsoft.Win32;
 
 namespace MonsterHunterStories2
@@ -24,6 +12,20 @@ namespace MonsterHunterStories2
 		public MainWindow()
 		{
 			InitializeComponent();
+		}
+
+		private void Window_PreviewDragOver(object sender, DragEventArgs e)
+		{
+			e.Handled = e.Data.GetDataPresent(DataFormats.FileDrop);
+		}
+
+		private void Window_Drop(object sender, DragEventArgs e)
+		{
+			String[] files = e.Data.GetData(DataFormats.FileDrop) as String[];
+			if (files == null) return;
+
+			SaveData.Instance().Open(files[0]);
+			DataContext = new ViewModel();
 		}
 
 		private void MenuItemFileOpen_Click(object sender, RoutedEventArgs e)
