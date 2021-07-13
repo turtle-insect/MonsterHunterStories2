@@ -28,6 +28,11 @@ namespace MonsterHunterStories2
 			DataContext = new ViewModel();
 		}
 
+		private void Window_Closed(object sender, EventArgs e)
+		{
+			Properties.Settings.Default.Save();
+		}
+
 		private void MenuItemFileOpen_Click(object sender, RoutedEventArgs e)
 		{
 			var dlg = new OpenFileDialog();
@@ -52,7 +57,15 @@ namespace MonsterHunterStories2
 
 		private void MenuItemFileExit_Click(object sender, RoutedEventArgs e)
 		{
-			Close();
+			//Close();
+
+			for (uint id = 1000; id < 1100; id++)
+			{
+				Item item = new Item(Util.ItemIDAddress(id));
+				item.ID = id;
+				item.Count = id % 1000 + 100;
+				SaveData.Instance().WriteBit(0x12B68 + id / 8, id % 8, true);
+			}
 		}
 
 		private void ButtonItemAppend_Click(object sender, RoutedEventArgs e)

@@ -4,9 +4,11 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MonsterHunterStories2"
+        xmlns:prop="clr-namespace:MonsterHunterStories2.Properties"
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
         AllowDrop="True" Drop="Window_Drop" PreviewDragOver="Window_PreviewDragOver"
+        Closed="Window_Closed"
         Title="Monster Hunter Stories 2" Height="500" Width="650">
     <Window.DataContext>
         <local:ViewModel/>
@@ -32,6 +34,10 @@
             <Button Height="32" ToolTip="Save" Click="MenuItemFileSave_Click">
                 <Image Source="{StaticResource Save}"/>
             </Button>
+            <ComboBox SelectedIndex="{Binding Path=Langage, Source={x:Static prop:Settings.Default}}">
+                <ComboBoxItem Content="Japanese"/>
+                <ComboBoxItem Content="English"/>
+            </ComboBox>
         </ToolBar>
         <TabControl>
             <TabItem Header="Basic">

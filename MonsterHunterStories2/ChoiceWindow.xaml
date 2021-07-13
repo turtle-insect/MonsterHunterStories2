@@ -22,7 +22,8 @@
                 <Button x:Name="ButtonDecision" Content="OK" IsEnabled="False" Click="ButtonDecision_Click"/>
                 <Button Content="Cancel" Grid.Column="1" IsCancel="True"/>
             </Grid>
-            <ListBox x:Name="ListBoxItem" SelectionChanged="ListBoxItem_SelectionChanged" DisplayMemberPath="Name" MouseDoubleClick="ListBoxItem_MouseDoubleClick"/>
+            <ListBox x:Name="ListBoxItem" SelectionChanged="ListBoxItem_SelectionChanged"
+                     DisplayMemberPath="Value" MouseDoubleClick="ListBoxItem_MouseDoubleClick"/>
         </DockPanel>
     </Grid>
 </Window>

@@ -40,21 +40,21 @@ namespace MonsterHunterStories2
 
 		private void ButtonDecision_Click(object sender, RoutedEventArgs e)
 		{
-			var item = (NameValueInfo)ListBoxItem.SelectedItem;
-			ID = item.Value;
+			var item = (KeyValuesInfo)ListBoxItem.SelectedItem;
+			ID = item.Key;
 			Close();
 		}
 
 		private void CreateItemList(String filter)
 		{
 			ListBoxItem.Items.Clear();
-			var items = Info.Instance().Item;
+			var infos = Info.Instance().Item;
 
-			foreach (var item in items)
+			foreach (var info in infos)
 			{
-				if (String.IsNullOrEmpty(filter) || item.Name.IndexOf(filter) >= 0)
+				if (String.IsNullOrEmpty(filter) || info.Value.IndexOf(filter) >= 0)
 				{
-					ListBoxItem.Items.Add(item);
+					ListBoxItem.Items.Add(info);
 				}
 			}
 		}

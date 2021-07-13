@@ -13,7 +13,7 @@ namespace MonsterHunterStories2
 		{
 			foreach(var itemInfo in Info.Instance().Item)
 			{
-				uint address = Util.ItemIDAddress(itemInfo.Value);
+				uint address = Util.ItemIDAddress(itemInfo.Key);
 				Item item = new Item(address);
 				if (item.ID == 0) continue;
 				if (item.Count == 0) continue;

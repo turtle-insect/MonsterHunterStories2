@@ -6,7 +6,7 @@ namespace MonsterHunterStories2
 	class Info
 	{
 		private static Info mThis;
-		public List<NameValueInfo> Item { get; private set; } = new List<NameValueInfo>();
+		public List<KeyValuesInfo> Item { get; private set; } = new List<KeyValuesInfo>();
 
 		private Info() { }
 
@@ -20,16 +20,16 @@ namespace MonsterHunterStories2
 			return mThis;
 		}
 
-		public NameValueInfo Search<Type>(List<Type> list, uint id)
-			where Type : NameValueInfo, new()
+		public KeyValuesInfo Search<Type>(List<Type> list, uint id)
+			where Type : KeyValuesInfo, new()
 		{
 			int min = 0;
 			int max = list.Count;
 			for (; min < max;)
 			{
 				int mid = (min + max) / 2;
-				if (list[mid].Value == id) return list[mid];
-				else if (list[mid].Value > id) max = mid;
+				if (list[mid].Key == id) return list[mid];
+				else if (list[mid].Key > id) max = mid;
 				else min = mid + 1;
 			}
 			return null;
