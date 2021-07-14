@@ -8,7 +8,12 @@ namespace MonsterHunterStories2
 		public String[] Values { get; private set; }
 		public String Value
 		{
-			get { return Values[Properties.Settings.Default.Langage]; }
+			get
+			{
+				int index = Properties.Settings.Default.Langage;
+				if (Values.Length <= index) index = 0;
+				return Values[index];
+			}
 		}
 
 		public int CompareTo(object obj)

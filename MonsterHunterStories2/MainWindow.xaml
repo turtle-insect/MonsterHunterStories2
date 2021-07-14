@@ -34,9 +34,10 @@
             <Button Height="32" ToolTip="Save" Click="MenuItemFileSave_Click">
                 <Image Source="{StaticResource Save}"/>
             </Button>
-            <ComboBox SelectedIndex="{Binding Path=Langage, Source={x:Static prop:Settings.Default}}">
+            <ComboBox Margin="10,0,0,0" SelectedIndex="{Binding Path=Langage, Source={x:Static prop:Settings.Default}}">
                 <ComboBoxItem Content="Japanese"/>
                 <ComboBoxItem Content="English"/>
+                <ComboBoxItem Content="Korean"/>
             </ComboBox>
         </ToolBar>
         <TabControl>
