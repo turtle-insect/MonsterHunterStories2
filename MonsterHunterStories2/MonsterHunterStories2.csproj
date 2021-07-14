@@ -65,6 +65,7 @@
     <Compile Include="ItemID2NameConverter.cs" />
     <Compile Include="Monster.cs" />
     <Compile Include="KeyValuesInfo.cs" />
+    <Compile Include="MonsterID2NameConverter.cs" />
     <Compile Include="SaveData.cs" />
     <Compile Include="Util.cs" />
     <Compile Include="ViewModel.cs" />

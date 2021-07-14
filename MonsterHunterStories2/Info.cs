@@ -7,6 +7,7 @@ namespace MonsterHunterStories2
 	{
 		private static Info mThis;
 		public List<KeyValuesInfo> Item { get; private set; } = new List<KeyValuesInfo>();
+		public List<KeyValuesInfo> Monster { get; private set; } = new List<KeyValuesInfo>();
 
 		private Info() { }
 
@@ -38,7 +39,9 @@ namespace MonsterHunterStories2
 		private void Init()
 		{
 			AppendList("info\\item.txt", Item);
+			AppendList("info\\monster.txt", Monster);
 			Item.Sort();
+			Monster.Sort();
 		}
 
 		private void AppendList<Type>(String filename, List<Type> items)

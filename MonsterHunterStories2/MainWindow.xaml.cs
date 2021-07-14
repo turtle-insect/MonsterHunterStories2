@@ -57,18 +57,10 @@ namespace MonsterHunterStories2
 
 		private void MenuItemFileExit_Click(object sender, RoutedEventArgs e)
 		{
-			//Close();
-
-			for (uint id = 1000; id < 1100; id++)
-			{
-				Item item = new Item(Util.ItemIDAddress(id));
-				item.ID = id;
-				item.Count = id % 1000 + 100;
-				SaveData.Instance().WriteBit(0x12B68 + id / 8, id % 8, true);
-			}
+			Close();
 		}
 
-		private void ButtonItemAppend_Click(object sender, RoutedEventArgs e)
+		private void ButtonItemChoice_Click(object sender, RoutedEventArgs e)
 		{
 			var dlg = new ChoiceWindow();
 			dlg.ID = 0;
@@ -97,6 +89,18 @@ namespace MonsterHunterStories2
 
 			// アイテム持ちのフラグ設定
 			SaveData.Instance().WriteBit(0x12B68 + id / 8, id % 8, true);
+		}
+
+		private void ButtonMonsterChoice_Click(object sender, RoutedEventArgs e)
+		{
+			Monster monster = ListBoxMonster.SelectedItem as Monster;
+			if (monster == null) return;
+
+			var dlg = new ChoiceWindow();
+			dlg.ID = monster.ID;
+			dlg.Type = ChoiceWindow.eType.TYPE_MONSTER;
+			dlg.ShowDialog();
+			monster.ID = dlg.ID;
 		}
 	}
 }

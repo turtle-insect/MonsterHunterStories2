@@ -132,6 +132,9 @@
                     </Grid.ColumnDefinitions>
                     <ListBox x:Name="ListBoxMonster" ItemsSource="{Binding Monsters}" DisplayMemberPath="Name"/>
                     <Grid Grid.Column="1">
+                        <Grid.Resources>
+                            <local:MonsterID2NameConverter x:Key="MonsterID2NameConverter"/>
+                        </Grid.Resources>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition/>
                             <ColumnDefinition/>
@@ -141,7 +144,8 @@
                             <RowDefinition/>
                             <RowDefinition/>
                             <RowDefinition/>
-                            <RowDefinition Height="10*"/>
+                            <RowDefinition/>
+                            <RowDefinition Height="9*"/>
                         </Grid.RowDefinitions>
                         <Label Content="Lv"/>
                         <TextBox Grid.Column="1" Text="{Binding ElementName=ListBoxMonster, Path=SelectedItem.Lv, UpdateSourceTrigger=PropertyChanged}"/>
@@ -151,6 +155,11 @@
                         <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding ElementName=ListBoxMonster, Path=SelectedItem.Name, UpdateSourceTrigger=PropertyChanged}"/>
                         <Label Grid.Row="3" Content="Type"/>
                         <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding ElementName=ListBoxMonster, Path=SelectedItem.ID, UpdateSourceTrigger=PropertyChanged}"/>
+                        <Label Grid.Row="4" Content="Type Name"/>
+                        <DockPanel Grid.Row="4" Grid.Column="1">
+                            <Button DockPanel.Dock="Right" Content="..." Click="ButtonMonsterChoice_Click"/>
+                            <Label Content="{Binding ElementName=ListBoxMonster, Path=SelectedItem.ID, Converter={StaticResource MonsterID2NameConverter}}"/>
+                        </DockPanel>
                     </Grid>
                 </Grid>
             </TabItem>
@@ -173,7 +182,7 @@
             </TabItem>
             <TabItem Header="Item">
                 <DockPanel>
-                    <Button DockPanel.Dock="Bottom" Content="Append/Search Item" Click="ButtonItemAppend_Click"/>
+                    <Button DockPanel.Dock="Bottom" Content="Append/Search Item" Click="ButtonItemChoice_Click"/>
                     <ListBox x:Name="ListBoxItem" ItemsSource="{Binding Items}">
                         <ListBox.Resources>
                             <local:ItemID2NameConverter x:Key="ItemID2NameConverter"/>
