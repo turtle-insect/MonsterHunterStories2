@@ -10,7 +10,14 @@ namespace MonsterHunterStories2
 	/// </summary>
 	public partial class ChoiceWindow : Window
 	{
+		public enum eType
+		{
+			TYPE_ITEM,
+			TYPE_MONSTER,
+		}
+
 		public uint ID { get; set; }
+		public eType Type { get; set; } = eType.TYPE_ITEM;
 
 		public ChoiceWindow()
 		{
@@ -49,6 +56,8 @@ namespace MonsterHunterStories2
 		{
 			ListBoxItem.Items.Clear();
 			var infos = Info.Instance().Item;
+
+			if (Type == eType.TYPE_MONSTER) infos = Info.Instance().Monster;
 
 			foreach (var info in infos)
 			{

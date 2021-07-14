@@ -12,7 +12,11 @@ https://www.capcom.co.jp/monsterhunter/stories2/
 
 # Soft
 ■Switch  
-https://store-jp.nintendo.com/list/software/70010000016893.html
+https://store-jp.nintendo.com/list/software/70010000016893.html  
+■Steam  
+https://store.steampowered.com/app/1277400  
+※Converter  
+https://github.com/AsteriskAmpersand/MHST2-Save-Tools
 
 # Resource
 https://docs.google.com/spreadsheets/d/1ePQdOEW_MQfNVqc3drSmGQN_wdaOAljhINBGiRgggxY

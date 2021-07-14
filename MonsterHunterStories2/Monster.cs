@@ -26,10 +26,10 @@ namespace MonsterHunterStories2
 
 		public uint ID
 		{
-			get { return SaveData.Instance().ReadNumber(mAddress + 48, 4); }
+			get { return SaveData.Instance().ReadNumber(mAddress + 52, 4); }
 			set
 			{
-				SaveData.Instance().WriteNumber(mAddress + 48, 4, value);
+				SaveData.Instance().WriteNumber(mAddress + 52, 4, value);
 				PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(ID)));
 			}
 		}

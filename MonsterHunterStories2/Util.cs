@@ -7,7 +7,7 @@
 		public const uint CHARACTER_SIZE = 596;
 
 		public const uint MONSTER_ADDRESS = 0x2D72C8;
-		public const uint MONSTER_COUNT = 50;
+		public const uint MONSTER_COUNT = 200;
 		public const uint MONSTER_SIZE = 412;
 
 		public const uint WEAPON_ADDRESS = 0x3ECC;
