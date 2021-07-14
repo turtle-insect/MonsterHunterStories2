@@ -151,7 +151,7 @@
                         <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding ElementName=ListBoxMonster, Path=SelectedItem.Name, UpdateSourceTrigger=PropertyChanged}"/>
                         <Label x:Name="LabelMonsterType" Grid.Row="3" Content="Type"/>
                         <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding ElementName=ListBoxMonster, Path=SelectedItem.ID, UpdateSourceTrigger=PropertyChanged}"/>
-                        <Label Grid.Row="4" Content="Type Name"/>
+                        <Label x:Name="LebelTypeName" Grid.Row="4" Content="Type Name"/>
                         <DockPanel Grid.Row="4" Grid.Column="1">
                             <Button DockPanel.Dock="Right" Content="..." Click="ButtonMonsterChoice_Click"/>
                             <Label Content="{Binding ElementName=ListBoxMonster, Path=SelectedItem.ID, Converter={StaticResource MonsterID2NameConverter}}"/>
@@ -178,7 +178,7 @@
             </TabItem>
             <TabItem x:Name="TabItem" Header="Item">
                 <DockPanel>
-                    <Button x:Name="ButtonItem" DockPanel.Dock="Bottom" Content="Append/Search Item" Click="ButtonItemAppend_Click"/>
+                    <Button x:Name="ButtonItem" DockPanel.Dock="Bottom" Content="Append/Search Item" Click="ButtonItemChoice_Click"/>
                     <ListBox x:Name="ListBoxItem" ItemsSource="{Binding Items}">
                         <ListBox.Resources>
                             <local:ItemID2NameConverter x:Key="ItemID2NameConverter"/>

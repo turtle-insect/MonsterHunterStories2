@@ -94,8 +94,19 @@ namespace MonsterHunterStories2
 			// アイテム持ちのフラグ設定
 			SaveData.Instance().WriteBit(0x12B68 + id / 8, id % 8, true);
 		}
+		private void ButtonMonsterChoice_Click(object sender, RoutedEventArgs e)
+		{
+			Monster monster = ListBoxMonster.SelectedItem as Monster;
+			if (monster == null) return;
 
-        private void ComboBox_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
+			var dlg = new ChoiceWindow();
+			dlg.ID = monster.ID;
+			dlg.Type = ChoiceWindow.eType.TYPE_MONSTER;
+			dlg.ShowDialog();
+			monster.ID = dlg.ID;
+		}
+
+		private void ComboBox_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
         {
 			int index = TransText.Languages[Languages.SelectedItem.ToString()];
 			if(TransText.LanguageTexts.GetLength(0)<index+1) index = 0;
@@ -133,6 +144,7 @@ namespace MonsterHunterStories2
 
 				LabelMonsterName.Content = TransText.LanguageTexts[index, i++];
 				LabelMonsterType.Content = TransText.LanguageTexts[index, i++];
+				LebelTypeName.Content = TransText.LanguageTexts[index, i++];
 
 				ButtonItem.Content = TransText.LanguageTexts[index, i++];
 			}
@@ -145,16 +157,4 @@ namespace MonsterHunterStories2
 		}
     }
 
-		private void ButtonMonsterChoice_Click(object sender, RoutedEventArgs e)
-		{
-			Monster monster = ListBoxMonster.SelectedItem as Monster;
-			if (monster == null) return;
-
-			var dlg = new ChoiceWindow();
-			dlg.ID = monster.ID;
-			dlg.Type = ChoiceWindow.eType.TYPE_MONSTER;
-			dlg.ShowDialog();
-			monster.ID = dlg.ID;
-		}
-	}
 }

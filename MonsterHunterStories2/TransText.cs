@@ -37,6 +37,7 @@ namespace MonsterHunterStories2
                 "Do not set anything but the Lv and Name, except for the main character.",
                 "Name",
                 "Type",
+                "Type Name",
                 "Append/Search Item"
             },
             //Chinese
@@ -66,6 +67,7 @@ namespace MonsterHunterStories2
                 "除了主角只能设置等级和名字。",
                 "名字",
                 "类型",
+                "类型名称",
                 "添加/搜索物品"
             },
 
