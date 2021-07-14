@@ -38,6 +38,7 @@
                 <ComboBoxItem Content="Japanese"/>
                 <ComboBoxItem Content="English"/>
                 <ComboBoxItem Content="Korean"/>
+                <ComboBoxItem Content="Chinese"/>
             </ComboBox>
         </ToolBar>
         <TabControl>
