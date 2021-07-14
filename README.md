@@ -14,6 +14,9 @@ https://www.capcom.co.jp/monsterhunter/stories2/
 ■Switch  
 https://store-jp.nintendo.com/list/software/70010000016893.html
 
+# Resource
+https://docs.google.com/spreadsheets/d/1ePQdOEW_MQfNVqc3drSmGQN_wdaOAljhINBGiRgggxY
+
 # 実行に必要
 * Windows マシン
 * .NET Framework 4.8の導入
