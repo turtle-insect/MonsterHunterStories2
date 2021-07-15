@@ -151,22 +151,25 @@
     <value>Voice</value>
   </data>
   <data name="MainMenuFile" xml:space="preserve">
-    <value>File</value>
+    <value>_File</value>
   </data>
   <data name="MainMenuFileExit" xml:space="preserve">
-    <value>Exit</value>
+    <value>_Exit</value>
   </data>
   <data name="MainMenuFileOpen" xml:space="preserve">
-    <value>Open...</value>
+    <value>_Open...</value>
   </data>
   <data name="MainMenuFileSave" xml:space="preserve">
-    <value>Save</value>
+    <value>_Save</value>
   </data>
   <data name="MainMenuFileSaveAs" xml:space="preserve">
-    <value>Save As...</value>
+    <value>Save _As...</value>
   </data>
   <data name="MainMonsterName" xml:space="preserve">
     <value>Name</value>
+  </data>
+  <data name="MainMonsterRideAction" xml:space="preserve">
+    <value>RideAction</value>
   </data>
   <data name="MainMonsterType" xml:space="preserve">
     <value>Type</value>

@@ -45,5 +45,25 @@ namespace MonsterHunterStories2
 			get { return SaveData.Instance().ReadNumber(mAddress + 188, 4); }
 			set { Util.WriteNumber(mAddress + 188, 4, value, 0, 99999999); }
 		}
+
+		public uint RideAction1
+		{
+			get { return SaveData.Instance().ReadNumber(mAddress + 60, 1); }
+			set
+			{
+				SaveData.Instance().WriteNumber(mAddress + 60, 1, value);
+				PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(RideAction1)));
+			}
+		}
+
+		public uint RideAction2
+		{
+			get { return SaveData.Instance().ReadNumber(mAddress + 61, 1); }
+			set
+			{
+				SaveData.Instance().WriteNumber(mAddress + 61, 1, value);
+				PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(RideAction2)));
+			}
+		}
 	}
 }

@@ -117,6 +117,9 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="ApplicationTitle" xml:space="preserve">
+    <value>Monster Hunter Stories 2</value>
+  </data>
   <data name="MainBasicMoney" xml:space="preserve">
     <value>金币</value>
   </data>
@@ -148,22 +151,25 @@
     <value>声音</value>
   </data>
   <data name="MainMenuFile" xml:space="preserve">
-    <value>文件</value>
+    <value>文件(__F)</value>
   </data>
   <data name="MainMenuFileExit" xml:space="preserve">
-    <value>关闭</value>
+    <value>关闭(_E)</value>
   </data>
   <data name="MainMenuFileOpen" xml:space="preserve">
-    <value>打开...</value>
+    <value>打开...(_O)</value>
   </data>
   <data name="MainMenuFileSave" xml:space="preserve">
-    <value>保存</value>
+    <value>保存(_S)</value>
   </data>
   <data name="MainMenuFileSaveAs" xml:space="preserve">
-    <value>另存为</value>
+    <value>另存为...(_A)</value>
   </data>
   <data name="MainMonsterName" xml:space="preserve">
     <value>名字</value>
+  </data>
+  <data name="MainMonsterRideAction" xml:space="preserve">
+    <value>RideAction</value>
   </data>
   <data name="MainMonsterType" xml:space="preserve">
     <value>类型</value>

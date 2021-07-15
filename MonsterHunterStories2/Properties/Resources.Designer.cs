@@ -160,7 +160,7 @@ namespace MonsterHunterStories2.Properties {
         }
         
         /// <summary>
-        ///   File に類似しているローカライズされた文字列を検索します。
+        ///   _File に類似しているローカライズされた文字列を検索します。
         /// </summary>
         public static string MainMenuFile {
             get {
@@ -169,7 +169,7 @@ namespace MonsterHunterStories2.Properties {
         }
         
         /// <summary>
-        ///   Exit に類似しているローカライズされた文字列を検索します。
+        ///   _Exit に類似しているローカライズされた文字列を検索します。
         /// </summary>
         public static string MainMenuFileExit {
             get {
@@ -178,7 +178,7 @@ namespace MonsterHunterStories2.Properties {
         }
         
         /// <summary>
-        ///   Open... に類似しているローカライズされた文字列を検索します。
+        ///   _Open... に類似しているローカライズされた文字列を検索します。
         /// </summary>
         public static string MainMenuFileOpen {
             get {
@@ -187,7 +187,7 @@ namespace MonsterHunterStories2.Properties {
         }
         
         /// <summary>
-        ///   Save に類似しているローカライズされた文字列を検索します。
+        ///   _Save に類似しているローカライズされた文字列を検索します。
         /// </summary>
         public static string MainMenuFileSave {
             get {
@@ -196,7 +196,7 @@ namespace MonsterHunterStories2.Properties {
         }
         
         /// <summary>
-        ///   Save As... に類似しているローカライズされた文字列を検索します。
+        ///   Save _As... に類似しているローカライズされた文字列を検索します。
         /// </summary>
         public static string MainMenuFileSaveAs {
             get {
@@ -210,6 +210,15 @@ namespace MonsterHunterStories2.Properties {
         public static string MainMonsterName {
             get {
                 return ResourceManager.GetString("MainMonsterName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   RideAction に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string MainMonsterRideAction {
+            get {
+                return ResourceManager.GetString("MainMonsterRideAction", resourceCulture);
             }
         }
         

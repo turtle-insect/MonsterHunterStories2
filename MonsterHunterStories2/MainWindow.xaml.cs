@@ -102,5 +102,28 @@ namespace MonsterHunterStories2
 			dlg.ShowDialog();
 			monster.ID = dlg.ID;
 		}
+
+		private void ButtonRaidAction1Choice_Click(object sender, RoutedEventArgs e)
+		{
+			Monster monster = ListBoxMonster.SelectedItem as Monster;
+			if (monster == null) return;
+			monster.RideAction1 = ChoiceMonsterRideAction(monster.RideAction1);
+		}
+
+		private void ButtonRaidAction2Choice_Click(object sender, RoutedEventArgs e)
+		{
+			Monster monster = ListBoxMonster.SelectedItem as Monster;
+			if (monster == null) return;
+			monster.RideAction2 = ChoiceMonsterRideAction(monster.RideAction2);
+		}
+
+		private uint ChoiceMonsterRideAction(uint id)
+		{
+			var dlg = new ChoiceWindow();
+			dlg.ID = id;
+			dlg.Type = ChoiceWindow.eType.TYPE_RAIDACTION;
+			dlg.ShowDialog();
+			return dlg.ID;
+		}
 	}
 }
