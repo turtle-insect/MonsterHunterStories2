@@ -1,17 +1,19 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Globalization;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Data;
 
 namespace MonsterHunterStories2
 {
-	class ItemID2NameConverter : IValueConverter
+	class CharacterVisibleConverter : IValueConverter
 	{
 		public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
 		{
-			uint id = (uint)value;
-			String name = Info.Instance().Search(Info.Instance().Item, id)?.Value;
-			if (String.IsNullOrEmpty(name)) name = "Item ID: " + id.ToString();
-			return name;
+			int index = (int)value;
+			return index == 0 ? System.Windows.Visibility.Visible : System.Windows.Visibility.Hidden;
 		}
 
 		public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)

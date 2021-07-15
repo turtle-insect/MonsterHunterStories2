@@ -56,7 +56,6 @@ namespace MonsterHunterStories2
 				String[] values = line.Split('\t');
 				if (values.Length < 2) continue;
 				if (String.IsNullOrEmpty(values[0])) continue;
-				if (String.IsNullOrEmpty(values[1])) continue;
 
 				Type type = new Type();
 				if (type.Line(values))

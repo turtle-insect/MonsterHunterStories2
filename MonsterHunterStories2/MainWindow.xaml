@@ -9,7 +9,7 @@
         WindowStartupLocation="CenterScreen"
         AllowDrop="True" Drop="Window_Drop" PreviewDragOver="Window_PreviewDragOver"
         Closed="Window_Closed"
-        Title="Monster Hunter Stories 2" Height="500" Width="650">
+        Title="{x:Static prop:Resources.ApplicationTitle}" Height="500" Width="650">
     <Window.DataContext>
         <local:ViewModel/>
     </Window.DataContext>
@@ -19,12 +19,12 @@
     </Window.Resources>
     <DockPanel>
         <Menu DockPanel.Dock="Top">
-            <MenuItem Header="File">
-                <MenuItem Header="Open..." Click="MenuItemFileOpen_Click"/>
-                <MenuItem Header="Save" Click="MenuItemFileSave_Click"/>
-                <MenuItem Header="Save As..." Click="MenuItemFileSaveAs_Click"/>
+            <MenuItem Header="{x:Static prop:Resources.MainMenuFile}">
+                <MenuItem Header="{x:Static prop:Resources.MainMenuFileOpen}" Click="MenuItemFileOpen_Click"/>
+                <MenuItem Header="{x:Static prop:Resources.MainMenuFileSave}" Click="MenuItemFileSave_Click"/>
+                <MenuItem Header="{x:Static prop:Resources.MainMenuFileSaveAs}" Click="MenuItemFileSaveAs_Click"/>
                 <Separator/>
-                <MenuItem Header="Exit" Click="MenuItemFileExit_Click"/>
+                <MenuItem Header="{x:Static prop:Resources.MainMenuFileExit}" Click="MenuItemFileExit_Click"/>
             </MenuItem>
         </Menu>
         <ToolBar DockPanel.Dock="Top">
@@ -39,10 +39,11 @@
                 <ComboBoxItem Content="English"/>
                 <ComboBoxItem Content="Korean"/>
                 <ComboBoxItem Content="Chinese"/>
+                <ComboBoxItem Content="French"/>
             </ComboBox>
         </ToolBar>
         <TabControl>
-            <TabItem Header="Basic">
+            <TabItem Header="{x:Static prop:Resources.MainTabBasic}">
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition/>
@@ -55,11 +56,11 @@
                         <RowDefinition/>
                         <RowDefinition Height="13*"/>
                     </Grid.RowDefinitions>
-                    <Label Content="Money"/>
+                    <Label Content="{x:Static prop:Resources.MainBasicMoney}"/>
                     <TextBox Grid.Column="1" Text="{Binding Money, UpdateSourceTrigger=PropertyChanged}"/>
                 </Grid>
             </TabItem>
-            <TabItem Header="Character">
+            <TabItem Header="{x:Static prop:Resources.MainTabCharacter}">
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="150"/>
@@ -68,9 +69,11 @@
                     </Grid.ColumnDefinitions>
                     <ListBox x:Name="ListBoxCharacter" ItemsSource="{Binding Characters}" DisplayMemberPath="Name"/>
                     <Grid Grid.Column="1">
+                        <Grid.Resources>
+                            <local:CharacterVisibleConverter x:Key="CharacterVisibleConverter"/>
+                        </Grid.Resources>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition/>
-                            <ColumnDefinition Width="20"/>
                             <ColumnDefinition/>
                         </Grid.ColumnDefinitions>
                         <Grid.RowDefinitions>
@@ -92,38 +95,41 @@
                         <Label Content="Lv"/>
                         <TextBox Grid.Column="3" Text="{Binding ElementName=ListBoxCharacter, Path=SelectedItem.Lv, UpdateSourceTrigger=PropertyChanged}"/>
                         <Label Grid.Row="1" Content="Exp"/>
-                        <TextBox Grid.Row="1" Grid.Column="2" Text="{Binding ElementName=ListBoxCharacter, Path=SelectedItem.Exp, UpdateSourceTrigger=PropertyChanged}"/>
-                        <Label Grid.Row="2" Content="Name"/>
-                        <TextBox Grid.Row="2" Grid.Column="2" Text="{Binding ElementName=ListBoxCharacter, Path=SelectedItem.Name, UpdateSourceTrigger=PropertyChanged}"/>
-                        <Label Grid.Row="3" Content="Body Type"/>
-                        <ComboBox Grid.Row="3" Grid.Column="2" SelectedIndex="{Binding ElementName=ListBoxCharacter, Path=SelectedItem.BodyType}">
+                        <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding ElementName=ListBoxCharacter, Path=SelectedItem.Exp, UpdateSourceTrigger=PropertyChanged}"/>
+                        <Label Grid.Row="2" Content="{x:Static prop:Resources.MainCharacterName}"/>
+                        <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding ElementName=ListBoxCharacter, Path=SelectedItem.Name, UpdateSourceTrigger=PropertyChanged}"/>
+                        <Label Grid.Row="3" Content="{x:Static prop:Resources.MainCharacterBodyType}"/>
+                        <ComboBox Grid.Row="3" Grid.Column="1" Visibility="{Binding ElementName=ListBoxCharacter, Path=SelectedIndex, Converter={StaticResource CharacterVisibleConverter}}" SelectedIndex="{Binding ElementName=ListBoxCharacter, Path=SelectedItem.BodyType}">
                             <ComboBoxItem Content="male"/>
                             <ComboBoxItem Content="woman"/>
                         </ComboBox>
-                        <Label Grid.Row="4" Content="Face Shape"/>
-                        <TextBox Grid.Row="4" Grid.Column="2" Text="{Binding ElementName=ListBoxCharacter, Path=SelectedItem.FaceShape, UpdateSourceTrigger=PropertyChanged}"/>
-                        <Label Grid.Row="5" Content="Skin"/>
-                        <Label Grid.Row="5" Grid.Column="1" Content="R"/>
-                        <TextBox Grid.Row="5" Grid.Column="2" Text="{Binding ElementName=ListBoxCharacter, Path=SelectedItem.SkinR, UpdateSourceTrigger=PropertyChanged}"/>
-                        <Label Grid.Row="6" Grid.Column="1" Content="G"/>
-                        <TextBox Grid.Row="6" Grid.Column="2" Text="{Binding ElementName=ListBoxCharacter, Path=SelectedItem.SkinG, UpdateSourceTrigger=PropertyChanged}"/>
-                        <Label Grid.Row="7" Grid.Column="1" Content="B"/>
-                        <TextBox Grid.Row="7" Grid.Column="2" Text="{Binding ElementName=ListBoxCharacter, Path=SelectedItem.SkinB, UpdateSourceTrigger=PropertyChanged}"/>
-                        <Label Grid.Row="8" Content="Hairstyle"/>
-                        <TextBox Grid.Row="8" Grid.Column="2" Text="{Binding ElementName=ListBoxCharacter, Path=SelectedItem.HairStyle, UpdateSourceTrigger=PropertyChanged}"/>
-                        <Label Grid.Row="9" Content="Eyes"/>
-                        <TextBox Grid.Row="9" Grid.Column="2" Text="{Binding ElementName=ListBoxCharacter, Path=SelectedItem.Eyes, UpdateSourceTrigger=PropertyChanged}"/>
-                        <Label Grid.Row="10" Content="Mouth"/>
-                        <TextBox Grid.Row="10" Grid.Column="2" Text="{Binding ElementName=ListBoxCharacter, Path=SelectedItem.Mouth, UpdateSourceTrigger=PropertyChanged}"/>
-                        <Label Grid.Row="11" Content="Makeup"/>
-                        <TextBox Grid.Row="11" Grid.Column="2" Text="{Binding ElementName=ListBoxCharacter, Path=SelectedItem.Makeup, UpdateSourceTrigger=PropertyChanged}"/>
-                        <Label Grid.Row="12" Content="Voice"/>
-                        <TextBox Grid.Row="12" Grid.Column="2" Text="{Binding ElementName=ListBoxCharacter, Path=SelectedItem.Voice, UpdateSourceTrigger=PropertyChanged}"/>
+                        <Label Grid.Row="4" Content="{x:Static prop:Resources.MainCharacterFaceShape}"/>
+                        <TextBox Grid.Row="4" Grid.Column="1" Visibility="{Binding ElementName=ListBoxCharacter, Path=SelectedIndex, Converter={StaticResource CharacterVisibleConverter}}" Text="{Binding ElementName=ListBoxCharacter, Path=SelectedItem.FaceShape, UpdateSourceTrigger=PropertyChanged}"/>
+                        <Label Grid.Row="5" Content="{x:Static prop:Resources.MainCharacterSkin}"/>
+                        <Grid Grid.Row="5" Grid.Column="1" Visibility="{Binding ElementName=ListBoxCharacter, Path=SelectedIndex, Converter={StaticResource CharacterVisibleConverter}}" >
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <TextBox Text="{Binding ElementName=ListBoxCharacter, Path=SelectedItem.SkinR, UpdateSourceTrigger=PropertyChanged}" Background="LightPink"/>
+                            <TextBox Grid.Column="1" Text="{Binding ElementName=ListBoxCharacter, Path=SelectedItem.SkinG, UpdateSourceTrigger=PropertyChanged}" Background="LightGreen"/>
+                            <TextBox Grid.Column="2" Text="{Binding ElementName=ListBoxCharacter, Path=SelectedItem.SkinB, UpdateSourceTrigger=PropertyChanged}" Background="LightBlue"/>
+                        </Grid>
+                        <Label Grid.Row="6" Content="{x:Static prop:Resources.MainCharacterHairStyle}"/>
+                        <TextBox Grid.Row="6" Grid.Column="1" Visibility="{Binding ElementName=ListBoxCharacter, Path=SelectedIndex, Converter={StaticResource CharacterVisibleConverter}}" Text="{Binding ElementName=ListBoxCharacter, Path=SelectedItem.HairStyle, UpdateSourceTrigger=PropertyChanged}"/>
+                        <Label Grid.Row="7" Content="{x:Static prop:Resources.MainCharacterEyes}"/>
+                        <TextBox Grid.Row="7" Grid.Column="1" Visibility="{Binding ElementName=ListBoxCharacter, Path=SelectedIndex, Converter={StaticResource CharacterVisibleConverter}}" Text="{Binding ElementName=ListBoxCharacter, Path=SelectedItem.Eyes, UpdateSourceTrigger=PropertyChanged}"/>
+                        <Label Grid.Row="8" Content="{x:Static prop:Resources.MainCharacterMouth}"/>
+                        <TextBox Grid.Row="8" Grid.Column="1" Visibility="{Binding ElementName=ListBoxCharacter, Path=SelectedIndex, Converter={StaticResource CharacterVisibleConverter}}" Text="{Binding ElementName=ListBoxCharacter, Path=SelectedItem.Mouth, UpdateSourceTrigger=PropertyChanged}"/>
+                        <Label Grid.Row="9" Content="{x:Static prop:Resources.MainCharacterMakeup}"/>
+                        <TextBox Grid.Row="9" Grid.Column="1" Visibility="{Binding ElementName=ListBoxCharacter, Path=SelectedIndex, Converter={StaticResource CharacterVisibleConverter}}" Text="{Binding ElementName=ListBoxCharacter, Path=SelectedItem.Makeup, UpdateSourceTrigger=PropertyChanged}"/>
+                        <Label Grid.Row="10" Content="{x:Static prop:Resources.MainCharacterVoice}"/>
+                        <TextBox Grid.Row="10" Grid.Column="1" Visibility="{Binding ElementName=ListBoxCharacter, Path=SelectedIndex, Converter={StaticResource CharacterVisibleConverter}}" Text="{Binding ElementName=ListBoxCharacter, Path=SelectedItem.Voice, UpdateSourceTrigger=PropertyChanged}"/>
                     </Grid>
-                    <TextBlock Grid.Column="2" Text="Do not set anything but the Lv and Name, except for the main character." Foreground="Red" TextWrapping="Wrap"/>
                 </Grid>
             </TabItem>
-            <TabItem Header="Monster">
+            <TabItem Header="{x:Static prop:Resources.MainTabMonster}">
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="150"/>
@@ -151,19 +157,18 @@
                         <TextBox Grid.Column="1" Text="{Binding ElementName=ListBoxMonster, Path=SelectedItem.Lv, UpdateSourceTrigger=PropertyChanged}"/>
                         <Label Grid.Row="1" Content="Exp"/>
                         <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding ElementName=ListBoxMonster, Path=SelectedItem.Exp, UpdateSourceTrigger=PropertyChanged}"/>
-                        <Label Grid.Row="2" Content="Name"/>
+                        <Label Grid.Row="2" Content="{x:Static prop:Resources.MainMonsterName}"/>
                         <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding ElementName=ListBoxMonster, Path=SelectedItem.Name, UpdateSourceTrigger=PropertyChanged}"/>
-                        <Label Grid.Row="3" Content="Type"/>
-                        <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding ElementName=ListBoxMonster, Path=SelectedItem.ID, UpdateSourceTrigger=PropertyChanged}"/>
-                        <Label Grid.Row="4" Content="Type Name"/>
-                        <DockPanel Grid.Row="4" Grid.Column="1">
+                        <Label Grid.Row="3" Content="{x:Static prop:Resources.MainMonsterType}"/>
+                        <DockPanel Grid.Row="3" Grid.Column="1">
                             <Button DockPanel.Dock="Right" Content="..." Click="ButtonMonsterChoice_Click"/>
                             <Label Content="{Binding ElementName=ListBoxMonster, Path=SelectedItem.ID, Converter={StaticResource MonsterID2NameConverter}}"/>
                         </DockPanel>
+                        <TextBox Grid.Row="4" Grid.Column="1" Text="{Binding ElementName=ListBoxMonster, Path=SelectedItem.ID, UpdateSourceTrigger=PropertyChanged}"/>
                     </Grid>
                 </Grid>
             </TabItem>
-            <TabItem Header="Weapon">
+            <TabItem Header="{x:Static prop:Resources.MainTabWeapon}">
                 <DockPanel>
                     <ListBox x:Name="ListBoxWeapon" ItemsSource="{Binding Weapons}">
                         <ListBox.ItemTemplate>
@@ -180,7 +185,7 @@
                     </ListBox>
                 </DockPanel>
             </TabItem>
-            <TabItem Header="Item">
+            <TabItem Header="{x:Static prop:Resources.MainTabItem}">
                 <DockPanel>
                     <Button DockPanel.Dock="Bottom" Content="Append/Search Item" Click="ButtonItemChoice_Click"/>
                     <ListBox x:Name="ListBoxItem" ItemsSource="{Binding Items}">

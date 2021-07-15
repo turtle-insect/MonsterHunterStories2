@@ -61,7 +61,9 @@ namespace MonsterHunterStories2
 
 			foreach (var info in infos)
 			{
-				if (String.IsNullOrEmpty(filter) || info.Value.IndexOf(filter) >= 0)
+				String value = info.Value;
+				if (String.IsNullOrEmpty(value)) continue;
+				if (String.IsNullOrEmpty(filter) || value.IndexOf(filter) >= 0)
 				{
 					ListBoxItem.Items.Add(info);
 				}
