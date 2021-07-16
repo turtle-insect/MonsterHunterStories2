@@ -160,6 +160,24 @@ namespace MonsterHunterStories2.Properties {
         }
         
         /// <summary>
+        ///   Armor に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string MainEquipmentArmor {
+            get {
+                return ResourceManager.GetString("MainEquipmentArmor", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Weapon に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string MainEquipmentWeapon {
+            get {
+                return ResourceManager.GetString("MainEquipmentWeapon", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   _About に類似しているローカライズされた文字列を検索します。
         /// </summary>
         public static string MainMenuAbout {
@@ -268,6 +286,15 @@ namespace MonsterHunterStories2.Properties {
         }
         
         /// <summary>
+        ///   Equipment に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string MainTabEquipment {
+            get {
+                return ResourceManager.GetString("MainTabEquipment", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Item に類似しているローカライズされた文字列を検索します。
         /// </summary>
         public static string MainTabItem {
@@ -282,15 +309,6 @@ namespace MonsterHunterStories2.Properties {
         public static string MainTabMonster {
             get {
                 return ResourceManager.GetString("MainTabMonster", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Weapon に類似しているローカライズされた文字列を検索します。
-        /// </summary>
-        public static string MainTabWeapon {
-            get {
-                return ResourceManager.GetString("MainTabWeapon", resourceCulture);
             }
         }
     }

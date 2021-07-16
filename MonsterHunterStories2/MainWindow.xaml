@@ -190,7 +190,7 @@
                                     <DataTemplate>
                                         <StackPanel Orientation="Horizontal">
                                             <Label Content="ID"/>
-                                            <TextBox Width="50" Text="{Binding ID, UpdateSourceTrigger=PropertyChanged}"/>
+                                            <TextBox Text="{Binding ID, UpdateSourceTrigger=PropertyChanged}" Width="50"/>
                                             <Label Content="Lock"/>
                                             <CheckBox IsChecked="{Binding Lock}" VerticalAlignment="Center"/>
                                             <Label Content="Stack"/>
@@ -207,22 +207,58 @@
                     </TabControl>
                 </Grid>
             </TabItem>
-            <TabItem Header="{x:Static prop:Resources.MainTabWeapon}">
-                <DockPanel>
-                    <ListBox x:Name="ListBoxWeapon" ItemsSource="{Binding Weapons}">
-                        <ListBox.ItemTemplate>
-                            <DataTemplate>
-                                <StackPanel Orientation="Horizontal">
-                                    <Label Content="Lv:"/>
-                                    <TextBox Text="{Binding Lv, UpdateSourceTrigger=PropertyChanged}" Width="60"/>
-                                    <Label Content=" ID:"/>
-                                    <TextBox Text="{Binding ID, UpdateSourceTrigger=PropertyChanged}" Width="60"/>
-                                    <Label Content="    ID=32767 is None" Foreground="Gray"/>
-                                </StackPanel>
-                            </DataTemplate>
-                        </ListBox.ItemTemplate>
-                    </ListBox>
-                </DockPanel>
+            <TabItem Header="{x:Static prop:Resources.MainTabEquipment}">
+                <TabControl>
+                    <TabItem Header="{x:Static prop:Resources.MainEquipmentWeapon}">
+                        <ListBox x:Name="ListBoxWeapon" ItemsSource="{Binding Weapons}">
+                            <ListBox.ItemTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Horizontal">
+                                        <Label Content="Lv"/>
+                                        <ComboBox SelectedIndex="{Binding Lv}">
+                                            <ComboBoxItem Content="0"/>
+                                            <ComboBoxItem Content="1"/>
+                                            <ComboBoxItem Content="2"/>
+                                            <ComboBoxItem Content="3"/>
+                                        </ComboBox>
+                                        <Label Content=" Type"/>
+                                        <ComboBox SelectedIndex="{Binding Type}" Width="120">
+                                            <ComboBoxItem Content="Sword &amp; Shield"/>
+                                            <ComboBoxItem Content="Great Sword"/>
+                                            <ComboBoxItem Content="Hammer"/>
+                                            <ComboBoxItem Content="Hunting Horn"/>
+                                            <ComboBoxItem Content="Bow"/>
+                                            <ComboBoxItem Content="Gunlance"/>
+                                        </ComboBox>
+                                        <Label Content=" ID"/>
+                                        <TextBox Text="{Binding ID, UpdateSourceTrigger=PropertyChanged}" Width="60"/>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </ListBox.ItemTemplate>
+                        </ListBox>
+                    </TabItem>
+                    <TabItem Header="{x:Static prop:Resources.MainEquipmentArmor}">
+                        <ListBox x:Name="ListBoxArmor" ItemsSource="{Binding Armors}">
+                            <ListBox.ItemTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Horizontal">
+                                        <Label Content="Lv"/>
+                                        <ComboBox SelectedIndex="{Binding Lv}">
+                                            <ComboBoxItem Content="0"/>
+                                            <ComboBoxItem Content="1"/>
+                                            <ComboBoxItem Content="2"/>
+                                            <ComboBoxItem Content="3"/>
+                                        </ComboBox>
+                                        <Label Content=" Type"/>
+                                        <TextBox Text="{Binding Type, UpdateSourceTrigger=PropertyChanged}" Width="60" />
+                                        <Label Content=" ID"/>
+                                        <TextBox Text="{Binding ID, UpdateSourceTrigger=PropertyChanged}" Width="60"/>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </ListBox.ItemTemplate>
+                        </ListBox>
+                    </TabItem>
+                </TabControl>
             </TabItem>
             <TabItem Header="{x:Static prop:Resources.MainTabItem}">
                 <DockPanel>
@@ -234,9 +270,9 @@
                         <ListBox.ItemTemplate>
                             <DataTemplate>
                                 <StackPanel Orientation="Horizontal">
-                                    <Label Content="Count:"/>
+                                    <Label Content="Count"/>
                                     <TextBox Text="{Binding Count, UpdateSourceTrigger=PropertyChanged}" Width="60"/>
-                                    <Label Content=" Name:"/>
+                                    <Label Margin="5,0,0,0" Content=" Name"/>
                                     <Label Content="{Binding ID, Converter={StaticResource ItemID2NameConverter}}"/>
                                 </StackPanel>
                             </DataTemplate>

@@ -3,24 +3,34 @@ using System.ComponentModel;
 
 namespace MonsterHunterStories2
 {
-	class Weapon : INotifyPropertyChanged
+	class Equipment : INotifyPropertyChanged
 	{
 		public event PropertyChangedEventHandler PropertyChanged;
 
 		private readonly uint mAddress;
 
-		public Weapon(uint address)
+		public Equipment(uint address)
 		{
 			mAddress = address;
 		}
 
-		public uint ID
+		public uint Type
 		{
-			get { return SaveData.Instance().ReadNumber(mAddress, 4); }
+			get { return SaveData.Instance().ReadNumber(mAddress, 2); }
 			set
 			{
-				SaveData.Instance().WriteNumber(mAddress, 4, value);
+				SaveData.Instance().WriteNumber(mAddress, 2, value);
 				PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Type)));
+			}
+		}
+
+		public uint ID
+		{
+			get { return SaveData.Instance().ReadNumber(mAddress + 2, 2); }
+			set
+			{
+				SaveData.Instance().WriteNumber(mAddress + 2, 2, value);
+				PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(ID)));
 			}
 		}
 

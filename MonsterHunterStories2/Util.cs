@@ -11,8 +11,16 @@
 		public const uint MONSTER_SIZE = 412;
 
 		public const uint WEAPON_ADDRESS = 0x3ECC;
-		public const uint WEAPON_COUNT = 1099;
+		public const uint WEAPON_COUNT = 700;
 		public const uint WEAPON_SIZE = 36;
+
+		public const uint ARMOR_ADDRESS = 0xA13C;
+		public const uint ARMOR_COUNT = 400;
+		public const uint ARMOR_SIZE = 36;
+
+		public const uint TALISMAN_ADDRESS = 0xD97C;
+		public const uint TALISMAN_COUNT = 200;
+		public const uint TALISMAN_SIZE = 48;
 
 		public static void WriteNumber(uint address, uint size, uint value, uint min, uint max)
 		{
