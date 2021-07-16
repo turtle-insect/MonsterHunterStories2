@@ -56,6 +56,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Character.cs" />
+    <Compile Include="CharacterVisibleConverter.cs" />
     <Compile Include="ChoiceWindow.xaml.cs">
       <DependentUpon>ChoiceWindow.xaml</DependentUpon>
     </Compile>
@@ -66,6 +67,7 @@
     <Compile Include="Monster.cs" />
     <Compile Include="KeyValuesInfo.cs" />
     <Compile Include="MonsterID2NameConverter.cs" />
+    <Compile Include="RaidActionID2NameConverter.cs" />
     <Compile Include="SaveData.cs" />
     <Compile Include="TransText.cs" />
     <Compile Include="Util.cs" />
@@ -103,9 +105,10 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
+      <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.zh-CN.resx" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

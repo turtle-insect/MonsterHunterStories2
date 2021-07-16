@@ -106,55 +106,27 @@ namespace MonsterHunterStories2
 			monster.ID = dlg.ID;
 		}
 
-		private void ComboBox_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
-        {
-			int index = TransText.Languages[Languages.SelectedItem.ToString()];
-			if(TransText.LanguageTexts.GetLength(0)<index+1) index = 0;
-			int i = 0;
-			try
-			{
-				MenuFile.Header = TransText.LanguageTexts[index, i++];
-				ButtonOpen.ToolTip = TransText.LanguageTexts[index, i];
-				MenuOpen.Header = TransText.LanguageTexts[index, i++];
-				ButtonSave.ToolTip = TransText.LanguageTexts[index, i];
-				MenuSave.Header = TransText.LanguageTexts[index, i++];
-				MenuSaveAs.Header = TransText.LanguageTexts[index, i++];
-				MenuExit.Header = TransText.LanguageTexts[index, i++];
-
-				TabBasic.Header = TransText.LanguageTexts[index, i++];
-				TabCharacter.Header = TransText.LanguageTexts[index, i++];
-				TabMonster.Header = TransText.LanguageTexts[index, i++];
-				TabWeapon.Header = TransText.LanguageTexts[index, i++];
-				TabItem.Header = TransText.LanguageTexts[index, i++];
-
-				LabelMoney.Content = TransText.LanguageTexts[index, i++];
-
-				LabelName.Content = TransText.LanguageTexts[index, i++];
-				LabelBody.Content = TransText.LanguageTexts[index, i++];
-				LabelFace.Content = TransText.LanguageTexts[index, i++];
-				LabelSkin.Content = TransText.LanguageTexts[index, i++];
-				LabelHair.Content = TransText.LanguageTexts[index, i++];
-				LabelEyes.Content = TransText.LanguageTexts[index, i++];
-				LabelMouth.Content = TransText.LanguageTexts[index, i++];
-				LabelMakeup.Content = TransText.LanguageTexts[index, i++];
-				LableVoice.Content = TransText.LanguageTexts[index, i++];
-				TextMale.Content = TransText.LanguageTexts[index, i++];
-				TextWoman.Content = TransText.LanguageTexts[index, i++];
-				TextBlock.Text = TransText.LanguageTexts[index, i++];
-
-				LabelMonsterName.Content = TransText.LanguageTexts[index, i++];
-				LabelMonsterType.Content = TransText.LanguageTexts[index, i++];
-				LebelTypeName.Content = TransText.LanguageTexts[index, i++];
-
-				ButtonItem.Content = TransText.LanguageTexts[index, i++];
-			}
-			catch (Exception)
-            {
-				MessageBox.Show("Missing string!");
-			}
-
-
+		private void ButtonRaidAction1Choice_Click(object sender, RoutedEventArgs e)
+		{
+			Monster monster = ListBoxMonster.SelectedItem as Monster;
+			if (monster == null) return;
+			monster.RideAction1 = ChoiceMonsterRideAction(monster.RideAction1);
 		}
-    }
 
+		private void ButtonRaidAction2Choice_Click(object sender, RoutedEventArgs e)
+		{
+			Monster monster = ListBoxMonster.SelectedItem as Monster;
+			if (monster == null) return;
+			monster.RideAction2 = ChoiceMonsterRideAction(monster.RideAction2);
+		}
+
+		private uint ChoiceMonsterRideAction(uint id)
+		{
+			var dlg = new ChoiceWindow();
+			dlg.ID = id;
+			dlg.Type = ChoiceWindow.eType.TYPE_RAIDACTION;
+			dlg.ShowDialog();
+			return dlg.ID;
+		}
+	}
 }

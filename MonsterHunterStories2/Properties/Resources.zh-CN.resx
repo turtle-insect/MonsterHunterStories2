@@ -121,72 +121,72 @@
     <value>Monster Hunter Stories 2</value>
   </data>
   <data name="MainBasicMoney" xml:space="preserve">
-    <value>Money</value>
+    <value>金币</value>
   </data>
   <data name="MainCharacterBodyType" xml:space="preserve">
-    <value>Body Type</value>
+    <value>体型</value>
   </data>
   <data name="MainCharacterEyes" xml:space="preserve">
-    <value>Eyes</value>
+    <value>眼睛</value>
   </data>
   <data name="MainCharacterFaceShape" xml:space="preserve">
-    <value>Face Shape</value>
+    <value>脸型</value>
   </data>
   <data name="MainCharacterHairStyle" xml:space="preserve">
-    <value>Hairstyle</value>
+    <value>发型</value>
   </data>
   <data name="MainCharacterMakeup" xml:space="preserve">
-    <value>Makeup</value>
+    <value>装扮</value>
   </data>
   <data name="MainCharacterMouth" xml:space="preserve">
-    <value>Mouth</value>
+    <value>嘴型</value>
   </data>
   <data name="MainCharacterName" xml:space="preserve">
-    <value>Name</value>
+    <value>名字</value>
   </data>
   <data name="MainCharacterSkin" xml:space="preserve">
-    <value>Skin</value>
+    <value>皮肤</value>
   </data>
   <data name="MainCharacterVoice" xml:space="preserve">
-    <value>Voice</value>
+    <value>声音</value>
   </data>
   <data name="MainMenuFile" xml:space="preserve">
-    <value>_File</value>
+    <value>文件(__F)</value>
   </data>
   <data name="MainMenuFileExit" xml:space="preserve">
-    <value>_Exit</value>
+    <value>关闭(_E)</value>
   </data>
   <data name="MainMenuFileOpen" xml:space="preserve">
-    <value>_Open...</value>
+    <value>打开...(_O)</value>
   </data>
   <data name="MainMenuFileSave" xml:space="preserve">
-    <value>_Save</value>
+    <value>保存(_S)</value>
   </data>
   <data name="MainMenuFileSaveAs" xml:space="preserve">
-    <value>Save _As...</value>
+    <value>另存为...(_A)</value>
   </data>
   <data name="MainMonsterName" xml:space="preserve">
-    <value>Name</value>
+    <value>名字</value>
   </data>
   <data name="MainMonsterRideAction" xml:space="preserve">
     <value>RideAction</value>
   </data>
   <data name="MainMonsterType" xml:space="preserve">
-    <value>Type</value>
+    <value>类型</value>
   </data>
   <data name="MainTabBasic" xml:space="preserve">
-    <value>Basic</value>
+    <value>基础</value>
   </data>
   <data name="MainTabCharacter" xml:space="preserve">
-    <value>Character</value>
+    <value>任务</value>
   </data>
   <data name="MainTabItem" xml:space="preserve">
-    <value>Item</value>
+    <value>物品</value>
   </data>
   <data name="MainTabMonster" xml:space="preserve">
-    <value>Monster</value>
+    <value>随从</value>
   </data>
   <data name="MainTabWeapon" xml:space="preserve">
-    <value>Weapon</value>
+    <value>武器</value>
   </data>
 </root>
