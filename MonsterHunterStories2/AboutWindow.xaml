@@ -1,0 +1,17 @@
+﻿<Window x:Class="MonsterHunterStories2.AboutWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MonsterHunterStories2"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
+        Title="AboutWindow" Height="120" Width="250">
+    <Grid>
+        <StackPanel>
+            <Label Content="Creater ： turtle-insect(カメムシ)"/>
+            <Label Content="HP ： http://turtleinsect.php.xdomain.jp/" MouseDown="LabelHP_MouseDown" Foreground="Blue"/>
+            <Label Content="Mail ： turtle.insect@gmail.com"/>
+        </StackPanel>
+    </Grid>
+</Window>

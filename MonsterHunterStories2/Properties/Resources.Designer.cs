@@ -160,6 +160,15 @@ namespace MonsterHunterStories2.Properties {
         }
         
         /// <summary>
+        ///   _About に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string MainMenuAbout {
+            get {
+                return ResourceManager.GetString("MainMenuAbout", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   _File に類似しているローカライズされた文字列を検索します。
         /// </summary>
         public static string MainMenuFile {
@@ -219,6 +228,15 @@ namespace MonsterHunterStories2.Properties {
         public static string MainMonsterRideAction {
             get {
                 return ResourceManager.GetString("MainMonsterRideAction", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Gene に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string MainMonsterTabGene {
+            get {
+                return ResourceManager.GetString("MainMonsterTabGene", resourceCulture);
             }
         }
         

@@ -26,6 +26,7 @@
                 <Separator/>
                 <MenuItem Header="{x:Static prop:Resources.MainMenuFileExit}" Click="MenuItemFileExit_Click"/>
             </MenuItem>
+            <MenuItem Header="{x:Static prop:Resources.MainMenuAbout}" Click="MenuItemAbout_Click"/>
         </Menu>
         <ToolBar DockPanel.Dock="Top">
             <Button Height="32" ToolTip="Open" Click="MenuItemFileOpen_Click">
@@ -63,8 +64,8 @@
             <TabItem Header="{x:Static prop:Resources.MainTabCharacter}">
                 <Grid>
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="150"/>
-                        <ColumnDefinition Width="1.5*"/>
+                        <ColumnDefinition Width="120"/>
+                        <ColumnDefinition/>
                         <ColumnDefinition/>
                     </Grid.ColumnDefinitions>
                     <ListBox x:Name="ListBoxCharacter" ItemsSource="{Binding Characters}" DisplayMemberPath="Name"/>
@@ -74,7 +75,7 @@
                         </Grid.Resources>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition/>
-                            <ColumnDefinition/>
+                            <ColumnDefinition Width="2*"/>
                         </Grid.ColumnDefinitions>
                         <Grid.RowDefinitions>
                             <RowDefinition/>
@@ -132,8 +133,8 @@
             <TabItem Header="{x:Static prop:Resources.MainTabMonster}">
                 <Grid>
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="150"/>
-                        <ColumnDefinition Width="1.5*"/>
+                        <ColumnDefinition Width="120"/>
+                        <ColumnDefinition/>
                         <ColumnDefinition/>
                     </Grid.ColumnDefinitions>
                     <ListBox x:Name="ListBoxMonster" ItemsSource="{Binding Monsters}" DisplayMemberPath="Name"/>
@@ -144,7 +145,7 @@
                         </Grid.Resources>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition/>
-                            <ColumnDefinition/>
+                            <ColumnDefinition Width="2*"/>
                         </Grid.ColumnDefinitions>
                         <Grid.RowDefinitions>
                             <RowDefinition/>
@@ -182,6 +183,28 @@
                         </DockPanel>
                         <TextBox Grid.Row="8" Grid.Column="1" Text="{Binding ElementName=ListBoxMonster, Path=SelectedItem.RideAction2, UpdateSourceTrigger=PropertyChanged}"/>
                     </Grid>
+                    <TabControl Grid.Column="2">
+                        <TabItem Header="{x:Static prop:Resources.MainMonsterTabGene}">
+                            <ListBox ItemsSource="{Binding ElementName=ListBoxMonster, Path=SelectedItem.Genes}">
+                                <ListBox.ItemTemplate>
+                                    <DataTemplate>
+                                        <StackPanel Orientation="Horizontal">
+                                            <Label Content="ID"/>
+                                            <TextBox Width="50" Text="{Binding ID, UpdateSourceTrigger=PropertyChanged}"/>
+                                            <Label Content="Lock"/>
+                                            <CheckBox IsChecked="{Binding Lock}" VerticalAlignment="Center"/>
+                                            <Label Content="Stack"/>
+                                            <ComboBox SelectedIndex="{Binding Stack}">
+                                                <ComboBoxItem Content="Default"/>
+                                                <ComboBoxItem Content="+1"/>
+                                                <ComboBoxItem Content="+2"/>
+                                            </ComboBox>
+                                        </StackPanel>
+                                    </DataTemplate>
+                                </ListBox.ItemTemplate>
+                            </ListBox>
+                        </TabItem>
+                    </TabControl>
                 </Grid>
             </TabItem>
             <TabItem Header="{x:Static prop:Resources.MainTabWeapon}">

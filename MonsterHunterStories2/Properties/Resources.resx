@@ -150,6 +150,9 @@
   <data name="MainCharacterVoice" xml:space="preserve">
     <value>Voice</value>
   </data>
+  <data name="MainMenuAbout" xml:space="preserve">
+    <value>_About</value>
+  </data>
   <data name="MainMenuFile" xml:space="preserve">
     <value>_File</value>
   </data>
@@ -170,6 +173,9 @@
   </data>
   <data name="MainMonsterRideAction" xml:space="preserve">
     <value>RideAction</value>
+  </data>
+  <data name="MainMonsterTabGene" xml:space="preserve">
+    <value>Gene</value>
   </data>
   <data name="MainMonsterType" xml:space="preserve">
     <value>Type</value>

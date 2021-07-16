@@ -60,6 +60,12 @@ namespace MonsterHunterStories2
 			Close();
 		}
 
+		private void MenuItemAbout_Click(object sender, RoutedEventArgs e)
+		{
+			var dlg = new AboutWindow();
+			dlg.ShowDialog();
+		}
+
 		private void ButtonItemChoice_Click(object sender, RoutedEventArgs e)
 		{
 			var dlg = new ChoiceWindow();
