@@ -39,7 +39,7 @@
                 <ComboBoxItem Content="Japanese"/>
                 <ComboBoxItem Content="English"/>
                 <ComboBoxItem Content="Korean"/>
-                <ComboBoxItem Content="Chinese"/>
+                <ComboBoxItem Content="中文"/>
                 <ComboBoxItem Content="French"/>
             </ComboBox>
         </ToolBar>
@@ -223,12 +223,12 @@
                                         </ComboBox>
                                         <Label Content=" Type"/>
                                         <ComboBox SelectedIndex="{Binding Type}" Width="120">
-                                            <ComboBoxItem Content="Sword &amp; Shield"/>
-                                            <ComboBoxItem Content="Great Sword"/>
-                                            <ComboBoxItem Content="Hammer"/>
-                                            <ComboBoxItem Content="Hunting Horn"/>
-                                            <ComboBoxItem Content="Bow"/>
-                                            <ComboBoxItem Content="Gunlance"/>
+                                            <ComboBoxItem Content="{x:Static prop:Resources.MainWeaponGS}"/>
+                                            <ComboBoxItem Content="{x:Static prop:Resources.MainWeaponSS}"/>
+                                            <ComboBoxItem Content="{x:Static prop:Resources.MainWeaponH}"/>
+                                            <ComboBoxItem Content="{x:Static prop:Resources.MainWeaponHH}"/>
+                                            <ComboBoxItem Content="{x:Static prop:Resources.MainWeaponG}"/>
+                                            <ComboBoxItem Content="{x:Static prop:Resources.MainWeaponB}"/>
                                         </ComboBox>
                                         <Label Content=" ID"/>
                                         <TextBox Text="{Binding ID, UpdateSourceTrigger=PropertyChanged}" Width="60"/>
