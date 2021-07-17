@@ -12,10 +12,6 @@ namespace MonsterHunterStories2
 		public MainWindow()
 		{
 			InitializeComponent();
-			foreach (string key in TransText.Languages.Keys)
-            {
-				Languages.Items.Add(key);
-			};
 		}
 
 		private void Window_PreviewDragOver(object sender, DragEventArgs e)
