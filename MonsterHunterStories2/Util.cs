@@ -7,8 +7,13 @@
 		public const uint CHARACTER_SIZE = 596;
 
 		public const uint MONSTER_ADDRESS = 0x2D72C8;
-		public const uint MONSTER_COUNT = 200;
+		public const uint MONSTER_COUNT = 500;
 		public const uint MONSTER_SIZE = 412;
+
+		public const uint EGG_ADDRESS = 0x10CAC;
+		public const uint EGG_COUNT = 12;
+		public const uint EGG_SIZE = 120;
+		public const uint EGG_COUNT_ADDRESS = 0x10C4A;
 
 		public const uint WEAPON_ADDRESS = 0x3ECC;
 		public const uint WEAPON_COUNT = 700;

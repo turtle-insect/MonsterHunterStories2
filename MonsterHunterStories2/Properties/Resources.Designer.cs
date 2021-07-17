@@ -160,20 +160,119 @@ namespace MonsterHunterStories2.Properties {
         }
         
         /// <summary>
+        ///   Smell に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string MainEggSmell {
+            get {
+                return ResourceManager.GetString("MainEggSmell", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Amazing に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string MainEggSmellTypeAmazing {
+            get {
+                return ResourceManager.GetString("MainEggSmellTypeAmazing", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Good に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string MainEggSmellTypeGood {
+            get {
+                return ResourceManager.GetString("MainEggSmellTypeGood", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Normal に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string MainEggSmellTypeNormal {
+            get {
+                return ResourceManager.GetString("MainEggSmellTypeNormal", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Gene に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string MainEggTabGene {
+            get {
+                return ResourceManager.GetString("MainEggTabGene", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Armor に類似しているローカライズされた文字列を検索します。
         /// </summary>
-        public static string MainEquipmentArmor {
+        public static string MainEquipmentTabArmor {
             get {
-                return ResourceManager.GetString("MainEquipmentArmor", resourceCulture);
+                return ResourceManager.GetString("MainEquipmentTabArmor", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Weapon に類似しているローカライズされた文字列を検索します。
         /// </summary>
-        public static string MainEquipmentWeapon {
+        public static string MainEquipmentTabWeapon {
             get {
-                return ResourceManager.GetString("MainEquipmentWeapon", resourceCulture);
+                return ResourceManager.GetString("MainEquipmentTabWeapon", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Bow に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string MainEquipmentWeaponB {
+            get {
+                return ResourceManager.GetString("MainEquipmentWeaponB", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Gunlance に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string MainEquipmentWeaponG {
+            get {
+                return ResourceManager.GetString("MainEquipmentWeaponG", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Great Sword に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string MainEquipmentWeaponGS {
+            get {
+                return ResourceManager.GetString("MainEquipmentWeaponGS", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Hammer に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string MainEquipmentWeaponH {
+            get {
+                return ResourceManager.GetString("MainEquipmentWeaponH", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Hunting Horn に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string MainEquipmentWeaponHH {
+            get {
+                return ResourceManager.GetString("MainEquipmentWeaponHH", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sword &amp; Shield に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string MainEquipmentWeaponSS {
+            get {
+                return ResourceManager.GetString("MainEquipmentWeaponSS", resourceCulture);
             }
         }
         
@@ -282,6 +381,15 @@ namespace MonsterHunterStories2.Properties {
         public static string MainTabCharacter {
             get {
                 return ResourceManager.GetString("MainTabCharacter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Egg に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string MainTabEgg {
+            get {
+                return ResourceManager.GetString("MainTabEgg", resourceCulture);
             }
         }
         

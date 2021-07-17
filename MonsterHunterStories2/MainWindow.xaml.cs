@@ -66,7 +66,7 @@ namespace MonsterHunterStories2
 			dlg.ShowDialog();
 		}
 
-		private void ButtonItemChoice_Click(object sender, RoutedEventArgs e)
+		private void ButtonChoiceItem_Click(object sender, RoutedEventArgs e)
 		{
 			var dlg = new ChoiceWindow();
 			dlg.ID = 0;
@@ -97,7 +97,7 @@ namespace MonsterHunterStories2
 			SaveData.Instance().WriteBit(0x12B68 + id / 8, id % 8, true);
 		}
 
-		private void ButtonMonsterChoice_Click(object sender, RoutedEventArgs e)
+		private void ButtonChoiceMonster_Click(object sender, RoutedEventArgs e)
 		{
 			Monster monster = ListBoxMonster.SelectedItem as Monster;
 			if (monster == null) return;
@@ -109,18 +109,30 @@ namespace MonsterHunterStories2
 			monster.ID = dlg.ID;
 		}
 
-		private void ButtonRaidAction1Choice_Click(object sender, RoutedEventArgs e)
+		private void ButtonChoiceRaidAction1_Click(object sender, RoutedEventArgs e)
 		{
 			Monster monster = ListBoxMonster.SelectedItem as Monster;
 			if (monster == null) return;
 			monster.RideAction1 = ChoiceMonsterRideAction(monster.RideAction1);
 		}
 
-		private void ButtonRaidAction2Choice_Click(object sender, RoutedEventArgs e)
+		private void ButtonChoiceRaidAction2_Click(object sender, RoutedEventArgs e)
 		{
 			Monster monster = ListBoxMonster.SelectedItem as Monster;
 			if (monster == null) return;
 			monster.RideAction2 = ChoiceMonsterRideAction(monster.RideAction2);
+		}
+
+		private void ButtonAppendEgg_Click(object sender, RoutedEventArgs e)
+		{
+			uint count = (uint)ListBoxEgg.Items.Count;
+			if (count >= Util.EGG_COUNT) return;
+
+			ViewModel viewmodel = DataContext as ViewModel;
+			if (viewmodel == null) return;
+			Egg egg = new Egg(Util.EGG_ADDRESS + count * Util.EGG_SIZE);
+			viewmodel.Eggs.Add(egg);
+			SaveData.Instance().WriteNumber(Util.EGG_COUNT_ADDRESS, 1, count);
 		}
 
 		private uint ChoiceMonsterRideAction(uint id)
