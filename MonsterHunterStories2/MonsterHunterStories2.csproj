@@ -79,7 +79,6 @@
     </Compile>
     <Compile Include="RaidActionID2NameConverter.cs" />
     <Compile Include="SaveData.cs" />
-    <Compile Include="TransText.cs" />
     <Compile Include="Util.cs" />
     <Compile Include="ViewModel.cs" />
     <Compile Include="Equipment.cs" />
