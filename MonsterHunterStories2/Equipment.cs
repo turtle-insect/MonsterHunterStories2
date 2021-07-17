@@ -39,11 +39,5 @@ namespace MonsterHunterStories2
 			get { return SaveData.Instance().ReadNumber(mAddress + 4, 2); }
 			set { Util.WriteNumber(mAddress + 4, 2, value, 1, 0xFFFF); }
 		}
-
-		public uint Get
-		{
-			get { return SaveData.Instance().ReadNumber(mAddress + 18, 1); }
-			set { SaveData.Instance().WriteNumber(mAddress + 18, 1, value); }
-		}
 	}
 }

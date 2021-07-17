@@ -22,11 +22,6 @@
 		public const uint TALISMAN_COUNT = 200;
 		public const uint TALISMAN_SIZE = 48;
 
-		//public const uint EGG_COUNT_ADDRESS = 0x10C4A;
-		public const uint EGG_ADDRESS = 0x10CAC;
-		public const uint EGG_COUNT = 12;
-		public const uint EGG_SIZE = 120;
-
 		public static void WriteNumber(uint address, uint size, uint value, uint min, uint max)
 		{
 			if (value < min) value = min;

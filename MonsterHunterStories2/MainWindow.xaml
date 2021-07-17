@@ -232,8 +232,6 @@
                                         </ComboBox>
                                         <Label Content=" ID"/>
                                         <TextBox Text="{Binding ID, UpdateSourceTrigger=PropertyChanged}" Width="60"/>
-                                        <Label Content=" Get"/>
-                                        <TextBox Text="{Binding Get}" Width="60"/>
                                     </StackPanel>
                                 </DataTemplate>
                             </ListBox.ItemTemplate>
@@ -281,18 +279,6 @@
                         </ListBox.ItemTemplate>
                     </ListBox>
                 </DockPanel>
-            </TabItem>
-            <TabItem Header="宠物蛋测试" Margin="-2,-2,-2,0">
-                <ListBox x:Name="ListBoxArmor1" ItemsSource="{Binding Eggs}">
-                    <ListBox.ItemTemplate>
-                        <DataTemplate>
-                            <StackPanel Orientation="Horizontal">
-                                <Label Content=" ID"/>
-                                <TextBox Text="{Binding Smell, UpdateSourceTrigger=PropertyChanged}" MaxWidth="460" TextWrapping="Wrap"/>
-                            </StackPanel>
-                        </DataTemplate>
-                    </ListBox.ItemTemplate>
-                </ListBox>
             </TabItem>
         </TabControl>
     </DockPanel>
