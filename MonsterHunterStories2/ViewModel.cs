@@ -6,7 +6,8 @@ namespace MonsterHunterStories2
 	class ViewModel
 	{
 		public ObservableCollection<Item> Items { get; set; } = new ObservableCollection<Item>();
-		public ObservableCollection<Weapon> Weapons { get; set; } = new ObservableCollection<Weapon>();
+		public ObservableCollection<Equipment> Weapons { get; set; } = new ObservableCollection<Equipment>();
+		public ObservableCollection<Equipment> Armors { get; set; } = new ObservableCollection<Equipment>();
 		public ObservableCollection<Character> Characters { get; set; } = new ObservableCollection<Character>();
 		public ObservableCollection<Monster> Monsters { get; set; } = new ObservableCollection<Monster>();
 		public ViewModel()
@@ -19,13 +20,6 @@ namespace MonsterHunterStories2
 				if (item.Count == 0) continue;
 
 				Items.Add(item);
-			}
-
-			for (uint i = 0; i < Util.WEAPON_COUNT; i++)
-			{
-				uint address = Util.WEAPON_ADDRESS + Util.WEAPON_SIZE * i;
-				Weapon weapon = new Weapon(address);
-				Weapons.Add(weapon);
 			}
 
 			for (uint i = 0; i < Util.CHARACTER_COUNT; i++)
@@ -44,6 +38,20 @@ namespace MonsterHunterStories2
 				if (String.IsNullOrEmpty(monster.Name)) continue;
 
 				Monsters.Add(monster);
+			}
+
+			for (uint i = 0; i < Util.WEAPON_COUNT; i++)
+			{
+				uint address = Util.WEAPON_ADDRESS + Util.WEAPON_SIZE * i;
+				Equipment weapon = new Equipment(address);
+				Weapons.Add(weapon);
+			}
+
+			for (uint i = 0; i < Util.ARMOR_COUNT; i++)
+			{
+				uint address = Util.ARMOR_ADDRESS + Util.ARMOR_SIZE * i;
+				Equipment armor = new Equipment(address);
+				Armors.Add(armor);
 			}
 		}
 

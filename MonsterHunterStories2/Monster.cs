@@ -1,17 +1,23 @@
 ﻿using System;
 using System.ComponentModel;
+using System.Collections.ObjectModel;
 
 namespace MonsterHunterStories2
 {
 	class Monster : INotifyPropertyChanged
 	{
 		public event PropertyChangedEventHandler PropertyChanged;
+		public ObservableCollection<Gene> Genes { get; set; } = new ObservableCollection<Gene>();
 
 		private readonly uint mAddress;
 
 		public Monster(uint address)
 		{
 			mAddress = address;
+			for (uint i = 0; i < 9; i++)
+			{
+				Genes.Add(new Gene(address + 332 + 4 * i));
+			}
 		}
 
 		public String Name

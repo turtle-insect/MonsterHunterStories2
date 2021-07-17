@@ -150,6 +150,15 @@
   <data name="MainCharacterVoice" xml:space="preserve">
     <value>声音</value>
   </data>
+  <data name="MainEquipmentArmor" xml:space="preserve">
+    <value>Armor</value>
+  </data>
+  <data name="MainEquipmentWeapon" xml:space="preserve">
+    <value>武器</value>
+  </data>
+  <data name="MainMenuAbout" xml:space="preserve">
+    <value>About</value>
+  </data>
   <data name="MainMenuFile" xml:space="preserve">
     <value>文件(__F)</value>
   </data>
@@ -171,6 +180,9 @@
   <data name="MainMonsterRideAction" xml:space="preserve">
     <value>RideAction</value>
   </data>
+  <data name="MainMonsterTabGene" xml:space="preserve">
+    <value>Gene</value>
+  </data>
   <data name="MainMonsterType" xml:space="preserve">
     <value>类型</value>
   </data>
@@ -180,13 +192,13 @@
   <data name="MainTabCharacter" xml:space="preserve">
     <value>任务</value>
   </data>
+  <data name="MainTabEquipment" xml:space="preserve">
+    <value>装備</value>
+  </data>
   <data name="MainTabItem" xml:space="preserve">
     <value>物品</value>
   </data>
   <data name="MainTabMonster" xml:space="preserve">
     <value>随从</value>
-  </data>
-  <data name="MainTabWeapon" xml:space="preserve">
-    <value>武器</value>
   </data>
 </root>

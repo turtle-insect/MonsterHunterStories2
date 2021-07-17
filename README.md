@@ -36,3 +36,7 @@ https://docs.google.com/spreadsheets/d/1ePQdOEW_MQfNVqc3drSmGQN_wdaOAljhINBGiRgg
 * 『mhr_slot_x.sav』をToolで読み込む(x = 1 or ...)
 * 任意の編集を行う
 * saveDataを書き戻す
+
+# Special Thanks
+* [iSharingan](https://github.com/iSharingan)
+* [jim972329667](https://github.com/jim972329667)
