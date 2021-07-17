@@ -10,6 +10,7 @@ namespace MonsterHunterStories2
 		public ObservableCollection<Equipment> Armors { get; set; } = new ObservableCollection<Equipment>();
 		public ObservableCollection<Character> Characters { get; set; } = new ObservableCollection<Character>();
 		public ObservableCollection<Monster> Monsters { get; set; } = new ObservableCollection<Monster>();
+		public ObservableCollection<Egg> Eggs { get; set; } = new ObservableCollection<Egg>();
 		public ViewModel()
 		{
 			foreach(var itemInfo in Info.Instance().Item)
@@ -52,6 +53,13 @@ namespace MonsterHunterStories2
 				uint address = Util.ARMOR_ADDRESS + Util.ARMOR_SIZE * i;
 				Equipment armor = new Equipment(address);
 				Armors.Add(armor);
+			}
+
+			for (uint i = 0; i < Util.EGG_COUNT; i++)
+			{
+				uint address = Util.EGG_ADDRESS + Util.EGG_SIZE * i;
+				Egg eggs = new Egg(address);
+				Eggs.Add(eggs);
 			}
 		}
 
