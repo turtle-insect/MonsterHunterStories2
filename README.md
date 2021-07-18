@@ -16,7 +16,8 @@ https://store-jp.nintendo.com/list/software/70010000016893.html
 ■Steam  
 https://store.steampowered.com/app/1277400  
 ※Converter  
-https://github.com/AsteriskAmpersand/MHST2-Save-Tools
+https://github.com/AsteriskAmpersand/MHST2-Save-Tools  
+https://github.com/Andoryuuta/MHS2SaveKeygen
 
 # Resource
 https://docs.google.com/spreadsheets/d/1ePQdOEW_MQfNVqc3drSmGQN_wdaOAljhINBGiRgggxY  
