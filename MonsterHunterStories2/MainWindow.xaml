@@ -209,17 +209,17 @@
                                     <ListBox.ItemTemplate>
                                         <DataTemplate>
                                             <StackPanel Orientation="Horizontal">
-                                                <Button DockPanel.Dock="Bottom" Content="..." Click="ButtonChoiceGenes_Click"/>
-                                                <Label Content="{Binding ID, Converter={StaticResource GeneID2NameConverter}}" Width="150"/>
-                                                <TextBox Text="{Binding ID, UpdateSourceTrigger=PropertyChanged}" Width="50"/>
-                                                <Label Content="Lock"/>
+                                                <Label Content="🔒"/>
                                                 <CheckBox IsChecked="{Binding Lock}" VerticalAlignment="Center"/>
                                                 <Label Content="Stack"/>
-                                                <ComboBox SelectedIndex="{Binding Stack}">
+                                                <ComboBox SelectedIndex="{Binding Stack}" Width="70">
                                                     <ComboBoxItem Content="Default"/>
                                                     <ComboBoxItem Content="+1"/>
                                                     <ComboBoxItem Content="+2"/>
                                                 </ComboBox>
+                                                <TextBox Text="{Binding ID, UpdateSourceTrigger=PropertyChanged}" Width="50"/>
+                                                <Button Content="..." Click="ButtonChoiceGenes_Click"/>
+                                                <Label Content="{Binding ID, Converter={StaticResource GeneID2NameConverter}}"/>
                                             </StackPanel>
                                         </DataTemplate>
                                     </ListBox.ItemTemplate>
@@ -376,17 +376,17 @@
                                     <ListBox.ItemTemplate>
                                         <DataTemplate>
                                             <StackPanel Orientation="Horizontal">
-                                                <Button DockPanel.Dock="Bottom" Content="..." Click="ButtonChoiceGenes_Click"/>
-                                                <Label Content="{Binding ID, Converter={StaticResource GeneID2NameConverter}}" Width="150"/>
-                                                <TextBox Text="{Binding ID, UpdateSourceTrigger=PropertyChanged}" Width="50"/>
-                                                <Label Content="Lock"/>
+                                                <Label Content="🔒"/>
                                                 <CheckBox IsChecked="{Binding Lock}" VerticalAlignment="Center"/>
                                                 <Label Content="Stack"/>
-                                                <ComboBox SelectedIndex="{Binding Stack}">
+                                                <ComboBox SelectedIndex="{Binding Stack}" Width="70">
                                                     <ComboBoxItem Content="Default"/>
                                                     <ComboBoxItem Content="+1"/>
                                                     <ComboBoxItem Content="+2"/>
                                                 </ComboBox>
+                                                <TextBox Text="{Binding ID, UpdateSourceTrigger=PropertyChanged}" Width="50"/>
+                                                <Button Content="..." Click="ButtonChoiceGenes_Click"/>
+                                                <Label Content="{Binding ID, Converter={StaticResource GeneID2NameConverter}}"/>
                                             </StackPanel>
                                         </DataTemplate>
                                     </ListBox.ItemTemplate>
