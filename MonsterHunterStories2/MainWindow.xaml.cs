@@ -135,16 +135,18 @@ namespace MonsterHunterStories2
 			SaveData.Instance().WriteNumber(Util.EGG_COUNT_ADDRESS, 1, count);
 		}
 
-        private void Button_Click_Copy(object sender, RoutedEventArgs e)
+        private void ButtonCopyEggHex_Click(object sender, RoutedEventArgs e)
         {
 			Clipboard.SetText(All_Hex.Text);
 		}
-		private void Button_Click_Paste(object sender, RoutedEventArgs e)
+
+		private void ButtonPasteEggHex_Click(object sender, RoutedEventArgs e)
 		{
 			string strs = Clipboard.GetText();
 			if (strs.Replace(" ", "").Length < 120) MessageBox.Show("Wrong Egg");
 			else SaveData.Instance().WriteHex(Util.EGG_ADDRESS + (uint)ListBoxEgg.SelectedIndex * Util.EGG_SIZE, strs);
 		}
+
 		private void ButtonChoiceGenes_Click(object sender, RoutedEventArgs e)
 		{
 			Gene gene = ListBoxGenes.SelectedItem as Gene;
@@ -155,6 +157,7 @@ namespace MonsterHunterStories2
 			dlg.ShowDialog();
 			gene.ID = dlg.ID;
 		}
+
 		private void ButtonChoiceEggGenes_Click(object sender, RoutedEventArgs e)
 		{
 			Gene EggGene = ListBoxEggGenes.SelectedItem as Gene;
@@ -165,13 +168,15 @@ namespace MonsterHunterStories2
 			dlg.ShowDialog();
 			EggGene.ID = dlg.ID;
 		}
-		private void MaxoutStack_Click(object sender, RoutedEventArgs e)
+
+		private void ButtonMaxoutMonsterStack_Click(object sender, RoutedEventArgs e)
 		{
 			Monster monster = ListBoxMonster.SelectedItem as Monster;			
 			if (monster == null) return;
 			 monster.MaximizeGeneStack();
         }
-		private void MaxoutEggStack_Click(object sender, RoutedEventArgs e)
+
+		private void ButtonMaxoutEggStack_Click(object sender, RoutedEventArgs e)
 		{
 			Egg eggs = ListBoxEgg.SelectedItem as Egg;
 			if (eggs == null) return;
