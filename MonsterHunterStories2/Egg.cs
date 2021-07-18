@@ -48,17 +48,13 @@ namespace MonsterHunterStories2
 		{
 			get
 			{
-				string strr = SaveData.Instance().ReadHex(mAddress, 120); 
-				if (SaveData.Instance().ReadNumber(mAddress, 4) == 0)
-				{
-					strr = "None";
-				}
+				if (ID == 0) return "None";
 
-				return strr;
+				return Util.ReadHex(mAddress, Util.EGG_SIZE);
 			}
 			set
 			{
-				SaveData.Instance().WriteHex(mAddress, value);
+				Util.WriteHex(mAddress, value);
 				PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(AllHex)));
 			}
 		}

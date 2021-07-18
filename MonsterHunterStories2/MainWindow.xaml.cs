@@ -142,9 +142,20 @@ namespace MonsterHunterStories2
 
 		private void ButtonPasteEggHex_Click(object sender, RoutedEventArgs e)
 		{
-			string strs = Clipboard.GetText();
-			if (strs.Replace(" ", "").Length < 120) MessageBox.Show("Wrong Egg");
-			else SaveData.Instance().WriteHex(Util.EGG_ADDRESS + (uint)ListBoxEgg.SelectedIndex * Util.EGG_SIZE, strs);
+			int index = ListBoxEgg.SelectedIndex;
+			if (index < 0) return;
+
+			var egg = ListBoxEgg.SelectedItem as Egg;
+			if (egg == null) return;
+
+			string info = Clipboard.GetText();
+			if (info.Replace(" ", "").Length < Util.EGG_SIZE)
+			{
+				MessageBox.Show("Wrong Egg");
+				return;
+			}
+
+			egg.AllHex = info;
 		}
 
 		private void ButtonChoiceGenes_Click(object sender, RoutedEventArgs e)
@@ -163,6 +174,7 @@ namespace MonsterHunterStories2
 		{
 			Monster monster = ListBoxMonster.SelectedItem as Monster;			
 			if (monster == null) return;
+
 			foreach (var gene in monster.Genes)
 			{
 				gene.Stack = 2;
@@ -173,6 +185,7 @@ namespace MonsterHunterStories2
 		{
 			Egg egg = ListBoxEgg.SelectedItem as Egg;
 			if (egg == null) return;
+
 			foreach (var gene in egg.Genes)
 			{
 				gene.Stack = 2;
