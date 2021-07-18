@@ -84,6 +84,10 @@ namespace MonsterHunterStories2
 			get { return SaveData.Instance().ReadNumber(mAddress + 42, 2); }
 			set { Util.WriteNumber(mAddress + 42, 2, value, 1, 0xFFFF); }
 		}
-		
+		public uint TalismansRarity
+		{
+			get { return SaveData.Instance().ReadNumber(mAddress + 36, 1); }
+			set { Util.WriteNumber(mAddress + 36, 1, value, 1, 8); }
+		}
 	}
 }
