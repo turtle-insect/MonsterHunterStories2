@@ -132,7 +132,7 @@ namespace MonsterHunterStories2
 
 			Egg egg = new Egg(Util.EGG_ADDRESS + count * Util.EGG_SIZE);
 			viewmodel.Eggs.Add(egg);
-			SaveData.Instance().WriteNumber(Util.EGG_COUNT_ADDRESS, 1, count);
+			SaveData.Instance().WriteNumber(Util.EGG_COUNT_ADDRESS, 1, count + 1);
 		}
 
         private void ButtonCopyEggHex_Click(object sender, RoutedEventArgs e)
