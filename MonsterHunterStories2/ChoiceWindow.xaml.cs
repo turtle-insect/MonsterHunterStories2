@@ -15,6 +15,7 @@ namespace MonsterHunterStories2
 			TYPE_ITEM,
 			TYPE_MONSTER,
 			TYPE_RAIDACTION,
+			TYPE_GENE,
 		}
 
 		public uint ID { get; set; }
@@ -60,6 +61,7 @@ namespace MonsterHunterStories2
 
 			if (Type == eType.TYPE_MONSTER) infos = Info.Instance().Monster;
 			else if (Type == eType.TYPE_RAIDACTION) infos = Info.Instance().RideAction;
+			else if (Type == eType.TYPE_GENE) infos = Info.Instance().Gene;
 
 			foreach (var info in infos)
 			{

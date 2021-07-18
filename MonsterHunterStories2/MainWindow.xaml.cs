@@ -2,6 +2,7 @@
 using System.Windows;
 using Microsoft.Win32;
 
+
 namespace MonsterHunterStories2
 {
 	/// <summary>
@@ -94,7 +95,10 @@ namespace MonsterHunterStories2
 			viewmodel.Items.Add(item);
 
 			// アイテム持ちのフラグ設定
-			SaveData.Instance().WriteBit(0x12B68 + id / 8, id % 8, true);
+			if (Properties.Settings.Default.PCConfirm)
+				SaveData.Instance().WriteBit(Util.ITEMSETTING_ADDRESS + Util.PC_ADDRESS + id / 8, id % 8, true);
+			else
+				SaveData.Instance().WriteBit(Util.ITEMSETTING_ADDRESS + id / 8, id % 8, true);
 		}
 
 		private void ButtonChoiceMonster_Click(object sender, RoutedEventArgs e)
@@ -130,9 +134,21 @@ namespace MonsterHunterStories2
 
 			ViewModel viewmodel = DataContext as ViewModel;
 			if (viewmodel == null) return;
-			Egg egg = new Egg(Util.EGG_ADDRESS + count * Util.EGG_SIZE);
-			viewmodel.Eggs.Add(egg);
-			SaveData.Instance().WriteNumber(Util.EGG_COUNT_ADDRESS, 1, count);
+			if (Properties.Settings.Default.PCConfirm)
+            {
+				Egg egg = new Egg(Util.EGG_ADDRESS + Util.PC_ADDRESS + count * Util.EGG_SIZE);
+				viewmodel.Eggs.Add(egg);
+			}
+            else
+            {
+				Egg egg = new Egg(Util.EGG_ADDRESS + count * Util.EGG_SIZE);
+				viewmodel.Eggs.Add(egg);
+			}
+
+			if (Properties.Settings.Default.PCConfirm)
+				SaveData.Instance().WriteNumber(Util.EGG_COUNT_ADDRESS+ Util.PC_ADDRESS, 1, count);
+			else
+				SaveData.Instance().WriteNumber(Util.EGG_COUNT_ADDRESS, 1, count);
 		}
 
 		private uint ChoiceMonsterRideAction(uint id)
@@ -142,6 +158,49 @@ namespace MonsterHunterStories2
 			dlg.Type = ChoiceWindow.eType.TYPE_RAIDACTION;
 			dlg.ShowDialog();
 			return dlg.ID;
+		}
+
+        private void Button_Click_Copy(object sender, RoutedEventArgs e)
+        {
+			Clipboard.SetText(All_Hex.Text);
+		}
+		private void Button_Click_Paste(object sender, RoutedEventArgs e)
+		{
+			string strs = Clipboard.GetText();
+			if (strs.Replace(" ", "").Length < 120) MessageBox.Show("Wrong Egg");
+			else SaveData.Instance().WriteHex(Util.EGG_ADDRESS + (uint)ListBoxEgg.SelectedIndex * Util.EGG_SIZE, strs);
+		}
+		private void ButtonChoiceGenes_Click(object sender, RoutedEventArgs e)
+		{
+			Gene gene = ListBoxGenes.SelectedItem as Gene;
+			if (gene == null) return;
+			var dlg = new ChoiceWindow();
+			dlg.ID = gene.ID;
+			dlg.Type = ChoiceWindow.eType.TYPE_GENE;
+			dlg.ShowDialog();
+			gene.ID = dlg.ID;
+		}
+		private void ButtonChoiceEggGenes_Click(object sender, RoutedEventArgs e)
+		{
+			Gene EggGene = ListBoxEggGenes.SelectedItem as Gene;
+			if (EggGene == null) return;
+			var dlg = new ChoiceWindow();
+			dlg.ID = EggGene.ID;
+			dlg.Type = ChoiceWindow.eType.TYPE_GENE;
+			dlg.ShowDialog();
+			EggGene.ID = dlg.ID;
+		}
+		private void MaxoutStack_Click(object sender, RoutedEventArgs e)
+		{
+			Monster monster = ListBoxMonster.SelectedItem as Monster;			
+			if (monster == null) return;
+			 monster.MaximizeGeneStack();
+        }
+		private void MaxoutEggStack_Click(object sender, RoutedEventArgs e)
+		{
+			Egg eggs = ListBoxEgg.SelectedItem as Egg;
+			if (eggs == null) return;
+			eggs.MaximizeGeneStack();
 		}
 	}
 }

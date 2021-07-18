@@ -171,6 +171,9 @@
   <data name="MainEquipmentTabArmor" xml:space="preserve">
     <value>Armor</value>
   </data>
+  <data name="MainEquipmentTabTalisman" xml:space="preserve">
+    <value>Talisman</value>
+  </data>
   <data name="MainEquipmentTabWeapon" xml:space="preserve">
     <value>Weapon</value>
   </data>
@@ -293,5 +296,23 @@
   </data>
   <data name="MainTabMonster" xml:space="preserve">
     <value>Monster</value>
+  </data>
+  <data name="MainWeaponB" xml:space="preserve">
+    <value>Bow</value>
+  </data>
+  <data name="MainWeaponG" xml:space="preserve">
+    <value>Gunlance</value>
+  </data>
+  <data name="MainWeaponGS" xml:space="preserve">
+    <value>Great Sword</value>
+  </data>
+  <data name="MainWeaponH" xml:space="preserve">
+    <value>Hammer</value>
+  </data>
+  <data name="MainWeaponHH" xml:space="preserve">
+    <value>Hunting Horn</value>
+  </data>
+  <data name="MainWeaponSS" xml:space="preserve">
+    <value>Sword &amp;amp; Shield</value>
   </data>
 </root>

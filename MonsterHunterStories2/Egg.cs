@@ -43,5 +43,30 @@ namespace MonsterHunterStories2
 				PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Smell)));
 			}
 		}
+		public string AllHex
+		{
+			get
+			{
+				string strr = SaveData.Instance().ReadHex(mAddress, 120); 
+				if (SaveData.Instance().ReadNumber(mAddress, 4) == 0)
+				{
+					strr = "None";
+				}
+
+				return strr;
+			}
+			set
+			{
+				SaveData.Instance().WriteHex(mAddress, value);
+				PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(AllHex)));
+			}
+		}
+		public void MaximizeGeneStack()
+		{
+			foreach (Gene gene in Genes)
+			{
+				gene.Stack = 2;
+			}
+		}
 	}
 }

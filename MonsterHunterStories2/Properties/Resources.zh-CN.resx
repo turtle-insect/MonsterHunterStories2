@@ -154,22 +154,25 @@
     <value>声音</value>
   </data>
   <data name="MainEggSmell" xml:space="preserve">
-    <value>Smell</value>
+    <value>气味</value>
   </data>
   <data name="MainEggSmellTypeAmazing" xml:space="preserve">
-    <value>Amazing</value>
+    <value>浓郁的气味</value>
   </data>
   <data name="MainEggSmellTypeGood" xml:space="preserve">
-    <value>Good</value>
+    <value>好闻的气味</value>
   </data>
   <data name="MainEggSmellTypeNormal" xml:space="preserve">
-    <value>Normal</value>
+    <value>普通的气味</value>
   </data>
   <data name="MainEggTabGene" xml:space="preserve">
     <value>基因</value>
   </data>
   <data name="MainEquipmentTabArmor" xml:space="preserve">
     <value>防具</value>
+  </data>
+  <data name="MainEquipmentTabTalisman" xml:space="preserve">
+    <value>护石</value>
   </data>
   <data name="MainEquipmentTabWeapon" xml:space="preserve">
     <value>武器</value>
@@ -226,18 +229,36 @@
     <value>基础</value>
   </data>
   <data name="MainTabCharacter" xml:space="preserve">
-    <value>任务</value>
+    <value>人物</value>
   </data>
   <data name="MainTabEgg" xml:space="preserve">
-    <value>Egg</value>
+    <value>蛋</value>
   </data>
   <data name="MainTabEquipment" xml:space="preserve">
-    <value>装備</value>
+    <value>装备</value>
   </data>
   <data name="MainTabItem" xml:space="preserve">
     <value>物品</value>
   </data>
   <data name="MainTabMonster" xml:space="preserve">
-    <value>随从</value>
+    <value>随行兽</value>
+  </data>
+  <data name="MainWeaponB" xml:space="preserve">
+    <value>弓</value>
+  </data>
+  <data name="MainWeaponG" xml:space="preserve">
+    <value>铳枪</value>
+  </data>
+  <data name="MainWeaponGS" xml:space="preserve">
+    <value>大剑</value>
+  </data>
+  <data name="MainWeaponH" xml:space="preserve">
+    <value>大锤</value>
+  </data>
+  <data name="MainWeaponHH" xml:space="preserve">
+    <value>狩猎笛</value>
+  </data>
+  <data name="MainWeaponSS" xml:space="preserve">
+    <value>单手剑</value>
   </data>
 </root>
