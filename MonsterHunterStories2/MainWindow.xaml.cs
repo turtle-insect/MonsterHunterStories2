@@ -25,8 +25,7 @@ namespace MonsterHunterStories2
 			String[] files = e.Data.GetData(DataFormats.FileDrop) as String[];
 			if (files == null) return;
 
-			SaveData.Instance().Open(files[0]);
-			DataContext = new ViewModel();
+			FileOpen(files[0]);
 		}
 
 		private void Window_Closed(object sender, EventArgs e)
@@ -39,8 +38,7 @@ namespace MonsterHunterStories2
 			var dlg = new OpenFileDialog();
 			if (dlg.ShowDialog() == false) return;
 
-			SaveData.Instance().Open(dlg.FileName);
-			DataContext = new ViewModel();
+			FileOpen(dlg.FileName);
 		}
 
 		private void MenuItemFileSave_Click(object sender, RoutedEventArgs e)
@@ -95,10 +93,7 @@ namespace MonsterHunterStories2
 			viewmodel.Items.Add(item);
 
 			// アイテム持ちのフラグ設定
-			if (Properties.Settings.Default.PCConfirm)
-				SaveData.Instance().WriteBit(Util.ITEMSETTING_ADDRESS + Util.PC_ADDRESS + id / 8, id % 8, true);
-			else
-				SaveData.Instance().WriteBit(Util.ITEMSETTING_ADDRESS + id / 8, id % 8, true);
+			SaveData.Instance().WriteBit(Util.ITEMSETTING_ADDRESS + id / 8, id % 8, true);
 		}
 
 		private void ButtonChoiceMonster_Click(object sender, RoutedEventArgs e)
@@ -134,30 +129,10 @@ namespace MonsterHunterStories2
 
 			ViewModel viewmodel = DataContext as ViewModel;
 			if (viewmodel == null) return;
-			if (Properties.Settings.Default.PCConfirm)
-            {
-				Egg egg = new Egg(Util.EGG_ADDRESS + Util.PC_ADDRESS + count * Util.EGG_SIZE);
-				viewmodel.Eggs.Add(egg);
-			}
-            else
-            {
-				Egg egg = new Egg(Util.EGG_ADDRESS + count * Util.EGG_SIZE);
-				viewmodel.Eggs.Add(egg);
-			}
 
-			if (Properties.Settings.Default.PCConfirm)
-				SaveData.Instance().WriteNumber(Util.EGG_COUNT_ADDRESS+ Util.PC_ADDRESS, 1, count);
-			else
-				SaveData.Instance().WriteNumber(Util.EGG_COUNT_ADDRESS, 1, count);
-		}
-
-		private uint ChoiceMonsterRideAction(uint id)
-		{
-			var dlg = new ChoiceWindow();
-			dlg.ID = id;
-			dlg.Type = ChoiceWindow.eType.TYPE_RAIDACTION;
-			dlg.ShowDialog();
-			return dlg.ID;
+			Egg egg = new Egg(Util.EGG_ADDRESS + count * Util.EGG_SIZE);
+			viewmodel.Eggs.Add(egg);
+			SaveData.Instance().WriteNumber(Util.EGG_COUNT_ADDRESS, 1, count);
 		}
 
         private void Button_Click_Copy(object sender, RoutedEventArgs e)
@@ -201,6 +176,22 @@ namespace MonsterHunterStories2
 			Egg eggs = ListBoxEgg.SelectedItem as Egg;
 			if (eggs == null) return;
 			eggs.MaximizeGeneStack();
+		}
+
+		private uint ChoiceMonsterRideAction(uint id)
+		{
+			var dlg = new ChoiceWindow();
+			dlg.ID = id;
+			dlg.Type = ChoiceWindow.eType.TYPE_RAIDACTION;
+			dlg.ShowDialog();
+			return dlg.ID;
+		}
+
+		private void FileOpen(String filename)
+		{
+			SaveData.Instance().Adventure = Properties.Settings.Default.PCConfirm ? Util.PC_ADDRESS : 0;
+			SaveData.Instance().Open(filename);
+			DataContext = new ViewModel();
 		}
 	}
 }

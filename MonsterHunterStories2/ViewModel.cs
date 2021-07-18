@@ -14,14 +14,9 @@ namespace MonsterHunterStories2
 		public ObservableCollection<Egg> Eggs { get; set; } = new ObservableCollection<Egg>();
 		public ViewModel()
 		{
-			uint pc = 0;
-            if (Properties.Settings.Default.PCConfirm)
-            {
-				pc = Util.PC_ADDRESS;
-            }
 			foreach(var itemInfo in Info.Instance().Item)
 			{
-				uint address = Util.ItemIDAddress(itemInfo.Key) + pc;
+				uint address = Util.ItemIDAddress(itemInfo.Key);
 				Item item = new Item(address);
 				if (item.ID == 0) continue;
 				if (item.Count == 0) continue;
@@ -31,7 +26,7 @@ namespace MonsterHunterStories2
 
 			for (uint i = 0; i < Util.CHARACTER_COUNT; i++)
 			{
-				uint address = Util.CHARACTER_ADDRESS + Util.CHARACTER_SIZE * i + pc;
+				uint address = Util.CHARACTER_ADDRESS + Util.CHARACTER_SIZE * i;
 				Character chara = new Character(address);
 				if (String.IsNullOrEmpty(chara.Name)) continue;
 
@@ -40,7 +35,7 @@ namespace MonsterHunterStories2
 
 			for (uint i = 0; i < Util.MONSTER_COUNT; i++)
 			{
-				uint address = Util.MONSTER_ADDRESS + Util.MONSTER_SIZE * i + pc;
+				uint address = Util.MONSTER_ADDRESS + Util.MONSTER_SIZE * i;
 				Monster monster = new Monster(address);
 				if (String.IsNullOrEmpty(monster.Name)) continue;
 
@@ -50,28 +45,28 @@ namespace MonsterHunterStories2
 			uint count = SaveData.Instance().ReadNumber(Util.EGG_COUNT_ADDRESS, 1);
 			for (uint i = 0; i < count; i++)
 			{
-				uint address = Util.EGG_ADDRESS + Util.EGG_SIZE * i + pc;
+				uint address = Util.EGG_ADDRESS + Util.EGG_SIZE * i;
 				Egg egg = new Egg(address);
 				Eggs.Add(egg);
 			}
 
 			for (uint i = 0; i < Util.WEAPON_COUNT; i++)
 			{
-				uint address = Util.WEAPON_ADDRESS + Util.WEAPON_SIZE * i + pc;
+				uint address = Util.WEAPON_ADDRESS + Util.WEAPON_SIZE * i;
 				Equipment weapon = new Equipment(address);
 				Weapons.Add(weapon);
 			}
 
 			for (uint i = 0; i < Util.ARMOR_COUNT; i++)
 			{
-				uint address = Util.ARMOR_ADDRESS + Util.ARMOR_SIZE * i + pc;
+				uint address = Util.ARMOR_ADDRESS + Util.ARMOR_SIZE * i;
 				Equipment armor = new Equipment(address);
 				Armors.Add(armor);
 			}
 
 			for (uint i = 0; i < Util.TALISMAN_COUNT; i++)
 			{
-				uint address = Util.TALISMAN_ADDRESS + Util.TALISMAN_SIZE * i + pc;
+				uint address = Util.TALISMAN_ADDRESS + Util.TALISMAN_SIZE * i;
 				Equipment Talisman = new Equipment(address);
 				Talismans.Add(Talisman);
 			}
@@ -79,62 +74,29 @@ namespace MonsterHunterStories2
 
 		public uint Money
 		{
-			get {
-				if(Properties.Settings.Default.PCConfirm) return SaveData.Instance().ReadNumber(Util.MONEY_ADDRESS + Util.PC_ADDRESS, 4);
-				else return SaveData.Instance().ReadNumber(Util.MONEY_ADDRESS, 4);
-			}
-			set {
-				if (Properties.Settings.Default.PCConfirm) Util.WriteNumber(Util.MONEY_ADDRESS + Util.PC_ADDRESS, 4, value, 0, 9999999);
-				else Util.WriteNumber(Util.MONEY_ADDRESS, 4, value, 0, 9999999);
-			}
+			get {return SaveData.Instance().ReadNumber(Util.MONEY_ADDRESS, 4);}
+			set {Util.WriteNumber(Util.MONEY_ADDRESS, 4, value, 0, 9999999);}
 		}
 		
 		public uint PlayTimeHour
 		{
-			get {
-				if(Properties.Settings.Default.PCConfirm)
-					return SaveData.Instance().ReadNumber(64 + Util.PC_ADDRESS, 4) / 3600;
-				else 
-					return SaveData.Instance().ReadNumber(64, 4) / 3600;
-			}
+			get {return SaveData.Instance().ReadNumber(64, 4) / 3600;}
 			set
 			{
-				if (Properties.Settings.Default.PCConfirm)
-				{
-					uint time = SaveData.Instance().ReadNumber(64 + Util.PC_ADDRESS, 4) % 3600 + value * 3600;
-					SaveData.Instance().WriteNumber(64 + Util.PC_ADDRESS, 4, time);
-				}
-                else
-                {
-					uint time = SaveData.Instance().ReadNumber(64, 4) % 3600 + value * 3600;
-					SaveData.Instance().WriteNumber(64, 4, time);
-				}
-				
+				uint time = SaveData.Instance().ReadNumber(64, 4) % 3600 + value * 3600;
+				SaveData.Instance().WriteNumber(64, 4, time);
 			}
 		}
 
 		public uint PlayTimeMinute
 		{
-			get {
-				if (Properties.Settings.Default.PCConfirm)
-					return SaveData.Instance().ReadNumber(64 + Util.PC_ADDRESS, 4) / 60 % 60;
-				else
-					return SaveData.Instance().ReadNumber(64, 4) / 60 % 60;
-			}
+			get {return SaveData.Instance().ReadNumber(64, 4) / 60 % 60;}
 			set
 			{
 				if (value < 0) value = 0;
 				if (value > 59) value = 59;
-				if (Properties.Settings.Default.PCConfirm)
-				{
-					uint time = SaveData.Instance().ReadNumber(64 + Util.PC_ADDRESS, 4) / 3600 * 3600 + value * 60;
-					SaveData.Instance().WriteNumber(64 + Util.PC_ADDRESS, 4, time);
-				}
-                else
-                {
-					uint time = SaveData.Instance().ReadNumber(64, 4) / 3600 * 3600 + value * 60;
-					SaveData.Instance().WriteNumber(64, 4, time);
-				}
+				uint time = SaveData.Instance().ReadNumber(64, 4) / 3600 * 3600 + value * 60;
+				SaveData.Instance().WriteNumber(64, 4, time);
 			}
 		}
 	}

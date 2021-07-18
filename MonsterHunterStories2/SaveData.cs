@@ -179,10 +179,10 @@ namespace MonsterHunterStories2
 			hexString = hexString.Replace(" ", "");
 			if ((hexString.Length % 2) != 0)
 				hexString += "0";
-			byte[] returnBytes = new byte[hexString.Length / 2];
-			for (int i = 0; i < returnBytes.Length; i++)
-				returnBytes[i] = Convert.ToByte(hexString.Substring(i * 2, 2), 16);
-			SaveData.Instance().WriteValue(address, returnBytes);
+			byte[] writeBytes = new byte[hexString.Length / 2];
+			for (int i = 0; i < writeBytes.Length; i++)
+				writeBytes[i] = Convert.ToByte(hexString.Substring(i * 2, 2), 16);
+			SaveData.Instance().WriteValue(address, writeBytes);
 		}
 		public void Fill(uint address, uint size, Byte number)
 		{
@@ -245,7 +245,7 @@ namespace MonsterHunterStories2
 
 		private uint CalcAddress(uint address)
 		{
-			return address;
+			return address + Adventure;
 		}
 
 		private void Backup()
