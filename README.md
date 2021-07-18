@@ -19,7 +19,8 @@ https://store.steampowered.com/app/1277400
 https://github.com/AsteriskAmpersand/MHST2-Save-Tools
 
 # Resource
-https://docs.google.com/spreadsheets/d/1ePQdOEW_MQfNVqc3drSmGQN_wdaOAljhINBGiRgggxY
+https://docs.google.com/spreadsheets/d/1ePQdOEW_MQfNVqc3drSmGQN_wdaOAljhINBGiRgggxY  
+https://docs.google.com/spreadsheets/d/1QzM9X34IfACPtRa_yWq2BZUidWJqs0l2K_Gs2023bO0
 
 # 実行に必要
 * Windows マシン

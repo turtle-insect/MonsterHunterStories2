@@ -167,18 +167,18 @@
                         <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding ElementName=ListBoxMonster, Path=SelectedItem.Name, UpdateSourceTrigger=PropertyChanged}"/>
                         <Label Grid.Row="3" Content="{x:Static prop:Resources.MainMonsterType}"/>
                         <DockPanel Grid.Row="3" Grid.Column="1">
-                            <Button DockPanel.Dock="Right" Content="..." Click="ButtonMonsterChoice_Click"/>
+                            <Button DockPanel.Dock="Right" Content="..." Click="ButtonChoiceMonster_Click"/>
                             <Label Content="{Binding ElementName=ListBoxMonster, Path=SelectedItem.ID, Converter={StaticResource MonsterID2NameConverter}}"/>
                         </DockPanel>
                         <TextBox Grid.Row="4" Grid.Column="1" Text="{Binding ElementName=ListBoxMonster, Path=SelectedItem.ID, UpdateSourceTrigger=PropertyChanged}"/>
                         <Label Grid.Row="5" Content="{x:Static prop:Resources.MainMonsterRideAction}"/>
                         <DockPanel Grid.Row="5" Grid.Column="1">
-                            <Button DockPanel.Dock="Right" Content="..." Click="ButtonRaidAction1Choice_Click"/>
+                            <Button DockPanel.Dock="Right" Content="..." Click="ButtonChoiceRaidAction1_Click"/>
                             <Label Content="{Binding ElementName=ListBoxMonster, Path=SelectedItem.RideAction1, Converter={StaticResource RaidActionID2NameConverter}}"/>
                         </DockPanel>
                         <TextBox Grid.Row="6" Grid.Column="1" Text="{Binding ElementName=ListBoxMonster, Path=SelectedItem.RideAction1, UpdateSourceTrigger=PropertyChanged}"/>
                         <DockPanel Grid.Row="7" Grid.Column="1">
-                            <Button DockPanel.Dock="Right" Content="..." Click="ButtonRaidAction2Choice_Click"/>
+                            <Button DockPanel.Dock="Right" Content="..." Click="ButtonChoiceRaidAction2_Click"/>
                             <Label Content="{Binding ElementName=ListBoxMonster, Path=SelectedItem.RideAction2, Converter={StaticResource RaidActionID2NameConverter}}"/>
                         </DockPanel>
                         <TextBox Grid.Row="8" Grid.Column="1" Text="{Binding ElementName=ListBoxMonster, Path=SelectedItem.RideAction2, UpdateSourceTrigger=PropertyChanged}"/>
@@ -207,9 +207,67 @@
                     </TabControl>
                 </Grid>
             </TabItem>
+            <TabItem Header="{x:Static prop:Resources.MainTabEgg}">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="120"/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <DockPanel>
+                        <Button DockPanel.Dock="Bottom" Content="Append Egg" Click="ButtonAppendEgg_Click"/>
+                        <ListBox x:Name="ListBoxEgg" ItemsSource="{Binding Eggs}"/>
+                    </DockPanel>
+                    <Grid Grid.Column="1">
+                        <Grid.Resources>
+                            <local:MonsterID2NameConverter x:Key="MonsterID2NameConverter"/>
+                            <local:RaidActionID2NameConverter x:Key="RaidActionID2NameConverter"/>
+                        </Grid.Resources>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition Width="2*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition Height="12*"/>
+                        </Grid.RowDefinitions>
+                        <Label Content="ID"/>
+                        <TextBox Grid.Column="1" Text="{Binding ElementName=ListBoxEgg, Path=SelectedItem.ID, UpdateSourceTrigger=PropertyChanged}"/>
+                        <Label Grid.Row="1" Content="{x:Static prop:Resources.MainEggSmell}"/>
+                        <ComboBox Grid.Row="1" Grid.Column="1" SelectedIndex="{Binding ElementName=ListBoxEgg, Path=SelectedItem.Smell}">
+                            <ComboBoxItem Content="{x:Static prop:Resources.MainEggSmellTypeNormal}"/>
+                            <ComboBoxItem Content="{x:Static prop:Resources.MainEggSmellTypeGood}"/>
+                            <ComboBoxItem Content="{x:Static prop:Resources.MainEggSmellTypeAmazing}"/>
+                        </ComboBox>
+                    </Grid>
+                    <TabControl Grid.Column="2">
+                        <TabItem Header="{x:Static prop:Resources.MainEggTabGene}">
+                            <ListBox ItemsSource="{Binding ElementName=ListBoxEgg, Path=SelectedItem.Genes}">
+                                <ListBox.ItemTemplate>
+                                    <DataTemplate>
+                                        <StackPanel Orientation="Horizontal">
+                                            <Label Content="ID"/>
+                                            <TextBox Text="{Binding ID, UpdateSourceTrigger=PropertyChanged}" Width="50"/>
+                                            <Label Content="Lock"/>
+                                            <CheckBox IsChecked="{Binding Lock}" VerticalAlignment="Center"/>
+                                            <Label Content="Stack"/>
+                                            <ComboBox SelectedIndex="{Binding Stack}">
+                                                <ComboBoxItem Content="Default"/>
+                                                <ComboBoxItem Content="+1"/>
+                                                <ComboBoxItem Content="+2"/>
+                                            </ComboBox>
+                                        </StackPanel>
+                                    </DataTemplate>
+                                </ListBox.ItemTemplate>
+                            </ListBox>
+                        </TabItem>
+                    </TabControl>
+                </Grid>
+            </TabItem>
             <TabItem Header="{x:Static prop:Resources.MainTabEquipment}">
                 <TabControl>
-                    <TabItem Header="{x:Static prop:Resources.MainEquipmentWeapon}">
+                    <TabItem Header="{x:Static prop:Resources.MainEquipmentTabWeapon}">
                         <ListBox x:Name="ListBoxWeapon" ItemsSource="{Binding Weapons}">
                             <ListBox.ItemTemplate>
                                 <DataTemplate>
@@ -223,12 +281,12 @@
                                         </ComboBox>
                                         <Label Content=" Type"/>
                                         <ComboBox SelectedIndex="{Binding Type}" Width="120">
-                                            <ComboBoxItem Content="{x:Static prop:Resources.MainWeaponGS}"/>
-                                            <ComboBoxItem Content="{x:Static prop:Resources.MainWeaponSS}"/>
-                                            <ComboBoxItem Content="{x:Static prop:Resources.MainWeaponH}"/>
-                                            <ComboBoxItem Content="{x:Static prop:Resources.MainWeaponHH}"/>
-                                            <ComboBoxItem Content="{x:Static prop:Resources.MainWeaponG}"/>
-                                            <ComboBoxItem Content="{x:Static prop:Resources.MainWeaponB}"/>
+                                            <ComboBoxItem Content="{x:Static prop:Resources.MainEquipmentWeaponGS}"/>
+                                            <ComboBoxItem Content="{x:Static prop:Resources.MainEquipmentWeaponSS}"/>
+                                            <ComboBoxItem Content="{x:Static prop:Resources.MainEquipmentWeaponH}"/>
+                                            <ComboBoxItem Content="{x:Static prop:Resources.MainEquipmentWeaponHH}"/>
+                                            <ComboBoxItem Content="{x:Static prop:Resources.MainEquipmentWeaponG}"/>
+                                            <ComboBoxItem Content="{x:Static prop:Resources.MainEquipmentWeaponB}"/>
                                         </ComboBox>
                                         <Label Content=" ID"/>
                                         <TextBox Text="{Binding ID, UpdateSourceTrigger=PropertyChanged}" Width="60"/>
@@ -237,7 +295,7 @@
                             </ListBox.ItemTemplate>
                         </ListBox>
                     </TabItem>
-                    <TabItem Header="{x:Static prop:Resources.MainEquipmentArmor}">
+                    <TabItem Header="{x:Static prop:Resources.MainEquipmentTabArmor}">
                         <ListBox x:Name="ListBoxArmor" ItemsSource="{Binding Armors}">
                             <ListBox.ItemTemplate>
                                 <DataTemplate>
@@ -262,7 +320,7 @@
             </TabItem>
             <TabItem Header="{x:Static prop:Resources.MainTabItem}">
                 <DockPanel>
-                    <Button x:Name="ButtonItem" DockPanel.Dock="Bottom" Content="Append/Search Item" Click="ButtonItemChoice_Click"/>
+                    <Button DockPanel.Dock="Bottom" Content="Append/Search Item" Click="ButtonChoiceItem_Click"/>
                     <ListBox x:Name="ListBoxItem" ItemsSource="{Binding Items}">
                         <ListBox.Resources>
                             <local:ItemID2NameConverter x:Key="ItemID2NameConverter"/>

@@ -150,11 +150,44 @@
   <data name="MainCharacterVoice" xml:space="preserve">
     <value>Voice</value>
   </data>
-  <data name="MainEquipmentArmor" xml:space="preserve">
+  <data name="MainEggSmell" xml:space="preserve">
+    <value>Smell</value>
+  </data>
+  <data name="MainEggSmellTypeAmazing" xml:space="preserve">
+    <value>Amazing</value>
+  </data>
+  <data name="MainEggSmellTypeGood" xml:space="preserve">
+    <value>Good</value>
+  </data>
+  <data name="MainEggSmellTypeNormal" xml:space="preserve">
+    <value>Normal</value>
+  </data>
+  <data name="MainEggTabGene" xml:space="preserve">
+    <value>Gene</value>
+  </data>
+  <data name="MainEquipmentTabArmor" xml:space="preserve">
     <value>Armor</value>
   </data>
-  <data name="MainEquipmentWeapon" xml:space="preserve">
+  <data name="MainEquipmentTabWeapon" xml:space="preserve">
     <value>Weapon</value>
+  </data>
+  <data name="MainEquipmentWeaponB" xml:space="preserve">
+    <value>Bow</value>
+  </data>
+  <data name="MainEquipmentWeaponG" xml:space="preserve">
+    <value>Gunlance</value>
+  </data>
+  <data name="MainEquipmentWeaponGS" xml:space="preserve">
+    <value>Great Sword</value>
+  </data>
+  <data name="MainEquipmentWeaponH" xml:space="preserve">
+    <value>Hammer</value>
+  </data>
+  <data name="MainEquipmentWeaponHH" xml:space="preserve">
+    <value>Hunting Horn</value>
+  </data>
+  <data name="MainEquipmentWeaponSS" xml:space="preserve">
+    <value>Sword &amp; Shield</value>
   </data>
   <data name="MainMenuAbout" xml:space="preserve">
     <value>_About</value>
@@ -191,6 +224,9 @@
   </data>
   <data name="MainTabCharacter" xml:space="preserve">
     <value>Character</value>
+  </data>
+  <data name="MainTabEgg" xml:space="preserve">
+    <value>Egg</value>
   </data>
   <data name="MainTabEquipment" xml:space="preserve">
     <value>Equipment</value>
