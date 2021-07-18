@@ -71,13 +71,7 @@ namespace MonsterHunterStories2
 				PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(RideAction2)));
 			}
 		}
-		public void MaximizeGeneStack()
-		{
-			foreach (Gene gene in Genes)
-			{
-				gene.Stack = 2;
-			}
-		}
+
 		public uint CurrentHP
 		{
 			get { return SaveData.Instance().ReadNumber(mAddress + 72, 4); }

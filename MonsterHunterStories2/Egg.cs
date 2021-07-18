@@ -43,6 +43,7 @@ namespace MonsterHunterStories2
 				PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Smell)));
 			}
 		}
+
 		public string AllHex
 		{
 			get
@@ -59,13 +60,6 @@ namespace MonsterHunterStories2
 			{
 				SaveData.Instance().WriteHex(mAddress, value);
 				PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(AllHex)));
-			}
-		}
-		public void MaximizeGeneStack()
-		{
-			foreach (Gene gene in Genes)
-			{
-				gene.Stack = 2;
 			}
 		}
 	}

@@ -163,14 +163,20 @@ namespace MonsterHunterStories2
 		{
 			Monster monster = ListBoxMonster.SelectedItem as Monster;			
 			if (monster == null) return;
-			 monster.MaximizeGeneStack();
+			foreach (var gene in monster.Genes)
+			{
+				gene.Stack = 2;
+			}
         }
 
 		private void ButtonMaxoutEggStack_Click(object sender, RoutedEventArgs e)
 		{
-			Egg eggs = ListBoxEgg.SelectedItem as Egg;
-			if (eggs == null) return;
-			eggs.MaximizeGeneStack();
+			Egg egg = ListBoxEgg.SelectedItem as Egg;
+			if (egg == null) return;
+			foreach (var gene in egg.Genes)
+			{
+				gene.Stack = 2;
+			}
 		}
 
 		private uint ChoiceMonsterRideAction(uint id)
