@@ -151,6 +151,7 @@ namespace MonsterHunterStories2
 		{
 			Gene gene = ListBoxGenes.SelectedItem as Gene;
 			if (gene == null) return;
+
 			var dlg = new ChoiceWindow();
 			dlg.ID = gene.ID;
 			dlg.Type = ChoiceWindow.eType.TYPE_GENE;
@@ -162,6 +163,7 @@ namespace MonsterHunterStories2
 		{
 			Gene EggGene = ListBoxEggGenes.SelectedItem as Gene;
 			if (EggGene == null) return;
+
 			var dlg = new ChoiceWindow();
 			dlg.ID = EggGene.ID;
 			dlg.Type = ChoiceWindow.eType.TYPE_GENE;

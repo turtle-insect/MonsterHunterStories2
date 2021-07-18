@@ -9,7 +9,7 @@
         WindowStartupLocation="CenterScreen"
         AllowDrop="True" Drop="Window_Drop" PreviewDragOver="Window_PreviewDragOver"
         Closed="Window_Closed"
-        Title="{x:Static prop:Resources.ApplicationTitle}" Height="500" Width="780">
+        Title="{x:Static prop:Resources.ApplicationTitle}" Height="550" Width="800">
     <Window.DataContext>
         <local:ViewModel/>
     </Window.DataContext>
@@ -202,7 +202,6 @@
                         <TabItem Header="{x:Static prop:Resources.MainMonsterTabGene}">
                             <DockPanel>
                                 <Button DockPanel.Dock="Bottom" Content="Maximize Stack" Click="ButtonMaxoutMonsterStack_Click"/>
-                                <Button DockPanel.Dock="Bottom" Content="Select Gene" Click="ButtonChoiceGenes_Click" IsEnabled="{Binding ElementName=ListBoxGenes, Path=SelectedItems.Count}" />
                                 <ListBox x:Name="ListBoxGenes" ItemsSource="{Binding ElementName=ListBoxMonster, Path=SelectedItem.Genes}">
                                     <ListBox.Resources>
                                         <local:GeneID2NameConverter x:Key="GeneID2NameConverter"/>
@@ -211,6 +210,7 @@
                                         <DataTemplate>
                                             <StackPanel Orientation="Horizontal">
                                                 <Label Content="{Binding ID, Converter={StaticResource GeneID2NameConverter}}" Width="150"/>
+                                                <Button DockPanel.Dock="Bottom" Content="..." Click="ButtonChoiceGenes_Click"/>
                                                 <TextBox Text="{Binding ID, UpdateSourceTrigger=PropertyChanged}" Width="50"/>
                                                 <Label Content="Lock"/>
                                                 <CheckBox IsChecked="{Binding Lock}" VerticalAlignment="Center"/>
