@@ -77,7 +77,7 @@ namespace MonsterHunterStories2
 			{
 				gene.Stack = 2;
 			}
-
+		}
 		public uint CurrentHP
 		{
 			get { return SaveData.Instance().ReadNumber(mAddress + 72, 4); }
