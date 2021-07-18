@@ -81,7 +81,7 @@
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="120"/>
                         <ColumnDefinition/>
-                        <ColumnDefinition/>
+                        <ColumnDefinition Width="1.5*"/>
                     </Grid.ColumnDefinitions>
                     <ListBox x:Name="ListBoxCharacter" ItemsSource="{Binding Characters}" DisplayMemberPath="Name"/>
                     <Grid Grid.Column="1">
@@ -408,6 +408,8 @@
                                             <ComboBoxItem Content="2"/>
                                             <ComboBoxItem Content="3"/>
                                         </ComboBox>
+                                        <Label Content=" ID"/>
+                                        <TextBox Text="{Binding ID, UpdateSourceTrigger=PropertyChanged}" Width="60"/>
                                         <Label Content=" Type"/>
                                         <ComboBox SelectedIndex="{Binding Type}" Width="120">
                                             <ComboBoxItem Content="{x:Static prop:Resources.MainEquipmentWeaponGS}"/>
@@ -417,8 +419,6 @@
                                             <ComboBoxItem Content="{x:Static prop:Resources.MainEquipmentWeaponG}"/>
                                             <ComboBoxItem Content="{x:Static prop:Resources.MainEquipmentWeaponB}"/>
                                         </ComboBox>
-                                        <Label Content=" ID"/>
-                                        <TextBox Text="{Binding ID, UpdateSourceTrigger=PropertyChanged}" Width="60"/>
                                     </StackPanel>
                                 </DataTemplate>
                             </ListBox.ItemTemplate>
@@ -438,14 +438,14 @@
                                         </ComboBox>
                                         <Label Content=" ID"/>
                                         <TextBox Text="{Binding ID, UpdateSourceTrigger=PropertyChanged}" Width="60"/>
-                                        <Label Content="Body"/>
-                                        <TextBox Text="{Binding MainR, UpdateSourceTrigger=PropertyChanged}" Width="30" Background="LightPink" TextAlignment="Center"/>
-                                        <TextBox Text="{Binding MainG, UpdateSourceTrigger=PropertyChanged}" Width="30" Background="LightGreen" TextAlignment="Center"/>
-                                        <TextBox Text="{Binding MainB, UpdateSourceTrigger=PropertyChanged}" Width="30" Background="LightBlue" TextAlignment="Center"/>
-                                        <Label Content="Decorative parts"/>
-                                        <TextBox Text="{Binding DR, UpdateSourceTrigger=PropertyChanged}" Width="30" Background="LightPink" TextAlignment="Center"/>
-                                        <TextBox Text="{Binding DG, UpdateSourceTrigger=PropertyChanged}" Width="30" Background="LightGreen" TextAlignment="Center"/>
-                                        <TextBox Text="{Binding DB, UpdateSourceTrigger=PropertyChanged}" Width="30" Background="LightBlue" TextAlignment="Center"/>
+                                        <Label Content=" Body"/>
+                                        <TextBox Text="{Binding MainR, UpdateSourceTrigger=PropertyChanged}" Width="30" Background="LightPink"/>
+                                        <TextBox Text="{Binding MainG, UpdateSourceTrigger=PropertyChanged}" Width="30" Background="LightGreen"/>
+                                        <TextBox Text="{Binding MainB, UpdateSourceTrigger=PropertyChanged}" Width="30" Background="LightBlue"/>
+                                        <Label Content=" Decorative parts"/>
+                                        <TextBox Text="{Binding DR, UpdateSourceTrigger=PropertyChanged}" Width="30" Background="LightPink"/>
+                                        <TextBox Text="{Binding DG, UpdateSourceTrigger=PropertyChanged}" Width="30" Background="LightGreen"/>
+                                        <TextBox Text="{Binding DB, UpdateSourceTrigger=PropertyChanged}" Width="30" Background="LightBlue"/>
                                     </StackPanel>
                                 </DataTemplate>
                             </ListBox.ItemTemplate>
@@ -456,12 +456,12 @@
                             <ListBox.ItemTemplate>
                                 <DataTemplate>
                                     <StackPanel Orientation="Horizontal">
-                                        <Label Content=" ID"/>
+                                        <Label Content="ID"/>
                                         <TextBox Text="{Binding ID, UpdateSourceTrigger=PropertyChanged}" Width="60"/>
                                         <Label Content=" Skill 1"/>
-                                        <TextBox Text="{Binding Skill1, UpdateSourceTrigger=PropertyChanged}" Width="60" TextAlignment="Center"/>
+                                        <TextBox Text="{Binding Skill1, UpdateSourceTrigger=PropertyChanged}" Width="60"/>
                                         <Label Content=" Skill 2"/>
-                                        <TextBox Text="{Binding Skill2, UpdateSourceTrigger=PropertyChanged}" Width="60" TextAlignment="Center"/>
+                                        <TextBox Text="{Binding Skill2, UpdateSourceTrigger=PropertyChanged}" Width="60"/>
                                         <Label Content=" Rarity"/>
                                         <ComboBox SelectedIndex="{Binding Rarity}">
                                             <ComboBoxItem Content="1"/>
