@@ -168,6 +168,9 @@
   <data name="MainEquipmentTabArmor" xml:space="preserve">
     <value>防具</value>
   </data>
+  <data name="MainEquipmentTabTalisman" xml:space="preserve">
+    <value>护石</value>
+  </data>
   <data name="MainEquipmentTabWeapon" xml:space="preserve">
     <value>武器</value>
   </data>
@@ -223,7 +226,7 @@
     <value>基础</value>
   </data>
   <data name="MainTabCharacter" xml:space="preserve">
-    <value>任务</value>
+    <value>人物</value>
   </data>
   <data name="MainTabEgg" xml:space="preserve">
     <value>蛋</value>

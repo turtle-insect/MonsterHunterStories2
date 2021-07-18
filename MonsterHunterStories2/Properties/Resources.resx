@@ -168,6 +168,9 @@
   <data name="MainEquipmentTabArmor" xml:space="preserve">
     <value>Armor</value>
   </data>
+  <data name="MainEquipmentTabTalisman" xml:space="preserve">
+    <value>Talisman</value>
+  </data>
   <data name="MainEquipmentTabWeapon" xml:space="preserve">
     <value>Weapon</value>
   </data>

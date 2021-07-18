@@ -8,6 +8,7 @@ namespace MonsterHunterStories2
 		public ObservableCollection<Item> Items { get; set; } = new ObservableCollection<Item>();
 		public ObservableCollection<Equipment> Weapons { get; set; } = new ObservableCollection<Equipment>();
 		public ObservableCollection<Equipment> Armors { get; set; } = new ObservableCollection<Equipment>();
+		public ObservableCollection<Equipment> Talismans { get; set; } = new ObservableCollection<Equipment>();
 		public ObservableCollection<Character> Characters { get; set; } = new ObservableCollection<Character>();
 		public ObservableCollection<Monster> Monsters { get; set; } = new ObservableCollection<Monster>();
 		public ObservableCollection<Egg> Eggs { get; set; } = new ObservableCollection<Egg>();
@@ -61,6 +62,13 @@ namespace MonsterHunterStories2
 				uint address = Util.ARMOR_ADDRESS + Util.ARMOR_SIZE * i;
 				Equipment armor = new Equipment(address);
 				Armors.Add(armor);
+			}
+
+			for (uint i = 0; i < Util.TALISMAN_COUNT; i++)
+			{
+				uint address = Util.TALISMAN_ADDRESS + Util.TALISMAN_SIZE * i;
+				Equipment Talisman = new Equipment(address);
+				Talismans.Add(Talisman);
 			}
 		}
 

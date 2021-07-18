@@ -160,7 +160,7 @@ namespace MonsterHunterStories2.Properties {
         }
         
         /// <summary>
-        ///   Smell に類似しているローカライズされた文字列を検索します。
+        ///   查找类似 Smell 的本地化字符串。
         /// </summary>
         public static string MainEggSmell {
             get {
@@ -169,7 +169,7 @@ namespace MonsterHunterStories2.Properties {
         }
         
         /// <summary>
-        ///   Amazing に類似しているローカライズされた文字列を検索します。
+        ///   查找类似 Amazing 的本地化字符串。
         /// </summary>
         public static string MainEggSmellTypeAmazing {
             get {
@@ -178,7 +178,7 @@ namespace MonsterHunterStories2.Properties {
         }
         
         /// <summary>
-        ///   Good に類似しているローカライズされた文字列を検索します。
+        ///   查找类似 Good 的本地化字符串。
         /// </summary>
         public static string MainEggSmellTypeGood {
             get {
@@ -187,7 +187,7 @@ namespace MonsterHunterStories2.Properties {
         }
         
         /// <summary>
-        ///   Normal に類似しているローカライズされた文字列を検索します。
+        ///   查找类似 Normal 的本地化字符串。
         /// </summary>
         public static string MainEggSmellTypeNormal {
             get {
@@ -196,7 +196,7 @@ namespace MonsterHunterStories2.Properties {
         }
         
         /// <summary>
-        ///   Gene に類似しているローカライズされた文字列を検索します。
+        ///   查找类似 Gene 的本地化字符串。
         /// </summary>
         public static string MainEggTabGene {
             get {
@@ -205,11 +205,20 @@ namespace MonsterHunterStories2.Properties {
         }
         
         /// <summary>
-        ///   Armor に類似しているローカライズされた文字列を検索します。
+        ///   查找类似 Armor 的本地化字符串。
         /// </summary>
         public static string MainEquipmentTabArmor {
             get {
                 return ResourceManager.GetString("MainEquipmentTabArmor", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Talisman 的本地化字符串。
+        /// </summary>
+        public static string MainEquipmentTabTalisman {
+            get {
+                return ResourceManager.GetString("MainEquipmentTabTalisman", resourceCulture);
             }
         }
         
@@ -223,7 +232,7 @@ namespace MonsterHunterStories2.Properties {
         }
         
         /// <summary>
-        ///   Bow に類似しているローカライズされた文字列を検索します。
+        ///   查找类似 Bow 的本地化字符串。
         /// </summary>
         public static string MainEquipmentWeaponB {
             get {
@@ -232,7 +241,7 @@ namespace MonsterHunterStories2.Properties {
         }
         
         /// <summary>
-        ///   Gunlance に類似しているローカライズされた文字列を検索します。
+        ///   查找类似 Gunlance 的本地化字符串。
         /// </summary>
         public static string MainEquipmentWeaponG {
             get {
@@ -241,7 +250,7 @@ namespace MonsterHunterStories2.Properties {
         }
         
         /// <summary>
-        ///   Great Sword に類似しているローカライズされた文字列を検索します。
+        ///   查找类似 Great Sword 的本地化字符串。
         /// </summary>
         public static string MainEquipmentWeaponGS {
             get {
@@ -250,7 +259,7 @@ namespace MonsterHunterStories2.Properties {
         }
         
         /// <summary>
-        ///   Hammer に類似しているローカライズされた文字列を検索します。
+        ///   查找类似 Hammer 的本地化字符串。
         /// </summary>
         public static string MainEquipmentWeaponH {
             get {
@@ -259,7 +268,7 @@ namespace MonsterHunterStories2.Properties {
         }
         
         /// <summary>
-        ///   Hunting Horn に類似しているローカライズされた文字列を検索します。
+        ///   查找类似 Hunting Horn 的本地化字符串。
         /// </summary>
         public static string MainEquipmentWeaponHH {
             get {
@@ -268,7 +277,7 @@ namespace MonsterHunterStories2.Properties {
         }
         
         /// <summary>
-        ///   Sword &amp; Shield に類似しているローカライズされた文字列を検索します。
+        ///   查找类似 Sword &amp; Shield 的本地化字符串。
         /// </summary>
         public static string MainEquipmentWeaponSS {
             get {
@@ -385,7 +394,7 @@ namespace MonsterHunterStories2.Properties {
         }
         
         /// <summary>
-        ///   Egg に類似しているローカライズされた文字列を検索します。
+        ///   查找类似 Egg 的本地化字符串。
         /// </summary>
         public static string MainTabEgg {
             get {
@@ -394,7 +403,7 @@ namespace MonsterHunterStories2.Properties {
         }
         
         /// <summary>
-        ///   Equipment に類似しているローカライズされた文字列を検索します。
+        ///   查找类似 Equipment 的本地化字符串。
         /// </summary>
         public static string MainTabEquipment {
             get {

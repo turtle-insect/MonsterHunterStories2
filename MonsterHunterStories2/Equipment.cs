@@ -40,26 +40,50 @@ namespace MonsterHunterStories2
 			set { Util.WriteNumber(mAddress + 4, 2, value, 1, 0xFFFF); }
 		}
 
-		public uint Skill_1
+		public uint ArmorsMainR
 		{
-			get { return SaveData.Instance().ReadNumber(mAddress + 20, 3); }
-			set { Util.WriteNumber(mAddress + 20, 3, value, 1, 0xFFFFFF); }
-		}
-		public string Skill_1_Hex
-		{
-			get { return SaveData.Instance().ReadHex(mAddress + 20, 3); }
-			set { SaveData.Instance().WriteHex(mAddress + 20,  value); }
+			get { return SaveData.Instance().ReadNumber(mAddress + 20, 1); }
+			set { Util.WriteNumber(mAddress + 24, 1, value, 0, 255); }
 		}
 
-		public uint Skill_2
+		public uint ArmorsMainG
 		{
-			get { return SaveData.Instance().ReadNumber(mAddress + 24, 3); }
-			set { Util.WriteNumber(mAddress + 24, 3, value, 1, 0xFFFFFF); }
+			get { return SaveData.Instance().ReadNumber(mAddress + 21, 1); }
+			set { Util.WriteNumber(mAddress + 25, 1, value, 0, 255); }
 		}
-		public string Skill_2_Hex
+
+		public uint ArmorsMainB
 		{
-			get { return SaveData.Instance().ReadHex(mAddress + 24, 3); }
-			set { SaveData.Instance().WriteHex(mAddress + 24, value); }
+			get { return SaveData.Instance().ReadNumber(mAddress + 22, 1); }
+			set { Util.WriteNumber(mAddress + 26, 1, value, 0, 255); }
 		}
+		public uint ArmorsDR
+		{
+			get { return SaveData.Instance().ReadNumber(mAddress + 24, 1); }
+			set { Util.WriteNumber(mAddress + 24, 1, value, 0, 255); }
+		}
+
+		public uint ArmorsDG
+		{
+			get { return SaveData.Instance().ReadNumber(mAddress + 25, 1); }
+			set { Util.WriteNumber(mAddress + 25, 1, value, 0, 255); }
+		}
+
+		public uint ArmorsDB
+		{
+			get { return SaveData.Instance().ReadNumber(mAddress + 26, 1); }
+			set { Util.WriteNumber(mAddress + 26, 1, value, 0, 255); }
+		}
+		public uint TalismansSkill_1
+		{
+			get { return SaveData.Instance().ReadNumber(mAddress + 40, 2); }
+			set { Util.WriteNumber(mAddress + 40, 2, value, 1, 0xFFFF); }
+		}
+		public uint TalismansSkill_2
+		{
+			get { return SaveData.Instance().ReadNumber(mAddress + 42, 2); }
+			set { Util.WriteNumber(mAddress + 42, 2, value, 1, 0xFFFF); }
+		}
+		
 	}
 }
