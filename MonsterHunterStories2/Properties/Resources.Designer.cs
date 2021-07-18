@@ -79,6 +79,15 @@ namespace MonsterHunterStories2.Properties {
         }
         
         /// <summary>
+        ///   PlayTime に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string MainBasicPlayTime {
+            get {
+                return ResourceManager.GetString("MainBasicPlayTime", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Body Type に類似しているローカライズされた文字列を検索します。
         /// </summary>
         public static string MainCharacterBodyType {
@@ -331,11 +340,119 @@ namespace MonsterHunterStories2.Properties {
         }
         
         /// <summary>
+        ///   CurrentHP に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string MainMonsterCurrentHP {
+            get {
+                return ResourceManager.GetString("MainMonsterCurrentHP", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Dragon Attack に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string MainMonsterDragonAttack {
+            get {
+                return ResourceManager.GetString("MainMonsterDragonAttack", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Dragon Defense に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string MainMonsterDragonDefense {
+            get {
+                return ResourceManager.GetString("MainMonsterDragonDefense", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Fire Attack に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string MainMonsterFireAttack {
+            get {
+                return ResourceManager.GetString("MainMonsterFireAttack", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Fire Defense に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string MainMonsterFireDefense {
+            get {
+                return ResourceManager.GetString("MainMonsterFireDefense", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   HP に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string MainMonsterHP {
+            get {
+                return ResourceManager.GetString("MainMonsterHP", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ice Attack に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string MainMonsterIceAttack {
+            get {
+                return ResourceManager.GetString("MainMonsterIceAttack", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ice Defense に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string MainMonsterIceDefense {
+            get {
+                return ResourceManager.GetString("MainMonsterIceDefense", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   MaxHP に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string MainMonsterMaxHP {
+            get {
+                return ResourceManager.GetString("MainMonsterMaxHP", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Speed に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string MainMonsterMaxSpeed {
+            get {
+                return ResourceManager.GetString("MainMonsterMaxSpeed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Name に類似しているローカライズされた文字列を検索します。
         /// </summary>
         public static string MainMonsterName {
             get {
                 return ResourceManager.GetString("MainMonsterName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Normal Attack に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string MainMonsterNormalAttack {
+            get {
+                return ResourceManager.GetString("MainMonsterNormalAttack", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Normal Defense に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string MainMonsterNormalDefense {
+            get {
+                return ResourceManager.GetString("MainMonsterNormalDefense", resourceCulture);
             }
         }
         
@@ -349,6 +466,15 @@ namespace MonsterHunterStories2.Properties {
         }
         
         /// <summary>
+        ///   Bonus に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string MainMonsterTabBonus {
+            get {
+                return ResourceManager.GetString("MainMonsterTabBonus", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Gene に類似しているローカライズされた文字列を検索します。
         /// </summary>
         public static string MainMonsterTabGene {
@@ -358,11 +484,56 @@ namespace MonsterHunterStories2.Properties {
         }
         
         /// <summary>
+        ///   Info に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string MainMonsterTabInfo {
+            get {
+                return ResourceManager.GetString("MainMonsterTabInfo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Thunder Attack に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string MainMonsterThunderAttack {
+            get {
+                return ResourceManager.GetString("MainMonsterThunderAttack", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Thunder Defense に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string MainMonsterThunderDefense {
+            get {
+                return ResourceManager.GetString("MainMonsterThunderDefense", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Type に類似しているローカライズされた文字列を検索します。
         /// </summary>
         public static string MainMonsterType {
             get {
                 return ResourceManager.GetString("MainMonsterType", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Water Attack に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string MainMonsterWaterAttack {
+            get {
+                return ResourceManager.GetString("MainMonsterWaterAttack", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Water Defense に類似しているローカライズされた文字列を検索します。
+        /// </summary>
+        public static string MainMonsterWaterDefense {
+            get {
+                return ResourceManager.GetString("MainMonsterWaterDefense", resourceCulture);
             }
         }
         

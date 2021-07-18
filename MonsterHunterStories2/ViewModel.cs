@@ -66,8 +66,30 @@ namespace MonsterHunterStories2
 
 		public uint Money
 		{
-			get { return SaveData.Instance().ReadNumber(0x48, 4); }
-			set { Util.WriteNumber(0x48, 4, value, 0, 9999999); }
+			get { return SaveData.Instance().ReadNumber(72, 4); }
+			set { Util.WriteNumber(72, 4, value, 0, 9999999); }
+		}
+
+		public uint PlayTimeHour
+		{
+			get { return SaveData.Instance().ReadNumber(64, 4) / 3600; }
+			set
+			{
+				uint time = SaveData.Instance().ReadNumber(64, 4) % 3600 + value * 3600;
+				SaveData.Instance().WriteNumber(64, 4, time);
+			}
+		}
+
+		public uint PlayTimeMinute
+		{
+			get { return SaveData.Instance().ReadNumber(64, 4) / 60 % 60; }
+			set
+			{
+				if (value < 0) value = 0;
+				if (value > 59) value = 59;
+				uint time = SaveData.Instance().ReadNumber(64, 4) / 3600 * 3600 + value * 60;
+				SaveData.Instance().WriteNumber(64, 4, time);
+			}
 		}
 	}
 }

@@ -123,6 +123,9 @@
   <data name="MainBasicMoney" xml:space="preserve">
     <value>Money</value>
   </data>
+  <data name="MainBasicPlayTime" xml:space="preserve">
+    <value>PlayTime</value>
+  </data>
   <data name="MainCharacterBodyType" xml:space="preserve">
     <value>Body Type</value>
   </data>
@@ -207,17 +210,71 @@
   <data name="MainMenuFileSaveAs" xml:space="preserve">
     <value>Save _As...</value>
   </data>
+  <data name="MainMonsterCurrentHP" xml:space="preserve">
+    <value>CurrentHP</value>
+  </data>
+  <data name="MainMonsterDragonAttack" xml:space="preserve">
+    <value>Dragon Attack</value>
+  </data>
+  <data name="MainMonsterDragonDefense" xml:space="preserve">
+    <value>Dragon Defense</value>
+  </data>
+  <data name="MainMonsterFireAttack" xml:space="preserve">
+    <value>Fire Attack</value>
+  </data>
+  <data name="MainMonsterFireDefense" xml:space="preserve">
+    <value>Fire Defense</value>
+  </data>
+  <data name="MainMonsterHP" xml:space="preserve">
+    <value>HP</value>
+  </data>
+  <data name="MainMonsterIceAttack" xml:space="preserve">
+    <value>Ice Attack</value>
+  </data>
+  <data name="MainMonsterIceDefense" xml:space="preserve">
+    <value>Ice Defense</value>
+  </data>
+  <data name="MainMonsterMaxHP" xml:space="preserve">
+    <value>MaxHP</value>
+  </data>
+  <data name="MainMonsterMaxSpeed" xml:space="preserve">
+    <value>Speed</value>
+  </data>
   <data name="MainMonsterName" xml:space="preserve">
     <value>Name</value>
+  </data>
+  <data name="MainMonsterNormalAttack" xml:space="preserve">
+    <value>Normal Attack</value>
+  </data>
+  <data name="MainMonsterNormalDefense" xml:space="preserve">
+    <value>Normal Defense</value>
   </data>
   <data name="MainMonsterRideAction" xml:space="preserve">
     <value>RideAction</value>
   </data>
+  <data name="MainMonsterTabBonus" xml:space="preserve">
+    <value>Bonus</value>
+  </data>
   <data name="MainMonsterTabGene" xml:space="preserve">
     <value>Gene</value>
   </data>
+  <data name="MainMonsterTabInfo" xml:space="preserve">
+    <value>Info</value>
+  </data>
+  <data name="MainMonsterThunderAttack" xml:space="preserve">
+    <value>Thunder Attack</value>
+  </data>
+  <data name="MainMonsterThunderDefense" xml:space="preserve">
+    <value>Thunder Defense</value>
+  </data>
   <data name="MainMonsterType" xml:space="preserve">
     <value>Type</value>
+  </data>
+  <data name="MainMonsterWaterAttack" xml:space="preserve">
+    <value>Water Attack</value>
+  </data>
+  <data name="MainMonsterWaterDefense" xml:space="preserve">
+    <value>Water Defense</value>
   </data>
   <data name="MainTabBasic" xml:space="preserve">
     <value>Basic</value>
