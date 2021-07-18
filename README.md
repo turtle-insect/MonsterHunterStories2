@@ -1,3 +1,5 @@
+![DL Count](https://img.shields.io/github/downloads/turtle-insect/MonsterHunterStories2/total.svg)
+
 # Monster Hunter Stories 2
 Switch Monster Hunter Stories 2 SaveDate Editor  
 **Tested with demo version.**  
