@@ -2,6 +2,7 @@
 using System.Windows;
 using Microsoft.Win32;
 
+
 namespace MonsterHunterStories2
 {
 	/// <summary>
@@ -156,5 +157,19 @@ namespace MonsterHunterStories2
 			dlg.ShowDialog();
 			return dlg.ID;
 		}
+
+        private void Button_Click_Copy(object sender, RoutedEventArgs e)
+        {
+			Clipboard.SetText(All_Hex.Text);
+		}
+		private void Button_Click_Paste(object sender, RoutedEventArgs e)
+		{
+			string strs = Clipboard.GetText();
+			if (strs.Replace(" ", "").Length < 120) MessageBox.Show("Wrong Egg");
+			else SaveData.Instance().WriteHex(Util.EGG_ADDRESS + (uint)ListBoxEgg.SelectedIndex * Util.EGG_SIZE, strs);
+
+
+		}
+
 	}
 }

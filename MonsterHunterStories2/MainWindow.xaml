@@ -243,6 +243,9 @@
                             <ComboBoxItem Content="{x:Static prop:Resources.MainEggSmellTypeGood}"/>
                             <ComboBoxItem Content="{x:Static prop:Resources.MainEggSmellTypeAmazing}"/>
                         </ComboBox>
+                        <TextBox x:Name="All_Hex" Grid.Row="2" Text="{Binding ElementName=ListBoxEgg, Path=SelectedItem.AllHex, UpdateSourceTrigger=PropertyChanged}" MaxWidth="460" TextWrapping="Wrap" Grid.ColumnSpan="2" Margin="0,0,0,133" IsReadOnly="True"/>
+                        <Button Grid.Row="2" Content ="Copy Hex"  Click="Button_Click_Copy" Margin="19,204,153,88" Grid.ColumnSpan="2"  />
+                        <Button Grid.Row="2" Content ="Paste Hex"  Click="Button_Click_Paste" Margin="61,204,25,88" Grid.Column="1"  />
                     </Grid>
                     <TabControl Grid.Column="2">
                         <TabItem Header="{x:Static prop:Resources.MainEggTabGene}">
