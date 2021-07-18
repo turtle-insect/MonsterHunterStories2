@@ -123,6 +123,9 @@
   <data name="MainBasicMoney" xml:space="preserve">
     <value>金币</value>
   </data>
+  <data name="MainBasicPlayTime" xml:space="preserve">
+    <value>PlayTime</value>
+  </data>
   <data name="MainCharacterBodyType" xml:space="preserve">
     <value>体型</value>
   </data>
