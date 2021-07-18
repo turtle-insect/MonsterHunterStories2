@@ -200,15 +200,9 @@
                     </Grid>
                     <TabControl Grid.Column="2">
                         <TabItem Header="{x:Static prop:Resources.MainMonsterTabGene}">
-                            <Grid>
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition/>
-                                </Grid.ColumnDefinitions>
-                                <Grid.RowDefinitions>
-                                    <RowDefinition/>
-                                    <RowDefinition Height="0.1*"/>
-                                    <RowDefinition Height="0.1*"/>
-                                </Grid.RowDefinitions>
+                            <DockPanel>
+                                <Button DockPanel.Dock="Bottom" Content="Maximize Stack" Click="ButtonMaxoutMonsterStack_Click"/>
+                                <Button DockPanel.Dock="Bottom" Content="Select Gene" Click="ButtonChoiceGenes_Click" IsEnabled="{Binding ElementName=ListBoxGenes, Path=SelectedItems.Count}" />
                                 <ListBox x:Name="ListBoxGenes" ItemsSource="{Binding ElementName=ListBoxMonster, Path=SelectedItem.Genes}">
                                     <ListBox.Resources>
                                         <local:GeneID2NameConverter x:Key="GeneID2NameConverter"/>
@@ -230,9 +224,7 @@
                                         </DataTemplate>
                                     </ListBox.ItemTemplate>
                                 </ListBox>
-                                <Button Grid.Row="1" Content="Select Gene" Click="ButtonChoiceGenes_Click" IsEnabled="{Binding ElementName=ListBoxGenes, Path=SelectedItems.Count}" />
-                                <Button Grid.Row="2" Content="Maximize Stack" Click="ButtonMaxoutMonsterStack_Click"/>
-                            </Grid>
+                            </DockPanel>
                         </TabItem>
                         <TabItem Header="{x:Static prop:Resources.MainMonsterTabInfo}">
                             <Grid>
@@ -368,15 +360,9 @@
                     </Grid>
                     <TabControl Grid.Column="2">
                         <TabItem Header="{x:Static prop:Resources.MainEggTabGene}">
-                            <Grid>
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition/>
-                                </Grid.ColumnDefinitions>
-                                <Grid.RowDefinitions>
-                                    <RowDefinition/>
-                                    <RowDefinition Height="0.1*"/>
-                                    <RowDefinition Height="0.1*"/>
-                                </Grid.RowDefinitions>
+                            <DockPanel>
+                                <Button DockPanel.Dock="Bottom" Content="Maximize Stack" Click="ButtonMaxoutEggStack_Click"/>
+                                <Button DockPanel.Dock="Bottom" Content="Select Gene" Click="ButtonChoiceEggGenes_Click" IsEnabled="{Binding ElementName=ListBoxEggGenes, Path=SelectedItems.Count}" />
                                 <ListBox x:Name="ListBoxEggGenes" ItemsSource="{Binding ElementName=ListBoxEgg, Path=SelectedItem.Genes}">
                                     <ListBox.Resources>
                                         <local:GeneID2NameConverter x:Key="GeneID2NameConverter"/>
@@ -386,7 +372,6 @@
                                             <StackPanel Orientation="Horizontal">
                                                 <Label Content="{Binding ID, Converter={StaticResource GeneID2NameConverter}}" Width="150"/>
                                                 <TextBox Text="{Binding ID, UpdateSourceTrigger=PropertyChanged}" Width="50"/>
-
                                                 <Label Content="Lock"/>
                                                 <CheckBox IsChecked="{Binding Lock}" VerticalAlignment="Center"/>
                                                 <Label Content="Stack"/>
@@ -399,9 +384,7 @@
                                         </DataTemplate>
                                     </ListBox.ItemTemplate>
                                 </ListBox>
-                                <Button Grid.Row="1" Content="Select Gene" Click="ButtonChoiceEggGenes_Click" IsEnabled="{Binding ElementName=ListBoxEggGenes, Path=SelectedItems.Count}" />
-                                <Button Grid.Row="2" Content="Maximize Stack" Click="ButtonMaxoutEggStack_Click"/>
-                            </Grid>
+                            </DockPanel>
                         </TabItem>
                     </TabControl>
                 </Grid>
