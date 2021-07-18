@@ -29,10 +29,10 @@
             <MenuItem Header="{x:Static prop:Resources.MainMenuAbout}" Click="MenuItemAbout_Click"/>
         </Menu>
         <ToolBar DockPanel.Dock="Top">
-            <Button x:Name="ButtonOpen" Height="32" ToolTip="Open" Click="MenuItemFileOpen_Click">
+            <Button Height="32" ToolTip="Open" Click="MenuItemFileOpen_Click">
                 <Image Source="{StaticResource Open}"/>
             </Button>
-            <Button x:Name="ButtonSave" Height="32" ToolTip="Save" Click="MenuItemFileSave_Click">
+            <Button Height="32" ToolTip="Save" Click="MenuItemFileSave_Click">
                 <Image Source="{StaticResource Save}"/>
             </Button>
             <ComboBox Margin="10,0,0,0" SelectedIndex="{Binding Path=Langage, Source={x:Static prop:Settings.Default}}">
@@ -218,7 +218,6 @@
                                             <StackPanel Orientation="Horizontal">
                                                 <Label Content="{Binding ID, Converter={StaticResource GeneID2NameConverter}}" Width="150"/>
                                                 <TextBox Text="{Binding ID, UpdateSourceTrigger=PropertyChanged}" Width="50"/>
-
                                                 <Label Content="Lock"/>
                                                 <CheckBox IsChecked="{Binding Lock}" VerticalAlignment="Center"/>
                                                 <Label Content="Stack"/>
