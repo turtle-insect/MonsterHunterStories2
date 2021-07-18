@@ -26,8 +26,7 @@ namespace MonsterHunterStories2
 
 			for (uint i = 0; i < Util.CHARACTER_COUNT; i++)
 			{
-				uint address = Util.CHARACTER_ADDRESS + Util.CHARACTER_SIZE * i;
-				Character chara = new Character(address);
+				Character chara = new Character(Util.CHARACTER_ADDRESS + Util.CHARACTER_SIZE * i);
 				if (String.IsNullOrEmpty(chara.Name)) continue;
 
 				Characters.Add(chara);
@@ -35,8 +34,7 @@ namespace MonsterHunterStories2
 
 			for (uint i = 0; i < Util.MONSTER_COUNT; i++)
 			{
-				uint address = Util.MONSTER_ADDRESS + Util.MONSTER_SIZE * i;
-				Monster monster = new Monster(address);
+				Monster monster = new Monster(Util.MONSTER_ADDRESS + Util.MONSTER_SIZE * i);
 				if (String.IsNullOrEmpty(monster.Name)) continue;
 
 				Monsters.Add(monster);
@@ -45,29 +43,25 @@ namespace MonsterHunterStories2
 			uint count = SaveData.Instance().ReadNumber(Util.EGG_COUNT_ADDRESS, 1);
 			for (uint i = 0; i < count; i++)
 			{
-				uint address = Util.EGG_ADDRESS + Util.EGG_SIZE * i;
-				Egg egg = new Egg(address);
+				Egg egg = new Egg(Util.EGG_ADDRESS + Util.EGG_SIZE * i);
 				Eggs.Add(egg);
 			}
 
 			for (uint i = 0; i < Util.WEAPON_COUNT; i++)
 			{
-				uint address = Util.WEAPON_ADDRESS + Util.WEAPON_SIZE * i;
-				Equipment weapon = new Equipment(address);
+				Equipment weapon = new Equipment(Util.WEAPON_ADDRESS + Util.WEAPON_SIZE * i);
 				Weapons.Add(weapon);
 			}
 
 			for (uint i = 0; i < Util.ARMOR_COUNT; i++)
 			{
-				uint address = Util.ARMOR_ADDRESS + Util.ARMOR_SIZE * i;
-				Equipment armor = new Equipment(address);
+				Equipment armor = new Equipment(Util.ARMOR_ADDRESS + Util.ARMOR_SIZE * i);
 				Armors.Add(armor);
 			}
 
 			for (uint i = 0; i < Util.TALISMAN_COUNT; i++)
 			{
-				uint address = Util.TALISMAN_ADDRESS + Util.TALISMAN_SIZE * i;
-				Equipment Talisman = new Equipment(address);
+				Equipment Talisman = new Equipment(Util.TALISMAN_ADDRESS + Util.TALISMAN_SIZE * i);
 				Talismans.Add(Talisman);
 			}
 		}
