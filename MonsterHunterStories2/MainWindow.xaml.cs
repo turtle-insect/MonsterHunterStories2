@@ -109,6 +109,18 @@ namespace MonsterHunterStories2
 			monster.ID = dlg.ID;
 		}
 
+		private void ButtonChoiceGenes_Click(object sender, RoutedEventArgs e)
+		{
+			Gene gene = ListBoxGenes.SelectedItem as Gene;
+			if (gene == null) return;
+
+			var dlg = new ChoiceWindow();
+			dlg.ID = gene.ID;
+			dlg.Type = ChoiceWindow.eType.TYPE_GENE;
+			dlg.ShowDialog();
+			gene.ID = dlg.ID;
+		}
+
 		private void ButtonChoiceRaidAction1_Click(object sender, RoutedEventArgs e)
 		{
 			Monster monster = ListBoxMonster.SelectedItem as Monster;
@@ -142,6 +154,14 @@ namespace MonsterHunterStories2
 			dlg.Type = ChoiceWindow.eType.TYPE_RAIDACTION;
 			dlg.ShowDialog();
 			return dlg.ID;
+		}
+
+		private void MaxoutStack_Click(object sender, RoutedEventArgs e)
+		{
+			Monster monster = ListBoxMonster.SelectedItem as Monster;
+			if (monster == null) return;
+
+			monster.MaximizeGeneStack();
 		}
 	}
 }

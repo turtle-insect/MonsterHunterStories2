@@ -68,6 +68,7 @@
     <Compile Include="ILineAnalysis.cs" />
     <Compile Include="Info.cs" />
     <Compile Include="Item.cs" />
+    <Compile Include="GeneID2NameConverter.cs" />
     <Compile Include="ItemID2NameConverter.cs" />
     <Compile Include="Monster.cs" />
     <Compile Include="KeyValuesInfo.cs" />

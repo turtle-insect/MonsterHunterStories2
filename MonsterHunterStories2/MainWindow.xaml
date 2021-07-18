@@ -9,7 +9,7 @@
         WindowStartupLocation="CenterScreen"
         AllowDrop="True" Drop="Window_Drop" PreviewDragOver="Window_PreviewDragOver"
         Closed="Window_Closed"
-        Title="{x:Static prop:Resources.ApplicationTitle}" Height="500" Width="650">
+        Title="{x:Static prop:Resources.ApplicationTitle}" Height="500" Width="750">
     <Window.DataContext>
         <local:ViewModel/>
     </Window.DataContext>
@@ -135,7 +135,7 @@
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="120"/>
                         <ColumnDefinition/>
-                        <ColumnDefinition/>
+                        <ColumnDefinition Width="1.55*"/>
                     </Grid.ColumnDefinitions>
                     <ListBox x:Name="ListBoxMonster" ItemsSource="{Binding Monsters}" DisplayMemberPath="Name"/>
                     <Grid Grid.Column="1">
@@ -185,24 +185,40 @@
                     </Grid>
                     <TabControl Grid.Column="2">
                         <TabItem Header="{x:Static prop:Resources.MainMonsterTabGene}">
-                            <ListBox ItemsSource="{Binding ElementName=ListBoxMonster, Path=SelectedItem.Genes}">
-                                <ListBox.ItemTemplate>
-                                    <DataTemplate>
-                                        <StackPanel Orientation="Horizontal">
-                                            <Label Content="ID"/>
-                                            <TextBox Text="{Binding ID, UpdateSourceTrigger=PropertyChanged}" Width="50"/>
-                                            <Label Content="Lock"/>
-                                            <CheckBox IsChecked="{Binding Lock}" VerticalAlignment="Center"/>
-                                            <Label Content="Stack"/>
-                                            <ComboBox SelectedIndex="{Binding Stack}">
-                                                <ComboBoxItem Content="Default"/>
-                                                <ComboBoxItem Content="+1"/>
-                                                <ComboBoxItem Content="+2"/>
-                                            </ComboBox>
-                                        </StackPanel>
-                                    </DataTemplate>
-                                </ListBox.ItemTemplate>
-                            </ListBox>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition/>
+                                    <RowDefinition Height="0.1*"/>
+                                    <RowDefinition Height="0.1*"/>
+                                </Grid.RowDefinitions>
+                                <ListBox x:Name="ListBoxGenes" ItemsSource="{Binding ElementName=ListBoxMonster, Path=SelectedItem.Genes}">
+                                    <ListBox.Resources>
+                                        <local:GeneID2NameConverter x:Key="GeneID2NameConverter"/>
+                                    </ListBox.Resources>
+                                    <ListBox.ItemTemplate>
+                                        <DataTemplate>
+                                            <StackPanel Orientation="Horizontal">
+                                                <Label Content="{Binding ID, Converter={StaticResource GeneID2NameConverter}}" Width="150"/>
+                                                <TextBox Text="{Binding ID, UpdateSourceTrigger=PropertyChanged}" Width="50"/>
+                                                
+                                                <Label Content="Lock"/>
+                                                <CheckBox IsChecked="{Binding Lock}" VerticalAlignment="Center"/>
+                                                <Label Content="Stack"/>
+                                                <ComboBox SelectedIndex="{Binding Stack}">
+                                                    <ComboBoxItem Content="Default"/>
+                                                    <ComboBoxItem Content="+1"/>
+                                                    <ComboBoxItem Content="+2"/>
+                                                </ComboBox>
+                                            </StackPanel>
+                                        </DataTemplate>
+                                    </ListBox.ItemTemplate>
+                                </ListBox>
+                                <Button Grid.Row="1" Content="Select Gene" Click="ButtonChoiceGenes_Click" IsEnabled="{Binding ElementName=ListBoxGenes, Path=SelectedItems.Count}" />
+                                <Button Grid.Row="2" Content="Maximize Stack" Click="MaxoutStack_Click"/>
+                            </Grid>
                         </TabItem>
                     </TabControl>
                 </Grid>
