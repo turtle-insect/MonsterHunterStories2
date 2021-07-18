@@ -307,10 +307,12 @@
                                             <ComboBoxItem Content="2"/>
                                             <ComboBoxItem Content="3"/>
                                         </ComboBox>
-                                        <Label Content=" Type"/>
-                                        <TextBox Text="{Binding Type, UpdateSourceTrigger=PropertyChanged}" Width="60" />
                                         <Label Content=" ID"/>
                                         <TextBox Text="{Binding ID, UpdateSourceTrigger=PropertyChanged}" Width="60"/>
+                                        <Label Content=" Skill_1 Hex"/>
+                                        <TextBox Text="{Binding Skill_1_Hex, UpdateSourceTrigger=PropertyChanged}" Width="60" TextAlignment="Center"/>
+                                        <Label Content="Skill_2 Hex"/>
+                                        <TextBox Text="{Binding Skill_2_Hex, UpdateSourceTrigger=PropertyChanged}" Width="60" TextAlignment="Center"/>
                                     </StackPanel>
                                 </DataTemplate>
                             </ListBox.ItemTemplate>
