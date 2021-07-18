@@ -434,31 +434,31 @@
                                         <Label Content=" ID"/>
                                         <TextBox Text="{Binding ID, UpdateSourceTrigger=PropertyChanged}" Width="60"/>
                                         <Label Content="Body"/>
-                                        <TextBox Text="{Binding ArmorsMainR, UpdateSourceTrigger=PropertyChanged}" Width="30" Background="LightPink" TextAlignment="Center"/>
-                                        <TextBox Text="{Binding ArmorsMainG, UpdateSourceTrigger=PropertyChanged}" Width="30" Background="LightGreen" TextAlignment="Center"/>
-                                        <TextBox Text="{Binding ArmorsMainB, UpdateSourceTrigger=PropertyChanged}" Width="30" Background="LightBlue" TextAlignment="Center"/>
+                                        <TextBox Text="{Binding MainR, UpdateSourceTrigger=PropertyChanged}" Width="30" Background="LightPink" TextAlignment="Center"/>
+                                        <TextBox Text="{Binding MainG, UpdateSourceTrigger=PropertyChanged}" Width="30" Background="LightGreen" TextAlignment="Center"/>
+                                        <TextBox Text="{Binding MainB, UpdateSourceTrigger=PropertyChanged}" Width="30" Background="LightBlue" TextAlignment="Center"/>
                                         <Label Content="Decorative parts"/>
-                                        <TextBox Text="{Binding ArmorsDR, UpdateSourceTrigger=PropertyChanged}" Width="30" Background="LightPink" TextAlignment="Center"/>
-                                        <TextBox Text="{Binding ArmorsDG, UpdateSourceTrigger=PropertyChanged}" Width="30" Background="LightGreen" TextAlignment="Center"/>
-                                        <TextBox Text="{Binding ArmorsDB, UpdateSourceTrigger=PropertyChanged}" Width="30" Background="LightBlue" TextAlignment="Center"/>
+                                        <TextBox Text="{Binding DR, UpdateSourceTrigger=PropertyChanged}" Width="30" Background="LightPink" TextAlignment="Center"/>
+                                        <TextBox Text="{Binding DG, UpdateSourceTrigger=PropertyChanged}" Width="30" Background="LightGreen" TextAlignment="Center"/>
+                                        <TextBox Text="{Binding DB, UpdateSourceTrigger=PropertyChanged}" Width="30" Background="LightBlue" TextAlignment="Center"/>
                                     </StackPanel>
                                 </DataTemplate>
                             </ListBox.ItemTemplate>
                         </ListBox>
                     </TabItem>
                     <TabItem Header="{x:Static prop:Resources.MainEquipmentTabTalisman}">
-                        <ListBox x:Name="ListBoxArmor1" ItemsSource="{Binding Talismans}">
+                        <ListBox ItemsSource="{Binding Talismans}">
                             <ListBox.ItemTemplate>
                                 <DataTemplate>
                                     <StackPanel Orientation="Horizontal">
                                         <Label Content=" ID"/>
                                         <TextBox Text="{Binding ID, UpdateSourceTrigger=PropertyChanged}" Width="60"/>
                                         <Label Content=" Skill 1"/>
-                                        <TextBox Text="{Binding TalismansSkill_1, UpdateSourceTrigger=PropertyChanged}" Width="60" TextAlignment="Center"/>
+                                        <TextBox Text="{Binding Skill1, UpdateSourceTrigger=PropertyChanged}" Width="60" TextAlignment="Center"/>
                                         <Label Content=" Skill 2"/>
-                                        <TextBox Text="{Binding TalismansSkill_2, UpdateSourceTrigger=PropertyChanged}" Width="60" TextAlignment="Center"/>
+                                        <TextBox Text="{Binding Skill2, UpdateSourceTrigger=PropertyChanged}" Width="60" TextAlignment="Center"/>
                                         <Label Content=" Rarity"/>
-                                        <ComboBox SelectedIndex="{Binding TalismansRarity}">
+                                        <ComboBox SelectedIndex="{Binding Rarity}">
                                             <ComboBoxItem Content="1"/>
                                             <ComboBoxItem Content="2"/>
                                             <ComboBoxItem Content="3"/>

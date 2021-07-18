@@ -58,6 +58,7 @@
     <Compile Include="AboutWindow.xaml.cs">
       <DependentUpon>AboutWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Armor.cs" />
     <Compile Include="Character.cs" />
     <Compile Include="CharacterVisibleConverter.cs" />
     <Compile Include="ChoiceWindow.xaml.cs">
@@ -80,9 +81,10 @@
     </Compile>
     <Compile Include="RaidActionID2NameConverter.cs" />
     <Compile Include="SaveData.cs" />
+    <Compile Include="Talisman.cs" />
     <Compile Include="Util.cs" />
     <Compile Include="ViewModel.cs" />
-    <Compile Include="Equipment.cs" />
+    <Compile Include="Weapon.cs" />
     <Page Include="AboutWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

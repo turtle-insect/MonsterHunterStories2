@@ -6,9 +6,9 @@ namespace MonsterHunterStories2
 	class ViewModel
 	{
 		public ObservableCollection<Item> Items { get; set; } = new ObservableCollection<Item>();
-		public ObservableCollection<Equipment> Weapons { get; set; } = new ObservableCollection<Equipment>();
-		public ObservableCollection<Equipment> Armors { get; set; } = new ObservableCollection<Equipment>();
-		public ObservableCollection<Equipment> Talismans { get; set; } = new ObservableCollection<Equipment>();
+		public ObservableCollection<Weapon> Weapons { get; set; } = new ObservableCollection<Weapon>();
+		public ObservableCollection<Armor> Armors { get; set; } = new ObservableCollection<Armor>();
+		public ObservableCollection<Talisman> Talismans { get; set; } = new ObservableCollection<Talisman>();
 		public ObservableCollection<Character> Characters { get; set; } = new ObservableCollection<Character>();
 		public ObservableCollection<Monster> Monsters { get; set; } = new ObservableCollection<Monster>();
 		public ObservableCollection<Egg> Eggs { get; set; } = new ObservableCollection<Egg>();
@@ -49,19 +49,19 @@ namespace MonsterHunterStories2
 
 			for (uint i = 0; i < Util.WEAPON_COUNT; i++)
 			{
-				Equipment weapon = new Equipment(Util.WEAPON_ADDRESS + Util.WEAPON_SIZE * i);
+				Weapon weapon = new Weapon(Util.WEAPON_ADDRESS + Util.WEAPON_SIZE * i);
 				Weapons.Add(weapon);
 			}
 
 			for (uint i = 0; i < Util.ARMOR_COUNT; i++)
 			{
-				Equipment armor = new Equipment(Util.ARMOR_ADDRESS + Util.ARMOR_SIZE * i);
+				Armor armor = new Armor(Util.ARMOR_ADDRESS + Util.ARMOR_SIZE * i);
 				Armors.Add(armor);
 			}
 
 			for (uint i = 0; i < Util.TALISMAN_COUNT; i++)
 			{
-				Equipment Talisman = new Equipment(Util.TALISMAN_ADDRESS + Util.TALISMAN_SIZE * i);
+				Talisman Talisman = new Talisman(Util.TALISMAN_ADDRESS + Util.TALISMAN_SIZE * i);
 				Talismans.Add(Talisman);
 			}
 		}
