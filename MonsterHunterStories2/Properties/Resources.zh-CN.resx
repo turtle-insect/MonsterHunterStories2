@@ -124,7 +124,7 @@
     <value>金币</value>
   </data>
   <data name="MainBasicPlayTime" xml:space="preserve">
-    <value>PlayTime</value>
+    <value>游玩时间</value>
   </data>
   <data name="MainCharacterBodyType" xml:space="preserve">
     <value>体型</value>

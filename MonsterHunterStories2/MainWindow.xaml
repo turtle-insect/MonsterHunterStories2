@@ -475,6 +475,17 @@
                                         <TextBox Text="{Binding TalismansSkill_1, UpdateSourceTrigger=PropertyChanged}" Width="60" TextAlignment="Center"/>
                                         <Label Content=" Skill 2"/>
                                         <TextBox Text="{Binding TalismansSkill_2, UpdateSourceTrigger=PropertyChanged}" Width="60" TextAlignment="Center"/>
+                                        <Label Content=" Rarity"/>
+                                        <ComboBox SelectedIndex="{Binding TalismansRarity}">
+                                            <ComboBoxItem Content="1"/>
+                                            <ComboBoxItem Content="2"/>
+                                            <ComboBoxItem Content="3"/>
+                                            <ComboBoxItem Content="4"/>
+                                            <ComboBoxItem Content="5"/>
+                                            <ComboBoxItem Content="6"/>
+                                            <ComboBoxItem Content="7"/>
+                                            <ComboBoxItem Content="8"/>
+                                        </ComboBox>
                                     </StackPanel>
                                 </DataTemplate>
                             </ListBox.ItemTemplate>
