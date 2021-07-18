@@ -71,5 +71,12 @@ namespace MonsterHunterStories2
 				PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(RideAction2)));
 			}
 		}
+		public void MaximizeGeneStack()
+		{
+			foreach (Gene gene in Genes)
+			{
+				gene.Stack = 2;
+			}
+		}
 	}
 }

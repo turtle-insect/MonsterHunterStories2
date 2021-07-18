@@ -144,9 +144,11 @@ namespace MonsterHunterStories2
 				Egg egg = new Egg(Util.EGG_ADDRESS + count * Util.EGG_SIZE);
 				viewmodel.Eggs.Add(egg);
 			}
-				
-			
-			SaveData.Instance().WriteNumber(Util.EGG_COUNT_ADDRESS, 1, count);
+
+			if (Properties.Settings.Default.PCConfirm)
+				SaveData.Instance().WriteNumber(Util.EGG_COUNT_ADDRESS+ Util.PC_ADDRESS, 1, count);
+			else
+				SaveData.Instance().WriteNumber(Util.EGG_COUNT_ADDRESS, 1, count);
 		}
 
 		private uint ChoiceMonsterRideAction(uint id)
@@ -167,9 +169,38 @@ namespace MonsterHunterStories2
 			string strs = Clipboard.GetText();
 			if (strs.Replace(" ", "").Length < 120) MessageBox.Show("Wrong Egg");
 			else SaveData.Instance().WriteHex(Util.EGG_ADDRESS + (uint)ListBoxEgg.SelectedIndex * Util.EGG_SIZE, strs);
-
-
 		}
-
+		private void ButtonChoiceGenes_Click(object sender, RoutedEventArgs e)
+		{
+			Gene gene = ListBoxGenes.SelectedItem as Gene;
+			if (gene == null) return;
+			var dlg = new ChoiceWindow();
+			dlg.ID = gene.ID;
+			dlg.Type = ChoiceWindow.eType.TYPE_GENE;
+			dlg.ShowDialog();
+			gene.ID = dlg.ID;
+		}
+		private void ButtonChoiceEggGenes_Click(object sender, RoutedEventArgs e)
+		{
+			Gene EggGene = ListBoxEggGenes.SelectedItem as Gene;
+			if (EggGene == null) return;
+			var dlg = new ChoiceWindow();
+			dlg.ID = EggGene.ID;
+			dlg.Type = ChoiceWindow.eType.TYPE_GENE;
+			dlg.ShowDialog();
+			EggGene.ID = dlg.ID;
+		}
+		private void MaxoutStack_Click(object sender, RoutedEventArgs e)
+		{
+			Monster monster = ListBoxMonster.SelectedItem as Monster;			
+			if (monster == null) return;
+			 monster.MaximizeGeneStack();
+        }
+		private void MaxoutEggStack_Click(object sender, RoutedEventArgs e)
+		{
+			Egg eggs = ListBoxEgg.SelectedItem as Egg;
+			if (eggs == null) return;
+			eggs.MaximizeGeneStack();
+		}
 	}
 }
