@@ -9,7 +9,7 @@
         WindowStartupLocation="CenterScreen"
         AllowDrop="True" Drop="Window_Drop" PreviewDragOver="Window_PreviewDragOver"
         Closed="Window_Closed"
-        Title="{x:Static prop:Resources.ApplicationTitle}" Height="550" Width="800">
+        Title="{x:Static prop:Resources.ApplicationTitle}" Height="500" Width="750">
     <Window.DataContext>
         <local:ViewModel/>
     </Window.DataContext>
@@ -217,8 +217,7 @@
                                                     <ComboBoxItem Content="+1"/>
                                                     <ComboBoxItem Content="+2"/>
                                                 </ComboBox>
-                                                <TextBox Text="{Binding ID, UpdateSourceTrigger=PropertyChanged}" Width="50"/>
-                                                <Button Content="..." Click="ButtonChoiceGenes_Click"/>
+                                                <Button Margin="10,0,0,0" Content="..." Click="ButtonChoiceGenes_Click"/>
                                                 <Label Content="{Binding ID, Converter={StaticResource GeneID2NameConverter}}"/>
                                             </StackPanel>
                                         </DataTemplate>
@@ -384,8 +383,7 @@
                                                     <ComboBoxItem Content="+1"/>
                                                     <ComboBoxItem Content="+2"/>
                                                 </ComboBox>
-                                                <TextBox Text="{Binding ID, UpdateSourceTrigger=PropertyChanged}" Width="50"/>
-                                                <Button Content="..." Click="ButtonChoiceGenes_Click"/>
+                                                <Button Margin="10,0,0,0" Content="..." Click="ButtonChoiceGenes_Click"/>
                                                 <Label Content="{Binding ID, Converter={StaticResource GeneID2NameConverter}}"/>
                                             </StackPanel>
                                         </DataTemplate>
