@@ -43,5 +43,6 @@ namespace MonsterHunterStories2
 				PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Smell)));
 			}
 		}
+
 	}
 }

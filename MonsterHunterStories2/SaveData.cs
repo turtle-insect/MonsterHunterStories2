@@ -160,7 +160,30 @@ namespace MonsterHunterStories2
 				mBuffer[address + i] = buffer[i];
 			}
 		}
-
+		public string ReadHex(uint address, uint size)
+		{
+			byte[] bytes = SaveData.Instance().ReadValue(address, size);
+			string returnStr = "";
+			if (bytes != null)
+			{
+				for (int i = 0; i < bytes.Length; i++)
+				{
+					if (i % 2 == 0 && i != 0) returnStr += " ";
+					returnStr += bytes[i].ToString("X2");
+				}
+			}
+			return returnStr;
+		}
+		public void WriteHex(uint address, string hexString)
+		{
+			hexString = hexString.Replace(" ", "");
+			if ((hexString.Length % 2) != 0)
+				hexString += " ";
+			byte[] returnBytes = new byte[hexString.Length / 2];
+			for (int i = 0; i < returnBytes.Length; i++)
+				returnBytes[i] = Convert.ToByte(hexString.Substring(i * 2, 2), 16);
+			SaveData.Instance().WriteValue(address, returnBytes);
+		}
 		public void Fill(uint address, uint size, Byte number)
 		{
 			if (mBuffer == null) return;
@@ -238,5 +261,7 @@ namespace MonsterHunterStories2
 				String.Format("{0:0000}-{1:00}-{2:00} {3:00}-{4:00}", now.Year, now.Month, now.Day, now.Hour, now.Minute));
 			System.IO.File.Copy(mFileName, path, true);
 		}
+
+		
 	}
 }
