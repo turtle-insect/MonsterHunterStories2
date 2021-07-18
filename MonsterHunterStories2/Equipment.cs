@@ -43,19 +43,19 @@ namespace MonsterHunterStories2
 		public uint ArmorsMainR
 		{
 			get { return SaveData.Instance().ReadNumber(mAddress + 20, 1); }
-			set { Util.WriteNumber(mAddress + 24, 1, value, 0, 255); }
+			set { Util.WriteNumber(mAddress + 20, 1, value, 0, 255); }
 		}
 
 		public uint ArmorsMainG
 		{
 			get { return SaveData.Instance().ReadNumber(mAddress + 21, 1); }
-			set { Util.WriteNumber(mAddress + 25, 1, value, 0, 255); }
+			set { Util.WriteNumber(mAddress + 21, 1, value, 0, 255); }
 		}
 
 		public uint ArmorsMainB
 		{
 			get { return SaveData.Instance().ReadNumber(mAddress + 22, 1); }
-			set { Util.WriteNumber(mAddress + 26, 1, value, 0, 255); }
+			set { Util.WriteNumber(mAddress + 22, 1, value, 0, 255); }
 		}
 		public uint ArmorsDR
 		{
