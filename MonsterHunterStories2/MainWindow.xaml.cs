@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows;
 using Microsoft.Win32;
-
+using System.Windows.Controls;
 
 namespace MonsterHunterStories2
 {
@@ -149,7 +149,7 @@ namespace MonsterHunterStories2
 
 		private void ButtonChoiceGenes_Click(object sender, RoutedEventArgs e)
 		{
-			Gene gene = ListBoxGenes.SelectedItem as Gene;
+			Gene gene = (sender as Button)?.DataContext as Gene;
 			if (gene == null) return;
 
 			var dlg = new ChoiceWindow();
@@ -157,18 +157,6 @@ namespace MonsterHunterStories2
 			dlg.Type = ChoiceWindow.eType.TYPE_GENE;
 			dlg.ShowDialog();
 			gene.ID = dlg.ID;
-		}
-
-		private void ButtonChoiceEggGenes_Click(object sender, RoutedEventArgs e)
-		{
-			Gene EggGene = ListBoxEggGenes.SelectedItem as Gene;
-			if (EggGene == null) return;
-
-			var dlg = new ChoiceWindow();
-			dlg.ID = EggGene.ID;
-			dlg.Type = ChoiceWindow.eType.TYPE_GENE;
-			dlg.ShowDialog();
-			EggGene.ID = dlg.ID;
 		}
 
 		private void ButtonMaxoutMonsterStack_Click(object sender, RoutedEventArgs e)

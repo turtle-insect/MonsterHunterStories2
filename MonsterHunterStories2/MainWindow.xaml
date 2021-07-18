@@ -150,7 +150,7 @@
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="120"/>
                         <ColumnDefinition/>
-                        <ColumnDefinition Width="1.55*"/>
+                        <ColumnDefinition Width="1.5*"/>
                     </Grid.ColumnDefinitions>
                     <ListBox x:Name="ListBoxMonster" ItemsSource="{Binding Monsters}" DisplayMemberPath="Name"/>
                     <Grid Grid.Column="1">
@@ -202,15 +202,15 @@
                         <TabItem Header="{x:Static prop:Resources.MainMonsterTabGene}">
                             <DockPanel>
                                 <Button DockPanel.Dock="Bottom" Content="Maximize Stack" Click="ButtonMaxoutMonsterStack_Click"/>
-                                <ListBox x:Name="ListBoxGenes" ItemsSource="{Binding ElementName=ListBoxMonster, Path=SelectedItem.Genes}">
+                                <ListBox ItemsSource="{Binding ElementName=ListBoxMonster, Path=SelectedItem.Genes}">
                                     <ListBox.Resources>
                                         <local:GeneID2NameConverter x:Key="GeneID2NameConverter"/>
                                     </ListBox.Resources>
                                     <ListBox.ItemTemplate>
                                         <DataTemplate>
                                             <StackPanel Orientation="Horizontal">
-                                                <Label Content="{Binding ID, Converter={StaticResource GeneID2NameConverter}}" Width="150"/>
                                                 <Button DockPanel.Dock="Bottom" Content="..." Click="ButtonChoiceGenes_Click"/>
+                                                <Label Content="{Binding ID, Converter={StaticResource GeneID2NameConverter}}" Width="150"/>
                                                 <TextBox Text="{Binding ID, UpdateSourceTrigger=PropertyChanged}" Width="50"/>
                                                 <Label Content="Lock"/>
                                                 <CheckBox IsChecked="{Binding Lock}" VerticalAlignment="Center"/>
@@ -326,7 +326,7 @@
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="120"/>
                         <ColumnDefinition/>
-                        <ColumnDefinition Width="1.55*"/>
+                        <ColumnDefinition Width="1.5*"/>
                     </Grid.ColumnDefinitions>
                     <DockPanel>
                         <Button DockPanel.Dock="Bottom" Content="Append Egg" Click="ButtonAppendEgg_Click"/>
@@ -344,7 +344,8 @@
                         <Grid.RowDefinitions>
                             <RowDefinition/>
                             <RowDefinition/>
-                            <RowDefinition Height="12*"/>
+                            <RowDefinition Height="8*"/>
+                            <RowDefinition Height="4*"/>
                         </Grid.RowDefinitions>
                         <Label Content="ID"/>
                         <TextBox Grid.Column="1" Text="{Binding ElementName=ListBoxEgg, Path=SelectedItem.ID, UpdateSourceTrigger=PropertyChanged}"/>
@@ -354,22 +355,28 @@
                             <ComboBoxItem Content="{x:Static prop:Resources.MainEggSmellTypeGood}"/>
                             <ComboBoxItem Content="{x:Static prop:Resources.MainEggSmellTypeAmazing}"/>
                         </ComboBox>
-                        <TextBox x:Name="All_Hex" Grid.Row="2" Text="{Binding ElementName=ListBoxEgg, Path=SelectedItem.AllHex, UpdateSourceTrigger=PropertyChanged}" MaxWidth="460" TextWrapping="Wrap" Grid.ColumnSpan="2" Margin="0,0,0,133" IsReadOnly="True"/>
-                        <Button Grid.Row="2" Content ="Copy Hex"  Click="ButtonCopyEggHex_Click" Margin="19,204,153,88" Grid.ColumnSpan="2"  />
-                        <Button Grid.Row="2" Content ="Paste Hex"  Click="ButtonPasteEggHex_Click" Margin="61,204,25,88" Grid.Column="1"  />
+                        <TextBox x:Name="All_Hex" Grid.Row="2" Grid.ColumnSpan="2" Text="{Binding ElementName=ListBoxEgg, Path=SelectedItem.AllHex, UpdateSourceTrigger=PropertyChanged}" TextWrapping="Wrap" IsReadOnly="True"/>
+                        <Grid Grid.Row="3" Grid.ColumnSpan="2">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <Button Content ="Copy Hex" Margin="10" Click="ButtonCopyEggHex_Click"/>
+                            <Button Grid.Column="1" Content ="Paste Hex" Margin="10" Click="ButtonPasteEggHex_Click"/>
+                        </Grid>
                     </Grid>
                     <TabControl Grid.Column="2">
                         <TabItem Header="{x:Static prop:Resources.MainEggTabGene}">
                             <DockPanel>
                                 <Button DockPanel.Dock="Bottom" Content="Maximize Stack" Click="ButtonMaxoutEggStack_Click"/>
-                                <Button DockPanel.Dock="Bottom" Content="Select Gene" Click="ButtonChoiceEggGenes_Click" IsEnabled="{Binding ElementName=ListBoxEggGenes, Path=SelectedItems.Count}" />
-                                <ListBox x:Name="ListBoxEggGenes" ItemsSource="{Binding ElementName=ListBoxEgg, Path=SelectedItem.Genes}">
+                                <ListBox ItemsSource="{Binding ElementName=ListBoxEgg, Path=SelectedItem.Genes}">
                                     <ListBox.Resources>
                                         <local:GeneID2NameConverter x:Key="GeneID2NameConverter"/>
                                     </ListBox.Resources>
                                     <ListBox.ItemTemplate>
                                         <DataTemplate>
                                             <StackPanel Orientation="Horizontal">
+                                                <Button DockPanel.Dock="Bottom" Content="..." Click="ButtonChoiceGenes_Click"/>
                                                 <Label Content="{Binding ID, Converter={StaticResource GeneID2NameConverter}}" Width="150"/>
                                                 <TextBox Text="{Binding ID, UpdateSourceTrigger=PropertyChanged}" Width="50"/>
                                                 <Label Content="Lock"/>
