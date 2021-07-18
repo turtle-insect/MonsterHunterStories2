@@ -91,23 +91,50 @@ namespace MonsterHunterStories2
 		
 		public uint PlayTimeHour
 		{
-			get { return SaveData.Instance().ReadNumber(64, 4) / 3600; }
+			get {
+				if(Properties.Settings.Default.PCConfirm)
+					return SaveData.Instance().ReadNumber(64 + Util.PC_ADDRESS, 4) / 3600;
+				else 
+					return SaveData.Instance().ReadNumber(64, 4) / 3600;
+			}
 			set
 			{
-				uint time = SaveData.Instance().ReadNumber(64, 4) % 3600 + value * 3600;
-				SaveData.Instance().WriteNumber(64, 4, time);
+				if (Properties.Settings.Default.PCConfirm)
+				{
+					uint time = SaveData.Instance().ReadNumber(64 + Util.PC_ADDRESS, 4) % 3600 + value * 3600;
+					SaveData.Instance().WriteNumber(64 + Util.PC_ADDRESS, 4, time);
+				}
+                else
+                {
+					uint time = SaveData.Instance().ReadNumber(64, 4) % 3600 + value * 3600;
+					SaveData.Instance().WriteNumber(64, 4, time);
+				}
+				
 			}
 		}
 
 		public uint PlayTimeMinute
 		{
-			get { return SaveData.Instance().ReadNumber(64, 4) / 60 % 60; }
+			get {
+				if (Properties.Settings.Default.PCConfirm)
+					return SaveData.Instance().ReadNumber(64 + Util.PC_ADDRESS, 4) / 60 % 60;
+				else
+					return SaveData.Instance().ReadNumber(64, 4) / 60 % 60;
+			}
 			set
 			{
 				if (value < 0) value = 0;
 				if (value > 59) value = 59;
-				uint time = SaveData.Instance().ReadNumber(64, 4) / 3600 * 3600 + value * 60;
-				SaveData.Instance().WriteNumber(64, 4, time);
+				if (Properties.Settings.Default.PCConfirm)
+				{
+					uint time = SaveData.Instance().ReadNumber(64 + Util.PC_ADDRESS, 4) / 3600 * 3600 + value * 60;
+					SaveData.Instance().WriteNumber(64 + Util.PC_ADDRESS, 4, time);
+				}
+                else
+                {
+					uint time = SaveData.Instance().ReadNumber(64, 4) / 3600 * 3600 + value * 60;
+					SaveData.Instance().WriteNumber(64, 4, time);
+				}
 			}
 		}
 	}
