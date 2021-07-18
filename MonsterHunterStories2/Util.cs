@@ -46,29 +46,33 @@ namespace MonsterHunterStories2
 			return ITEM_ADDRESS + id * 8;
 		}
 
-		public static string ReadHex(uint address, uint size)
+		public static String ReadHex(uint address, uint size)
 		{
 			byte[] bytes = SaveData.Instance().ReadValue(address, size);
-			string returnStr = "";
-			if (bytes != null)
+			if (bytes == null) return "";
+
+			var hexText = new System.Text.StringBuilder();
+			for (int i = 0; i < bytes.Length; i++)
 			{
-				for (int i = 0; i < bytes.Length; i++)
-				{
-					if (i % 2 == 0 && i != 0) returnStr += " ";
-					returnStr += bytes[i].ToString("X2");
-				}
+				if (i % 2 == 0 && i != 0) hexText.Append(" ");
+				hexText.Append(bytes[i].ToString("X2"));
 			}
-			return returnStr;
+			return hexText.ToString();
 		}
 
-		public static void WriteHex(uint address, string hexString)
+		public static void WriteHex(uint address, String hexString)
 		{
 			hexString = hexString.Replace(" ", "");
-			if ((hexString.Length % 2) != 0)
+			if (hexString.Length % 2 != 0)
+			{
 				hexString += "0";
+			}
+
 			byte[] writeBytes = new byte[hexString.Length / 2];
 			for (int i = 0; i < writeBytes.Length; i++)
+			{
 				writeBytes[i] = Convert.ToByte(hexString.Substring(i * 2, 2), 16);
+			}
 			SaveData.Instance().WriteValue(address, writeBytes);
 		}
 	}

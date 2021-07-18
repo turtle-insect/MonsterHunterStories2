@@ -9,7 +9,7 @@
         WindowStartupLocation="CenterScreen"
         AllowDrop="True" Drop="Window_Drop" PreviewDragOver="Window_PreviewDragOver"
         Closed="Window_Closed"
-        Title="{x:Static prop:Resources.ApplicationTitle}" Height="500" Width="750">
+        Title="{x:Static prop:Resources.ApplicationTitle}" Height="500" Width="700">
     <Window.DataContext>
         <local:ViewModel/>
     </Window.DataContext>
@@ -185,18 +185,15 @@
                             <Button DockPanel.Dock="Right" Content="..." Click="ButtonChoiceMonster_Click"/>
                             <Label Content="{Binding ElementName=ListBoxMonster, Path=SelectedItem.ID, Converter={StaticResource MonsterID2NameConverter}}"/>
                         </DockPanel>
-                        <TextBox Grid.Row="4" Grid.Column="1" Text="{Binding ElementName=ListBoxMonster, Path=SelectedItem.ID, UpdateSourceTrigger=PropertyChanged}"/>
-                        <Label Grid.Row="5" Content="{x:Static prop:Resources.MainMonsterRideAction}"/>
-                        <DockPanel Grid.Row="5" Grid.Column="1">
+                        <Label Grid.Row="4" Content="{x:Static prop:Resources.MainMonsterRideAction}"/>
+                        <DockPanel Grid.Row="4" Grid.Column="1">
                             <Button DockPanel.Dock="Right" Content="..." Click="ButtonChoiceRaidAction1_Click"/>
                             <Label Content="{Binding ElementName=ListBoxMonster, Path=SelectedItem.RideAction1, Converter={StaticResource RaidActionID2NameConverter}}"/>
                         </DockPanel>
-                        <TextBox Grid.Row="6" Grid.Column="1" Text="{Binding ElementName=ListBoxMonster, Path=SelectedItem.RideAction1, UpdateSourceTrigger=PropertyChanged}"/>
-                        <DockPanel Grid.Row="7" Grid.Column="1">
+                        <DockPanel Grid.Row="5" Grid.Column="1">
                             <Button DockPanel.Dock="Right" Content="..." Click="ButtonChoiceRaidAction2_Click"/>
                             <Label Content="{Binding ElementName=ListBoxMonster, Path=SelectedItem.RideAction2, Converter={StaticResource RaidActionID2NameConverter}}"/>
                         </DockPanel>
-                        <TextBox Grid.Row="8" Grid.Column="1" Text="{Binding ElementName=ListBoxMonster, Path=SelectedItem.RideAction2, UpdateSourceTrigger=PropertyChanged}"/>
                     </Grid>
                     <TabControl Grid.Column="2">
                         <TabItem Header="{x:Static prop:Resources.MainMonsterTabGene}">
