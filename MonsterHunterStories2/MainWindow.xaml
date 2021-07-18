@@ -42,6 +42,9 @@
                 <ComboBoxItem Content="中文"/>
                 <ComboBoxItem Content="French"/>
             </ComboBox>
+            <CheckBox IsChecked="{Binding Path=PCConfirm, Source={x:Static prop:Settings.Default}}" VerticalAlignment="Center">
+                <Label Content="PC?" VerticalAlignment="Center"/>
+            </CheckBox>
         </ToolBar>
         <TabControl>
             <TabItem Header="{x:Static prop:Resources.MainTabBasic}">

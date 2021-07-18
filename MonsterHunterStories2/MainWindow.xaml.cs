@@ -94,7 +94,10 @@ namespace MonsterHunterStories2
 			viewmodel.Items.Add(item);
 
 			// アイテム持ちのフラグ設定
-			SaveData.Instance().WriteBit(0x12B68 + id / 8, id % 8, true);
+			if (Properties.Settings.Default.PCConfirm)
+				SaveData.Instance().WriteBit(Util.ITEMSETTING_ADDRESS + Util.PC_ADDRESS + id / 8, id % 8, true);
+			else
+				SaveData.Instance().WriteBit(Util.ITEMSETTING_ADDRESS + id / 8, id % 8, true);
 		}
 
 		private void ButtonChoiceMonster_Click(object sender, RoutedEventArgs e)
@@ -130,8 +133,18 @@ namespace MonsterHunterStories2
 
 			ViewModel viewmodel = DataContext as ViewModel;
 			if (viewmodel == null) return;
-			Egg egg = new Egg(Util.EGG_ADDRESS + count * Util.EGG_SIZE);
-			viewmodel.Eggs.Add(egg);
+			if (Properties.Settings.Default.PCConfirm)
+            {
+				Egg egg = new Egg(Util.EGG_ADDRESS + Util.PC_ADDRESS + count * Util.EGG_SIZE);
+				viewmodel.Eggs.Add(egg);
+			}
+            else
+            {
+				Egg egg = new Egg(Util.EGG_ADDRESS + count * Util.EGG_SIZE);
+				viewmodel.Eggs.Add(egg);
+			}
+				
+			
 			SaveData.Instance().WriteNumber(Util.EGG_COUNT_ADDRESS, 1, count);
 		}
 

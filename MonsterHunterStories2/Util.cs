@@ -2,6 +2,8 @@
 {
 	class Util
 	{
+		public const uint PC_ADDRESS = 0x30;
+
 		public const uint CHARACTER_ADDRESS = 0x2D2A98;
 		public const uint CHARACTER_COUNT = 31;
 		public const uint CHARACTER_SIZE = 596;
@@ -27,6 +29,9 @@
 		public const uint TALISMAN_COUNT = 200;
 		public const uint TALISMAN_SIZE = 48;
 
+		public const uint ITEMSETTING_ADDRESS = 0x12B68;
+		public const uint MONEY_ADDRESS = 0x48;
+		public const uint ITEM_ADDRESS = 0x4C;
 		public static void WriteNumber(uint address, uint size, uint value, uint min, uint max)
 		{
 			if (value < min) value = min;
@@ -36,7 +41,7 @@
 
 		public static uint ItemIDAddress(uint id)
 		{
-			return 0x4C + id * 8;
+			return ITEM_ADDRESS + id * 8;
 		}
 	}
 }
