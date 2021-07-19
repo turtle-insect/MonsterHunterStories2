@@ -45,3 +45,6 @@ https://docs.google.com/spreadsheets/d/1QzM9X34IfACPtRa_yWq2BZUidWJqs0l2K_Gs2023
 * [iSharingan](https://github.com/iSharingan)
 * [jim972329667](https://github.com/jim972329667)
 * [p-eis](https://github.com/p-eis)
+
+# GBA TEMP
+https://gbatemp.net/threads/monster-hunter-stories-2-demo-save-editor.590851/
