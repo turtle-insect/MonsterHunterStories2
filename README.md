@@ -25,21 +25,22 @@ https://github.com/Andoryuuta/MHS2SaveKeygen
 https://docs.google.com/spreadsheets/d/1ePQdOEW_MQfNVqc3drSmGQN_wdaOAljhINBGiRgggxY  
 https://docs.google.com/spreadsheets/d/1QzM9X34IfACPtRa_yWq2BZUidWJqs0l2K_Gs2023bO0
 
-# 実行に必要
-* Windows マシン
-* .NET Framework 4.8の導入
-* セーブデータの吸い出し
-* セーブデータの書き戻し
+# Execution Requirements
+* Windows OS
+* .NET Framework 4.8
+* SaveDate Backup
+* SaveDate Restore
 
-# Build環境
+# Build Environment
 * Windows 10(64bit)
 * Visual Studio 2019
 
-# 編集時の手順
-* saveDataを吸い出す
-* 『mhr_slot_x.sav』をToolで読み込む(x = 1 or ...)
-* 任意の編集を行う
-* saveDataを書き戻す
+# Step to Edit
+* SaveData Backup
+* Save editor will read in『mhr_slot_x.sav』(x = 1 or ...)
+* Perform any editing
+* Write out 『mhr_slot_x.sav』(x = 1 or ...)
+* SaveData Restore
 
 # Special Thanks
 * [iSharingan](https://github.com/iSharingan)
