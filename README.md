@@ -1,4 +1,5 @@
 ![DL Count](https://img.shields.io/github/downloads/turtle-insect/MonsterHunterStories2/total.svg)
+[![Build status](https://ci.appveyor.com/api/projects/status/mn3omca1bbq8jel9?svg=true)](https://ci.appveyor.com/project/turtle-insect/monsterhunterstories2)
 
 # Monster Hunter Stories 2
 Switch Monster Hunter Stories 2 SaveDate Editor  
