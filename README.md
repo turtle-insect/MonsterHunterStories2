@@ -9,7 +9,8 @@ If you would like to donate, we would be happy to give me an [amazon gift](https
 <mail : turtle.insect@gmail.com>
 
 
-# Portal
+# Official Game Site
+https://www.monsterhunter.com/stories2/uk/
 https://www.capcom.co.jp/monsterhunter/stories2/
 
 # Soft
@@ -17,11 +18,13 @@ https://www.capcom.co.jp/monsterhunter/stories2/
 https://store-jp.nintendo.com/list/software/70010000016893.html  
 ■Steam  
 https://store.steampowered.com/app/1277400  
-※Converter  
-https://github.com/AsteriskAmpersand/MHST2-Save-Tools  
-https://github.com/Andoryuuta/MHS2SaveKeygen
 
-# Resource
+# Relation Tool
+■Converter  
+https://github.com/AsteriskAmpersand/MHST2-Save-Tools  
+https://github.com/Andoryuuta/MHS2SaveKeygen  
+
+■Date Value Table  
 https://docs.google.com/spreadsheets/d/1ePQdOEW_MQfNVqc3drSmGQN_wdaOAljhINBGiRgggxY  
 https://docs.google.com/spreadsheets/d/1QzM9X34IfACPtRa_yWq2BZUidWJqs0l2K_Gs2023bO0
 
