@@ -10,7 +10,7 @@ If you would like to donate, we would be happy to give me an [amazon gift](https
 
 
 # Official Game Site
-https://www.monsterhunter.com/stories2/uk/
+https://www.monsterhunter.com/stories2/uk/  
 https://www.capcom.co.jp/monsterhunter/stories2/
 
 # Soft
