@@ -85,6 +85,7 @@
     <Compile Include="Util.cs" />
     <Compile Include="ViewModel.cs" />
     <Compile Include="Weapon.cs" />
+    <Compile Include="WeaponID2NameConverter.cs" />
     <Page Include="AboutWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
