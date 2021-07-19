@@ -149,7 +149,7 @@ namespace MonsterHunterStories2
 			if (egg == null) return;
 
 			string info = Clipboard.GetText();
-			if (info.Replace(" ", "").Length != (int)Util.EGG_SIZE)
+			if (info.Replace(" ", "").Length != (int)Util.EGG_SIZE * 2)
 			{
 				MessageBox.Show("Wrong Egg");
 				return;
