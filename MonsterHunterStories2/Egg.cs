@@ -22,6 +22,7 @@ namespace MonsterHunterStories2
         {
             get
             {
+				if (ID == 0) return "None";
 				return Info.Instance().Search(Info.Instance().Monster, ID)?.Value;
 			}
         }
