@@ -9,7 +9,7 @@
         WindowStartupLocation="CenterScreen"
         AllowDrop="True" Drop="Window_Drop" PreviewDragOver="Window_PreviewDragOver"
         Closed="Window_Closed"
-        Title="{x:Static prop:Resources.ApplicationTitle}" Height="500" Width="700">
+        Title="{x:Static prop:Resources.ApplicationTitle}" Height="550" Width="750">
     <Window.DataContext>
         <local:ViewModel/>
     </Window.DataContext>
@@ -198,7 +198,8 @@
                     <TabControl Grid.Column="2">
                         <TabItem Header="{x:Static prop:Resources.MainMonsterTabGene}">
                             <DockPanel>
-                                <Button DockPanel.Dock="Bottom" Content="Maximize Stack" Click="ButtonMaxoutMonsterStack_Click"/>
+                                <Button DockPanel.Dock="Bottom" Content="Stack Max" Click="ButtonMonsterGeneStackMax_Click"/>
+                                <Button DockPanel.Dock="Bottom" Content="Unlock" Click="ButtonMonsterGeneUnlock_Click"/>
                                 <ListBox ItemsSource="{Binding ElementName=ListBoxMonster, Path=SelectedItem.Genes}">
                                     <ListBox.Resources>
                                         <local:GeneID2NameConverter x:Key="GeneID2NameConverter"/>
@@ -214,7 +215,9 @@
                                                     <ComboBoxItem Content="+1"/>
                                                     <ComboBoxItem Content="+2"/>
                                                 </ComboBox>
-                                                <Button Margin="10,0,0,0" Content="..." Click="ButtonChoiceGenes_Click"/>
+                                                <Label Content=" ID"/>
+                                                <TextBox Text="{Binding ID, UpdateSourceTrigger=PropertyChanged}" Width="40"/>
+                                                <Button Content="..." Click="ButtonChoiceGenes_Click"/>
                                                 <Label Content="{Binding ID, Converter={StaticResource GeneID2NameConverter}}"/>
                                             </StackPanel>
                                         </DataTemplate>
@@ -364,7 +367,8 @@
                     <TabControl Grid.Column="2">
                         <TabItem Header="{x:Static prop:Resources.MainEggTabGene}">
                             <DockPanel>
-                                <Button DockPanel.Dock="Bottom" Content="Maximize Stack" Click="ButtonMaxoutEggStack_Click"/>
+                                <Button DockPanel.Dock="Bottom" Content="Stack Max" Click="ButtonEggGeneStackMax_Click"/>
+                                <Button DockPanel.Dock="Bottom" Content="Unlock" Click="ButtonEggGeneUnlock_Click"/>
                                 <ListBox ItemsSource="{Binding ElementName=ListBoxEgg, Path=SelectedItem.Genes}">
                                     <ListBox.Resources>
                                         <local:GeneID2NameConverter x:Key="GeneID2NameConverter"/>
@@ -380,7 +384,9 @@
                                                     <ComboBoxItem Content="+1"/>
                                                     <ComboBoxItem Content="+2"/>
                                                 </ComboBox>
-                                                <Button Margin="10,0,0,0" Content="..." Click="ButtonChoiceGenes_Click"/>
+                                                <Label Content=" ID"/>
+                                                <TextBox Text="{Binding ID, UpdateSourceTrigger=PropertyChanged}" Width="40"/>
+                                                <Button Content="..." Click="ButtonChoiceGenes_Click"/>
                                                 <Label Content="{Binding ID, Converter={StaticResource GeneID2NameConverter}}"/>
                                             </StackPanel>
                                         </DataTemplate>
@@ -416,6 +422,18 @@
                                             <ComboBoxItem Content="{x:Static prop:Resources.MainEquipmentWeaponG}"/>
                                             <ComboBoxItem Content="{x:Static prop:Resources.MainEquipmentWeaponB}"/>
                                         </ComboBox>
+                                        <Button Margin="10,0,0,0" Content="..." Click="ButtonChoiceWeapon_Click"/>
+                                        <Label>
+                                            <Label.Resources>
+                                                <local:WeaponID2NameConverter x:Key="WeaponID2NameConverter"/>
+                                            </Label.Resources>
+                                            <Label.Content>
+                                                <MultiBinding Converter="{StaticResource WeaponID2NameConverter}">
+                                                    <Binding Path="ID"/>
+                                                    <Binding Path="Type"/>
+                                                </MultiBinding>
+                                            </Label.Content>
+                                        </Label>
                                     </StackPanel>
                                 </DataTemplate>
                             </ListBox.ItemTemplate>

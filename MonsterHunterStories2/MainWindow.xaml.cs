@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows;
-using Microsoft.Win32;
 using System.Windows.Controls;
+using Microsoft.Win32;
 
 namespace MonsterHunterStories2
 {
@@ -108,6 +108,22 @@ namespace MonsterHunterStories2
 			monster.ID = dlg.ID;
 		}
 
+		private void ButtonChoiceWeapon_Click(object sender, RoutedEventArgs e)
+		{
+			Weapon weapon = (sender as Button)?.DataContext as Weapon;
+			if (weapon == null) return;
+
+			var dlg = new ChoiceWindow();
+			dlg.ID = weapon.ID;
+			dlg.Type = ChoiceWindow.eType.TYPE_WEAPON;
+			dlg.WeaponType = weapon.Type;
+			if (dlg.WeaponType >= Info.Instance().Weapon.Count) dlg.WeaponType = 0;
+			if (dlg.ShowDialog() == false) return;
+
+			weapon.ID = dlg.ID;
+			weapon.Type = dlg.WeaponType;
+		}
+
 		private void ButtonChoiceRaidAction1_Click(object sender, RoutedEventArgs e)
 		{
 			Monster monster = ListBoxMonster.SelectedItem as Monster;
@@ -124,11 +140,11 @@ namespace MonsterHunterStories2
 
 		private void ButtonAppendEgg_Click(object sender, RoutedEventArgs e)
 		{
-			uint count = (uint)ListBoxEgg.Items.Count;
-			if (count >= Util.EGG_COUNT) return;
-
 			ViewModel viewmodel = DataContext as ViewModel;
 			if (viewmodel == null) return;
+
+			uint count = (uint)viewmodel.Eggs.Count;
+			if (count >= Util.EGG_COUNT) return;
 
 			Egg egg = new Egg(Util.EGG_ADDRESS + count * Util.EGG_SIZE);
 			viewmodel.Eggs.Add(egg);
@@ -149,7 +165,7 @@ namespace MonsterHunterStories2
 			if (egg == null) return;
 
 			string info = Clipboard.GetText();
-			if (info.Replace(" ", "").Length != (int)Util.EGG_SIZE*2)
+			if (info.Replace(" ", "").Length != Util.EGG_SIZE * 2)
 			{
 				MessageBox.Show("Wrong Egg");
 				return;
@@ -170,7 +186,7 @@ namespace MonsterHunterStories2
 			gene.ID = dlg.ID;
 		}
 
-		private void ButtonMaxoutMonsterStack_Click(object sender, RoutedEventArgs e)
+		private void ButtonMonsterGeneStackMax_Click(object sender, RoutedEventArgs e)
 		{
 			Monster monster = ListBoxMonster.SelectedItem as Monster;			
 			if (monster == null) return;
@@ -181,7 +197,18 @@ namespace MonsterHunterStories2
 			}
         }
 
-		private void ButtonMaxoutEggStack_Click(object sender, RoutedEventArgs e)
+		private void ButtonMonsterGeneUnlock_Click(object sender, RoutedEventArgs e)
+		{
+			Monster monster = ListBoxMonster.SelectedItem as Monster;
+			if (monster == null) return;
+
+			foreach (var gene in monster.Genes)
+			{
+				gene.Lock = false;
+			}
+		}
+
+		private void ButtonEggGeneStackMax_Click(object sender, RoutedEventArgs e)
 		{
 			Egg egg = ListBoxEgg.SelectedItem as Egg;
 			if (egg == null) return;
@@ -189,6 +216,17 @@ namespace MonsterHunterStories2
 			foreach (var gene in egg.Genes)
 			{
 				gene.Stack = 2;
+			}
+		}
+
+		private void ButtonEggGeneUnlock_Click(object sender, RoutedEventArgs e)
+		{
+			Egg egg = ListBoxEgg.SelectedItem as Egg;
+			if (egg == null) return;
+
+			foreach (var gene in egg.Genes)
+			{
+				gene.Lock = false;
 			}
 		}
 

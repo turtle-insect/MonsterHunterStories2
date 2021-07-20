@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MonsterHunterStories2"
+        xmlns:prop="clr-namespace:MonsterHunterStories2.Properties"
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
         Title="ChoiceWindow" Height="300" Width="300"
@@ -11,8 +12,19 @@
     <Grid>
         <DockPanel>
             <DockPanel DockPanel.Dock="Top">
-                <Label Content="Filter"/>
+                <Label Content="Filter" Width="40"/>
                 <TextBox x:Name="TextBoxFilter" TextChanged="TextBoxFilter_TextChanged" TabIndex="0"/>
+            </DockPanel>
+            <DockPanel x:Name="WeaponTypeArea" DockPanel.Dock="Top" Visibility="Collapsed">
+                <Label Content="Type" Width="40"/>
+                <ComboBox Name="ComboBoxWeaponType" SelectionChanged="ComboBoxItem_SelectionChanged">
+                    <ComboBoxItem Content="{x:Static prop:Resources.MainEquipmentWeaponGS}"/>
+                    <ComboBoxItem Content="{x:Static prop:Resources.MainEquipmentWeaponSS}"/>
+                    <ComboBoxItem Content="{x:Static prop:Resources.MainEquipmentWeaponH}"/>
+                    <ComboBoxItem Content="{x:Static prop:Resources.MainEquipmentWeaponHH}"/>
+                    <ComboBoxItem Content="{x:Static prop:Resources.MainEquipmentWeaponG}"/>
+                    <ComboBoxItem Content="{x:Static prop:Resources.MainEquipmentWeaponB}"/>
+                </ComboBox>
             </DockPanel>
             <Grid DockPanel.Dock="Bottom">
                 <Grid.ColumnDefinitions>
