@@ -11,6 +11,7 @@ namespace MonsterHunterStories2
 		public List<KeyValuesInfo> RideAction { get; private set; } = new List<KeyValuesInfo>();
 		public List<KeyValuesInfo> Gene { get; private set; } = new List<KeyValuesInfo>();
 		public Dictionary<uint, List<KeyValuesInfo>> Weapon { get; private set; } = new Dictionary<uint, List<KeyValuesInfo>>();
+		public List<KeyValuesInfo> Talisman { get; private set; } = new List<KeyValuesInfo>();
 		private Info() { }
 
 		public static Info Instance()
@@ -44,6 +45,7 @@ namespace MonsterHunterStories2
 			AppendList("info\\monster.txt", Monster);
 			AppendList("info\\ride.txt", RideAction);
 			AppendList("info\\gene.txt", Gene);
+			AppendList("info\\talisman.txt", Talisman);
 
 			String[] weapons = { "greatsword.txt", "swordshield.txt", "hammer.txt", "huntinghorn.txt", "gunlance.txt", "bow.txt" };
 			for (uint i = 0; i < weapons.Length; i++)
@@ -58,6 +60,7 @@ namespace MonsterHunterStories2
 			Monster.Sort();
 			RideAction.Sort();
 			Gene.Sort();
+			Talisman.Sort();
 		}
 
 		private void AppendList<Type>(String filename, List<Type> items)

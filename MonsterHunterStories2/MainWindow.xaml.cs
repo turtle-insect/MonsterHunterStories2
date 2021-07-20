@@ -185,7 +185,30 @@ namespace MonsterHunterStories2
 			dlg.ShowDialog();
 			gene.ID = dlg.ID;
 		}
-
+		private void ButtonChoiceTalisman_Click(object sender, RoutedEventArgs e)
+		{
+			Button b = sender as Button;
+			string btid = b.Name;
+			Talisman talisman = (b)?.DataContext as Talisman;
+			if (talisman == null) return;
+			var dlg = new ChoiceWindow();
+			dlg.Type = ChoiceWindow.eType.TYPE_TALISMAN;
+			switch (btid)
+			{
+				case "ButtonSkill1":
+					dlg.ID = talisman.Skill1;
+					dlg.ShowDialog();
+					talisman.Skill1 = dlg.ID;
+					break;
+				case "ButtonSkill2":
+					dlg.ID = talisman.Skill2;
+					dlg.ShowDialog();
+					talisman.Skill2 = dlg.ID;
+					break;
+				default:
+					break;
+			}	
+		}
 		private void ButtonMonsterGeneStackMax_Click(object sender, RoutedEventArgs e)
 		{
 			Monster monster = ListBoxMonster.SelectedItem as Monster;			
