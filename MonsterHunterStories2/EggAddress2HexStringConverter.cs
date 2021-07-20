@@ -1,16 +1,19 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Globalization;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Data;
 
 namespace MonsterHunterStories2
 {
-	class MonsterID2NameConverter : IValueConverter
+	class EggAddress2HexStringConverter : IValueConverter
 	{
 		public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
 		{
-			uint id = (uint)value;
-			if (id == 0) return "None";
-			return Info.Instance().Search(Info.Instance().Monster, id)?.Value;
+			uint address = (uint)value;
+			return Util.ReadHex(address, Util.EGG_SIZE);
 		}
 
 		public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)

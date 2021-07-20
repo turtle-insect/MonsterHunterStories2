@@ -164,7 +164,13 @@ namespace MonsterHunterStories2
 				return;
 			}
 
-			egg.AllHex = info;
+			ViewModel viewmodel = DataContext as ViewModel;
+			if (viewmodel == null) return;
+
+			Util.WriteHex(egg.Address, info);
+			viewmodel.Eggs.RemoveAt(index);
+			viewmodel.Eggs.Insert(index, new Egg(egg.Address));
+			ListBoxEgg.SelectedIndex = index;
 		}
 
 		private void ButtonChoiceGenes_Click(object sender, RoutedEventArgs e)

@@ -66,6 +66,7 @@
       <DependentUpon>ChoiceWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Egg.cs" />
+    <Compile Include="EggAddress2HexStringConverter.cs" />
     <Compile Include="Gene.cs" />
     <Compile Include="GeneID2NameConverter.cs" />
     <Compile Include="ILineAnalysis.cs" />
