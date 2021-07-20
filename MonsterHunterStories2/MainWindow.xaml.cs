@@ -67,12 +67,7 @@ namespace MonsterHunterStories2
 
 		private void ButtonChoiceItem_Click(object sender, RoutedEventArgs e)
 		{
-			var dlg = new ChoiceWindow();
-			dlg.ID = 0;
-			dlg.ShowDialog();
-			if (dlg.ID == 0) return;
-
-			uint id = dlg.ID;
+			uint id = ChoiceDialog(ChoiceWindow.eType.TYPE_ITEM, 0);
 			ViewModel viewmodel = DataContext as ViewModel;
 			if (viewmodel == null) return;
 
@@ -101,11 +96,7 @@ namespace MonsterHunterStories2
 			Monster monster = ListBoxMonster.SelectedItem as Monster;
 			if (monster == null) return;
 
-			var dlg = new ChoiceWindow();
-			dlg.ID = monster.ID;
-			dlg.Type = ChoiceWindow.eType.TYPE_MONSTER;
-			dlg.ShowDialog();
-			monster.ID = dlg.ID;
+			monster.ID = ChoiceDialog(ChoiceWindow.eType.TYPE_MONSTER, monster.ID);
 		}
 
 		private void ButtonChoiceWeapon_Click(object sender, RoutedEventArgs e)
@@ -181,11 +172,7 @@ namespace MonsterHunterStories2
 			Gene gene = (sender as Button)?.DataContext as Gene;
 			if (gene == null) return;
 
-			var dlg = new ChoiceWindow();
-			dlg.ID = gene.ID;
-			dlg.Type = ChoiceWindow.eType.TYPE_GENE;
-			dlg.ShowDialog();
-			gene.ID = dlg.ID;
+			gene.ID = ChoiceDialog(ChoiceWindow.eType.TYPE_GENE, gene.ID);
 		}
 
 		private void ButtonMonsterGeneStackMax_Click(object sender, RoutedEventArgs e)
@@ -230,6 +217,22 @@ namespace MonsterHunterStories2
 			{
 				gene.Lock = false;
 			}
+		}
+
+		private void ButtonChoiceArmor_Click(object sender, RoutedEventArgs e)
+		{
+			Armor armor = (sender as Button)?.DataContext as Armor;
+			if (armor == null) return;
+
+			armor.ID = ChoiceDialog(ChoiceWindow.eType.TYPE_ARMOR, armor.ID);
+		}
+
+		private void ButtonChoiceTalisman_Click(object sender, RoutedEventArgs e)
+		{
+			Talisman talisman = (sender as Button)?.DataContext as Talisman;
+			if (talisman == null) return;
+
+			talisman.ID = ChoiceDialog(ChoiceWindow.eType.TYPE_TALISMAN, talisman.ID);
 		}
 
 		private void ButtonChoiceTalismanSkill1_Click(object sender, RoutedEventArgs e)

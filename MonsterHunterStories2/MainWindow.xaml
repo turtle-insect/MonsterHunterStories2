@@ -441,6 +441,9 @@
                     </TabItem>
                     <TabItem Header="{x:Static prop:Resources.MainEquipmentTabArmor}">
                         <ListBox x:Name="ListBoxArmor" ItemsSource="{Binding Armors}">
+                            <ListBox.Resources>
+                                <local:ArmorID2NameConverter x:Key="ArmorID2NameConverter"/>
+                            </ListBox.Resources>
                             <ListBox.ItemTemplate>
                                 <DataTemplate>
                                     <StackPanel Orientation="Horizontal">
@@ -461,6 +464,8 @@
                                         <TextBox Text="{Binding DR, UpdateSourceTrigger=PropertyChanged}" Width="30" Background="LightPink"/>
                                         <TextBox Text="{Binding DG, UpdateSourceTrigger=PropertyChanged}" Width="30" Background="LightGreen"/>
                                         <TextBox Text="{Binding DB, UpdateSourceTrigger=PropertyChanged}" Width="30" Background="LightBlue"/>
+                                        <Button Margin="10,0,0,0" Content="..." Click="ButtonChoiceArmor_Click"/>
+                                        <Label Content="{Binding ID, Converter={StaticResource ArmorID2NameConverter}}"/>
                                     </StackPanel>
                                 </DataTemplate>
                             </ListBox.ItemTemplate>
@@ -469,6 +474,7 @@
                     <TabItem Header="{x:Static prop:Resources.MainEquipmentTabTalisman}">
                         <ListBox ItemsSource="{Binding Talismans}">
                             <ListBox.Resources>
+                                <local:TalismanID2NameConverter x:Key="TalismanID2NameConverter"/>
                                 <local:TalismanSkillID2NameConverter x:Key="TalismanSkillID2NameConverter"/>
                             </ListBox.Resources>
                             <ListBox.ItemTemplate>
@@ -488,6 +494,8 @@
                                             </ComboBox>
                                             <Label Content=" ID"/>
                                             <TextBox Text="{Binding ID, UpdateSourceTrigger=PropertyChanged}" Width="60"/>
+                                            <Button Margin="10,0,0,0" Content="..." Click="ButtonChoiceTalisman_Click"/>
+                                            <Label Content="{Binding ID, Converter={StaticResource TalismanID2NameConverter}}"/>
                                         </StackPanel>
                                         <StackPanel Orientation="Horizontal">
                                             <Label Content="Skill 1"/>

@@ -4,7 +4,7 @@
 # Monster Hunter Stories 2
 Switch Monster Hunter Stories 2 SaveDate Editor  
 **Tested with demo version.**  
-**Do not connect to the network**
+**Do not connect to the network & Coop**
 
 If you would like to donate, we would be happy to give me an [amazon gift](https://www.amazon.co.jp/dp/B004N3APGO)!  
 <mail : turtle.insect@gmail.com>
