@@ -9,7 +9,7 @@ namespace MonsterHunterStories2
 		public ObservableCollection<Gene> Genes { get; set; } = new ObservableCollection<Gene>();
 
 		private readonly uint mAddress;
-
+		
 		public Egg(uint address)
 		{
 			mAddress = address;
@@ -18,7 +18,13 @@ namespace MonsterHunterStories2
 				Genes.Add(new Gene(address + 8 + 4 * i));
 			}
 		}
-
+		public string Name
+        {
+            get
+            {
+				return Info.Instance().Search(Info.Instance().Monster, ID)?.Value;
+			}
+        }
 		public uint ID
 		{
 			get { return SaveData.Instance().ReadNumber(mAddress, 4); }
@@ -26,6 +32,7 @@ namespace MonsterHunterStories2
 			{
 				SaveData.Instance().WriteNumber(mAddress, 4, value);
 				PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(ID)));
+				PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Name)));
 			}
 		}
 
@@ -51,6 +58,9 @@ namespace MonsterHunterStories2
 			{
 				Util.WriteHex(mAddress, value);
 				PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(AllHex)));
+				PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(ID)));
+				PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Name)));
+				PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Smell)));
 			}
 		}
 	}

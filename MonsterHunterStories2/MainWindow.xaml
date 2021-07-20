@@ -329,7 +329,7 @@
                     </Grid.ColumnDefinitions>
                     <DockPanel>
                         <Button DockPanel.Dock="Bottom" Content="Append Egg" Click="ButtonAppendEgg_Click"/>
-                        <ListBox x:Name="ListBoxEgg" ItemsSource="{Binding Eggs}"/>
+                        <ListBox x:Name="ListBoxEgg" ItemsSource="{Binding Eggs}"  DisplayMemberPath="Name"/>
                     </DockPanel>
                     <Grid Grid.Column="1">
                         <Grid.Resources>
