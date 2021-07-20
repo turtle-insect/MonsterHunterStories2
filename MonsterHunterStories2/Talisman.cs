@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.ComponentModel;
+﻿using System.ComponentModel;
 
 namespace MonsterHunterStories2
 {
@@ -59,7 +54,7 @@ namespace MonsterHunterStories2
 		public uint Rarity
 		{
 			get { return SaveData.Instance().ReadNumber(mAddress + 36, 1); }
-			set { Util.WriteNumber(mAddress + 36, 1, value, 1, 8); }
+			set { Util.WriteNumber(mAddress + 36, 1, value, 0, 7); }
 		}
 	}
 }

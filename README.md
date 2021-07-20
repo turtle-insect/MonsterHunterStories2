@@ -1,4 +1,5 @@
 ![DL Count](https://img.shields.io/github/downloads/turtle-insect/MonsterHunterStories2/total.svg)
+[![Build status](https://ci.appveyor.com/api/projects/status/mn3omca1bbq8jel9?svg=true)](https://ci.appveyor.com/project/turtle-insect/monsterhunterstories2)
 
 # Monster Hunter Stories 2
 Switch Monster Hunter Stories 2 SaveDate Editor  
@@ -9,7 +10,8 @@ If you would like to donate, we would be happy to give me an [amazon gift](https
 <mail : turtle.insect@gmail.com>
 
 
-# Portal
+# Official Game Site
+https://www.monsterhunter.com/stories2/uk/  
 https://www.capcom.co.jp/monsterhunter/stories2/
 
 # Soft
@@ -17,29 +19,32 @@ https://www.capcom.co.jp/monsterhunter/stories2/
 https://store-jp.nintendo.com/list/software/70010000016893.html  
 ■Steam  
 https://store.steampowered.com/app/1277400  
-※Converter  
-https://github.com/AsteriskAmpersand/MHST2-Save-Tools  
-https://github.com/Andoryuuta/MHS2SaveKeygen
 
-# Resource
+# Relation Tool
+■Converter  
+https://github.com/AsteriskAmpersand/MHST2-Save-Tools  
+https://github.com/Andoryuuta/MHS2SaveKeygen  
+
+■Date Value Table  
 https://docs.google.com/spreadsheets/d/1ePQdOEW_MQfNVqc3drSmGQN_wdaOAljhINBGiRgggxY  
 https://docs.google.com/spreadsheets/d/1QzM9X34IfACPtRa_yWq2BZUidWJqs0l2K_Gs2023bO0
 
-# 実行に必要
-* Windows マシン
-* .NET Framework 4.8の導入
-* セーブデータの吸い出し
-* セーブデータの書き戻し
+# Execution Requirements
+* Windows OS
+* .NET Framework 4.8
+* SaveDate Backup
+* SaveDate Restore
 
-# Build環境
+# Build Environment
 * Windows 10(64bit)
 * Visual Studio 2019
 
-# 編集時の手順
-* saveDataを吸い出す
-* 『mhr_slot_x.sav』をToolで読み込む(x = 1 or ...)
-* 任意の編集を行う
-* saveDataを書き戻す
+# Step to Edit
+* SaveData Backup
+* Save editor will read in『mhr_slot_x.sav』(x = 1 or ...)
+* Perform any editing
+* Write out 『mhr_slot_x.sav』(x = 1 or ...)
+* SaveData Restore
 
 # Special Thanks
 * [iSharingan](https://github.com/iSharingan)
