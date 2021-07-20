@@ -44,7 +44,7 @@ namespace MonsterHunterStories2
 			get { return SaveData.Instance().ReadNumber(mAddress + 40, 2); }
 			set 
 			{
-				Util.WriteNumber(mAddress + 40, 2, value, 1, 0xFFFF);
+				Util.WriteNumber(mAddress + 40, 2, value, 0, 0xFFFF);
 				PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Skill1)));
 			}
 		}
@@ -54,7 +54,7 @@ namespace MonsterHunterStories2
 			get { return SaveData.Instance().ReadNumber(mAddress + 42, 2); }
 			set
 			{
-				Util.WriteNumber(mAddress + 42, 2, value, 1, 0xFFFF);
+				Util.WriteNumber(mAddress + 42, 2, value, 0, 0xFFFF);
 				PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Skill2)));
 			}
 		}

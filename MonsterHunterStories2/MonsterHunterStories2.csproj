@@ -82,7 +82,7 @@
     <Compile Include="RaidActionID2NameConverter.cs" />
     <Compile Include="SaveData.cs" />
     <Compile Include="Talisman.cs" />
-    <Compile Include="TalismanID2NameConverter.cs" />
+    <Compile Include="TalismanSkillID2NameConverter.cs" />
     <Compile Include="Util.cs" />
     <Compile Include="ViewModel.cs" />
     <Compile Include="Weapon.cs" />

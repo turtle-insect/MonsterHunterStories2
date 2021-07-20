@@ -128,14 +128,16 @@ namespace MonsterHunterStories2
 		{
 			Monster monster = ListBoxMonster.SelectedItem as Monster;
 			if (monster == null) return;
-			monster.RideAction1 = ChoiceMonsterRideAction(monster.RideAction1);
+
+			monster.RideAction1 = ChoiceDialog(ChoiceWindow.eType.TYPE_RAIDACTION, monster.RideAction1);
 		}
 
 		private void ButtonChoiceRaidAction2_Click(object sender, RoutedEventArgs e)
 		{
 			Monster monster = ListBoxMonster.SelectedItem as Monster;
 			if (monster == null) return;
-			monster.RideAction2 = ChoiceMonsterRideAction(monster.RideAction2);
+
+			monster.RideAction2 = ChoiceDialog(ChoiceWindow.eType.TYPE_RAIDACTION, monster.RideAction2);
 		}
 
 		private void ButtonAppendEgg_Click(object sender, RoutedEventArgs e)
@@ -185,30 +187,7 @@ namespace MonsterHunterStories2
 			dlg.ShowDialog();
 			gene.ID = dlg.ID;
 		}
-		private void ButtonChoiceTalisman_Click(object sender, RoutedEventArgs e)
-		{
-			Button b = sender as Button;
-			string btid = b.Name;
-			Talisman talisman = (b)?.DataContext as Talisman;
-			if (talisman == null) return;
-			var dlg = new ChoiceWindow();
-			dlg.Type = ChoiceWindow.eType.TYPE_TALISMAN;
-			switch (btid)
-			{
-				case "ButtonSkill1":
-					dlg.ID = talisman.Skill1;
-					dlg.ShowDialog();
-					talisman.Skill1 = dlg.ID;
-					break;
-				case "ButtonSkill2":
-					dlg.ID = talisman.Skill2;
-					dlg.ShowDialog();
-					talisman.Skill2 = dlg.ID;
-					break;
-				default:
-					break;
-			}	
-		}
+
 		private void ButtonMonsterGeneStackMax_Click(object sender, RoutedEventArgs e)
 		{
 			Monster monster = ListBoxMonster.SelectedItem as Monster;			
@@ -253,11 +232,27 @@ namespace MonsterHunterStories2
 			}
 		}
 
-		private uint ChoiceMonsterRideAction(uint id)
+		private void ButtonChoiceTalismanSkill1_Click(object sender, RoutedEventArgs e)
+		{
+			Talisman talisman = (sender as Button)?.DataContext as Talisman;
+			if (talisman == null) return;
+
+			talisman.Skill1 = ChoiceDialog(ChoiceWindow.eType.TYPE_TALISMAN_SKILL, talisman.Skill1);
+		}
+
+		private void ButtonChoiceTalismanSkill2_Click(object sender, RoutedEventArgs e)
+		{
+			Talisman talisman = (sender as Button)?.DataContext as Talisman;
+			if (talisman == null) return;
+
+			talisman.Skill2 = ChoiceDialog(ChoiceWindow.eType.TYPE_TALISMAN_SKILL, talisman.Skill2);
+		}
+
+		private uint ChoiceDialog(ChoiceWindow.eType type, uint id)
 		{
 			var dlg = new ChoiceWindow();
 			dlg.ID = id;
-			dlg.Type = ChoiceWindow.eType.TYPE_RAIDACTION;
+			dlg.Type = type;
 			dlg.ShowDialog();
 			return dlg.ID;
 		}
