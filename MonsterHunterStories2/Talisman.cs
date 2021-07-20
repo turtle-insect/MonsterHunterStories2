@@ -42,13 +42,21 @@ namespace MonsterHunterStories2
 		public uint Skill1
 		{
 			get { return SaveData.Instance().ReadNumber(mAddress + 40, 2); }
-			set { Util.WriteNumber(mAddress + 40, 2, value, 1, 0xFFFF); }
+			set 
+			{
+				Util.WriteNumber(mAddress + 40, 2, value, 1, 0xFFFF);
+				PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Skill1)));
+			}
 		}
 
 		public uint Skill2
 		{
 			get { return SaveData.Instance().ReadNumber(mAddress + 42, 2); }
-			set { Util.WriteNumber(mAddress + 42, 2, value, 1, 0xFFFF); }
+			set
+			{
+				Util.WriteNumber(mAddress + 42, 2, value, 1, 0xFFFF);
+				PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Skill2)));
+			}
 		}
 
 		public uint Rarity
@@ -56,5 +64,6 @@ namespace MonsterHunterStories2
 			get { return SaveData.Instance().ReadNumber(mAddress + 36, 1); }
 			set { Util.WriteNumber(mAddress + 36, 1, value, 0, 7); }
 		}
+
 	}
 }

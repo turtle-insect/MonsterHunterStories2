@@ -77,6 +77,7 @@ namespace MonsterHunterStories2
 			else if (Type == eType.TYPE_RAIDACTION) infos = Info.Instance().RideAction;
 			else if (Type == eType.TYPE_GENE) infos = Info.Instance().Gene;
 			else if (Type == eType.TYPE_WEAPON) infos = Info.Instance().Weapon[WeaponType];
+			else if (Type == eType.TYPE_TALISMAN) infos = Info.Instance().Talisman;
 
 			foreach (var info in infos)
 			{
