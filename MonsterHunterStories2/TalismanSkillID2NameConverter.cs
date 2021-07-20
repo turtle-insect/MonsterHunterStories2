@@ -4,12 +4,12 @@ using System.Windows.Data;
 
 namespace MonsterHunterStories2
 {
-	class TalismanID2NameConverter : IValueConverter
+	class TalismanSkillID2NameConverter : IValueConverter
 	{
 		public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
 		{
 			uint id = (uint)value;
-			String name = Info.Instance().Search(Info.Instance().Talisman, id)?.Value;
+			String name = Info.Instance().Search(Info.Instance().TalismanSkill, id)?.Value;
 			if (id == 0) name = "None";
 			if (String.IsNullOrEmpty(name)) name = "ID: " + id.ToString();
 			return name;

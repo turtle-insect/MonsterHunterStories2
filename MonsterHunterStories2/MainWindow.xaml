@@ -469,32 +469,38 @@
                     <TabItem Header="{x:Static prop:Resources.MainEquipmentTabTalisman}">
                         <ListBox ItemsSource="{Binding Talismans}">
                             <ListBox.Resources>
-                                <local:TalismanID2NameConverter x:Key="TalismanID2NameConverter"/>
+                                <local:TalismanSkillID2NameConverter x:Key="TalismanSkillID2NameConverter"/>
                             </ListBox.Resources>
                             <ListBox.ItemTemplate>
                                 <DataTemplate>
-                                    <StackPanel Orientation="Horizontal">
-                                        <Label Content="ID"/>
-                                        <TextBox Text="{Binding ID, UpdateSourceTrigger=PropertyChanged}" Width="60"/>
-                                        <Label Content=" Skill 1"/>                                        
-                                        <TextBox Text="{Binding Skill1, UpdateSourceTrigger=PropertyChanged}" Width="60"/>
-                                        <Button x:Name="ButtonSkill1" Content="..." Click="ButtonChoiceTalisman_Click"/>
-                                        <Label Content="{Binding Skill1, Converter={StaticResource TalismanID2NameConverter}}" Width="80"/>
-                                        <Label Content=" Skill 2"/>
-                                        <TextBox Text="{Binding Skill2, UpdateSourceTrigger=PropertyChanged}" Width="60"/>
-                                        <Button x:Name="ButtonSkill2" Content="..." Click="ButtonChoiceTalisman_Click"/>
-                                        <Label Content="{Binding Skill2, Converter={StaticResource TalismanID2NameConverter}}" Width="80"/>
-                                        <Label Content=" Rarity"/>
-                                        <ComboBox SelectedIndex="{Binding Rarity}">
-                                            <ComboBoxItem Content="1"/>
-                                            <ComboBoxItem Content="2"/>
-                                            <ComboBoxItem Content="3"/>
-                                            <ComboBoxItem Content="4"/>
-                                            <ComboBoxItem Content="5"/>
-                                            <ComboBoxItem Content="6"/>
-                                            <ComboBoxItem Content="7"/>
-                                            <ComboBoxItem Content="8"/>
-                                        </ComboBox>
+                                    <StackPanel>
+                                        <StackPanel Orientation="Horizontal">
+                                            <Label Content="Rarity"/>
+                                            <ComboBox SelectedIndex="{Binding Rarity}">
+                                                <ComboBoxItem Content="1"/>
+                                                <ComboBoxItem Content="2"/>
+                                                <ComboBoxItem Content="3"/>
+                                                <ComboBoxItem Content="4"/>
+                                                <ComboBoxItem Content="5"/>
+                                                <ComboBoxItem Content="6"/>
+                                                <ComboBoxItem Content="7"/>
+                                                <ComboBoxItem Content="8"/>
+                                            </ComboBox>
+                                            <Label Content=" ID"/>
+                                            <TextBox Text="{Binding ID, UpdateSourceTrigger=PropertyChanged}" Width="60"/>
+                                        </StackPanel>
+                                        <StackPanel Orientation="Horizontal">
+                                            <Label Content="Skill 1"/>
+                                            <TextBox Text="{Binding Skill1, UpdateSourceTrigger=PropertyChanged}" Width="60"/>
+                                            <Button Content="..." Click="ButtonChoiceTalismanSkill1_Click"/>
+                                            <Label Content="{Binding Skill1, Converter={StaticResource TalismanSkillID2NameConverter}}"/>
+                                        </StackPanel>
+                                        <StackPanel Orientation="Horizontal">
+                                            <Label Content="Skill 2"/>
+                                            <TextBox Text="{Binding Skill2, UpdateSourceTrigger=PropertyChanged}" Width="60"/>
+                                            <Button Content="..." Click="ButtonChoiceTalismanSkill2_Click"/>
+                                            <Label Content="{Binding Skill2, Converter={StaticResource TalismanSkillID2NameConverter}}"/>
+                                        </StackPanel>
                                     </StackPanel>
                                 </DataTemplate>
                             </ListBox.ItemTemplate>
