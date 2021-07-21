@@ -166,8 +166,15 @@ namespace MonsterHunterStories2
 
 			ViewModel viewmodel = DataContext as ViewModel;
 			if (viewmodel == null) return;
-
-			Util.WriteHex(egg.Address, info);
+			try
+			{
+				Util.WriteHex(egg.Address, info);
+			}
+			catch
+			{
+				MessageBox.Show("Wrong Egg");
+				return;
+			}
 			viewmodel.Eggs.RemoveAt(index);
 			viewmodel.Eggs.Insert(index, new Egg(egg.Address));
 			ListBoxEgg.SelectedIndex = index;
