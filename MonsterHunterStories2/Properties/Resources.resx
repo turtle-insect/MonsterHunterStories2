@@ -153,6 +153,15 @@
   <data name="MainCharacterVoice" xml:space="preserve">
     <value>Voice</value>
   </data>
+  <data name="MainEggAppendEgg" xml:space="preserve">
+    <value>Append Egg</value>
+  </data>
+  <data name="MainEggCopyHex" xml:space="preserve">
+    <value>Copy Hex</value>
+  </data>
+  <data name="MainEggPasteHex" xml:space="preserve">
+    <value>Paste Hex</value>
+  </data>
   <data name="MainEggSmell" xml:space="preserve">
     <value>Smell</value>
   </data>
@@ -165,8 +174,23 @@
   <data name="MainEggSmellTypeNormal" xml:space="preserve">
     <value>Normal</value>
   </data>
+  <data name="MainEggStack" xml:space="preserve">
+    <value>Stack</value>
+  </data>
+  <data name="MainEggStackMax" xml:space="preserve">
+    <value>Stack Max</value>
+  </data>
   <data name="MainEggTabGene" xml:space="preserve">
     <value>Gene</value>
+  </data>
+  <data name="MainEggUnlock" xml:space="preserve">
+    <value>Unlock</value>
+  </data>
+  <data name="MainEquipmentArmorBody" xml:space="preserve">
+    <value>Body</value>
+  </data>
+  <data name="MainEquipmentArmorDecorative" xml:space="preserve">
+    <value>Decorative parts</value>
   </data>
   <data name="MainEquipmentTabArmor" xml:space="preserve">
     <value>Armor</value>
@@ -176,6 +200,18 @@
   </data>
   <data name="MainEquipmentTabWeapon" xml:space="preserve">
     <value>Weapon</value>
+  </data>
+  <data name="MainEquipmentTalismanRarity" xml:space="preserve">
+    <value>Rarity</value>
+  </data>
+  <data name="MainEquipmentTalismanSkill1" xml:space="preserve">
+    <value>Skill 1</value>
+  </data>
+  <data name="MainEquipmentTalismanSkill2" xml:space="preserve">
+    <value>Skill 2</value>
+  </data>
+  <data name="MainEquipmentType" xml:space="preserve">
+    <value>Type</value>
   </data>
   <data name="MainEquipmentWeaponB" xml:space="preserve">
     <value>Bow</value>
@@ -194,6 +230,9 @@
   </data>
   <data name="MainEquipmentWeaponSS" xml:space="preserve">
     <value>Sword &amp; Shield</value>
+  </data>
+  <data name="MainItemAppend" xml:space="preserve">
+    <value>Append/Search Item</value>
   </data>
   <data name="MainMenuAbout" xml:space="preserve">
     <value>_About</value>
@@ -255,6 +294,12 @@
   <data name="MainMonsterRideAction" xml:space="preserve">
     <value>RideAction</value>
   </data>
+  <data name="MainMonsterStack" xml:space="preserve">
+    <value>Stack</value>
+  </data>
+  <data name="MainMonsterStackMax" xml:space="preserve">
+    <value>Stack Max</value>
+  </data>
   <data name="MainMonsterTabBonus" xml:space="preserve">
     <value>Bonus</value>
   </data>
@@ -273,11 +318,17 @@
   <data name="MainMonsterType" xml:space="preserve">
     <value>Type</value>
   </data>
+  <data name="MainMonsterUnlock" xml:space="preserve">
+    <value>Unlock</value>
+  </data>
   <data name="MainMonsterWaterAttack" xml:space="preserve">
     <value>Water Attack</value>
   </data>
   <data name="MainMonsterWaterDefense" xml:space="preserve">
     <value>Water Defense</value>
+  </data>
+  <data name="MainNoneType" xml:space="preserve">
+    <value>None</value>
   </data>
   <data name="MainTabBasic" xml:space="preserve">
     <value>Basic</value>
@@ -296,23 +347,5 @@
   </data>
   <data name="MainTabMonster" xml:space="preserve">
     <value>Monster</value>
-  </data>
-  <data name="MainWeaponB" xml:space="preserve">
-    <value>Bow</value>
-  </data>
-  <data name="MainWeaponG" xml:space="preserve">
-    <value>Gunlance</value>
-  </data>
-  <data name="MainWeaponGS" xml:space="preserve">
-    <value>Great Sword</value>
-  </data>
-  <data name="MainWeaponH" xml:space="preserve">
-    <value>Hammer</value>
-  </data>
-  <data name="MainWeaponHH" xml:space="preserve">
-    <value>Hunting Horn</value>
-  </data>
-  <data name="MainWeaponSS" xml:space="preserve">
-    <value>Sword &amp;amp; Shield</value>
   </data>
 </root>

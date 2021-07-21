@@ -153,6 +153,15 @@
   <data name="MainCharacterVoice" xml:space="preserve">
     <value>声音</value>
   </data>
+  <data name="MainEggAppendEgg" xml:space="preserve">
+    <value>添加宠物蛋</value>
+  </data>
+  <data name="MainEggCopyHex" xml:space="preserve">
+    <value>复制代码</value>
+  </data>
+  <data name="MainEggPasteHex" xml:space="preserve">
+    <value>粘贴代码</value>
+  </data>
   <data name="MainEggSmell" xml:space="preserve">
     <value>气味</value>
   </data>
@@ -165,8 +174,23 @@
   <data name="MainEggSmellTypeNormal" xml:space="preserve">
     <value>普通的气味</value>
   </data>
+  <data name="MainEggStack" xml:space="preserve">
+    <value>Stack</value>
+  </data>
+  <data name="MainEggStackMax" xml:space="preserve">
+    <value>Stack Max</value>
+  </data>
   <data name="MainEggTabGene" xml:space="preserve">
     <value>基因</value>
+  </data>
+  <data name="MainEggUnlock" xml:space="preserve">
+    <value>全部解锁</value>
+  </data>
+  <data name="MainEquipmentArmorBody" xml:space="preserve">
+    <value>主要部分</value>
+  </data>
+  <data name="MainEquipmentArmorDecorative" xml:space="preserve">
+    <value>装饰部分</value>
   </data>
   <data name="MainEquipmentTabArmor" xml:space="preserve">
     <value>防具</value>
@@ -176,6 +200,18 @@
   </data>
   <data name="MainEquipmentTabWeapon" xml:space="preserve">
     <value>武器</value>
+  </data>
+  <data name="MainEquipmentTalismanRarity" xml:space="preserve">
+    <value>稀有度</value>
+  </data>
+  <data name="MainEquipmentTalismanSkill1" xml:space="preserve">
+    <value>技能一</value>
+  </data>
+  <data name="MainEquipmentTalismanSkill2" xml:space="preserve">
+    <value>技能二</value>
+  </data>
+  <data name="MainEquipmentType" xml:space="preserve">
+    <value>类型</value>
   </data>
   <data name="MainEquipmentWeaponB" xml:space="preserve">
     <value>弓</value>
@@ -195,6 +231,9 @@
   <data name="MainEquipmentWeaponSS" xml:space="preserve">
     <value>单手剑</value>
   </data>
+  <data name="MainItemAppend" xml:space="preserve">
+    <value>添加/搜索物品</value>
+  </data>
   <data name="MainMenuAbout" xml:space="preserve">
     <value>关于</value>
   </data>
@@ -213,17 +252,83 @@
   <data name="MainMenuFileSaveAs" xml:space="preserve">
     <value>另存为...(_A)</value>
   </data>
+  <data name="MainMonsterCurrentHP" xml:space="preserve">
+    <value>当前生命值</value>
+  </data>
+  <data name="MainMonsterDragonAttack" xml:space="preserve">
+    <value>龙属性攻击</value>
+  </data>
+  <data name="MainMonsterDragonDefense" xml:space="preserve">
+    <value>龙属性防御</value>
+  </data>
+  <data name="MainMonsterFireAttack" xml:space="preserve">
+    <value>火属性攻击</value>
+  </data>
+  <data name="MainMonsterFireDefense" xml:space="preserve">
+    <value>火属性防御</value>
+  </data>
+  <data name="MainMonsterHP" xml:space="preserve">
+    <value>生命值</value>
+  </data>
+  <data name="MainMonsterIceAttack" xml:space="preserve">
+    <value>冰属性攻击</value>
+  </data>
+  <data name="MainMonsterIceDefense" xml:space="preserve">
+    <value>冰属性防御</value>
+  </data>
+  <data name="MainMonsterMaxHP" xml:space="preserve">
+    <value>最大生命值</value>
+  </data>
+  <data name="MainMonsterMaxSpeed" xml:space="preserve">
+    <value>速度</value>
+  </data>
   <data name="MainMonsterName" xml:space="preserve">
     <value>名字</value>
+  </data>
+  <data name="MainMonsterNormalAttack" xml:space="preserve">
+    <value>无属性攻击</value>
+  </data>
+  <data name="MainMonsterNormalDefense" xml:space="preserve">
+    <value>无属性防御</value>
   </data>
   <data name="MainMonsterRideAction" xml:space="preserve">
     <value>驾驭动作</value>
   </data>
+  <data name="MainMonsterStack" xml:space="preserve">
+    <value>Stack</value>
+  </data>
+  <data name="MainMonsterStackMax" xml:space="preserve">
+    <value>Stack Max</value>
+  </data>
+  <data name="MainMonsterTabBonus" xml:space="preserve">
+    <value>增强</value>
+  </data>
   <data name="MainMonsterTabGene" xml:space="preserve">
     <value>基因</value>
   </data>
+  <data name="MainMonsterTabInfo" xml:space="preserve">
+    <value>信息</value>
+  </data>
+  <data name="MainMonsterThunderAttack" xml:space="preserve">
+    <value>雷属性攻击</value>
+  </data>
+  <data name="MainMonsterThunderDefense" xml:space="preserve">
+    <value>雷属性防御</value>
+  </data>
   <data name="MainMonsterType" xml:space="preserve">
     <value>类型</value>
+  </data>
+  <data name="MainMonsterUnlock" xml:space="preserve">
+    <value>全部解锁</value>
+  </data>
+  <data name="MainMonsterWaterAttack" xml:space="preserve">
+    <value>水属性攻击</value>
+  </data>
+  <data name="MainMonsterWaterDefense" xml:space="preserve">
+    <value>水属性防御</value>
+  </data>
+  <data name="MainNoneType" xml:space="preserve">
+    <value>空</value>
   </data>
   <data name="MainTabBasic" xml:space="preserve">
     <value>基础</value>
@@ -242,23 +347,5 @@
   </data>
   <data name="MainTabMonster" xml:space="preserve">
     <value>随行兽</value>
-  </data>
-  <data name="MainWeaponB" xml:space="preserve">
-    <value>弓</value>
-  </data>
-  <data name="MainWeaponG" xml:space="preserve">
-    <value>铳枪</value>
-  </data>
-  <data name="MainWeaponGS" xml:space="preserve">
-    <value>大剑</value>
-  </data>
-  <data name="MainWeaponH" xml:space="preserve">
-    <value>大锤</value>
-  </data>
-  <data name="MainWeaponHH" xml:space="preserve">
-    <value>狩猎笛</value>
-  </data>
-  <data name="MainWeaponSS" xml:space="preserve">
-    <value>单手剑</value>
   </data>
 </root>

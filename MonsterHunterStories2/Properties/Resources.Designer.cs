@@ -8,18 +8,18 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace MonsterHunterStories2.Properties
-{
-
-
-	/// <summary>
-	///   一个强类型的资源类，用于查找本地化的字符串等。
-	/// </summary>
-	// 此类是由 StronglyTypedResourceBuilder
-	// 类通过类似于 ResGen 或 Visual Studio 的工具自动生成的。
-	// 若要添加或移除成员，请编辑 .ResX 文件，然后重新运行 ResGen
-	// (以 /str 作为命令选项)，或重新生成 VS 项目。
-	[global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
+namespace MonsterHunterStories2.Properties {
+    using System;
+    
+    
+    /// <summary>
+    ///   一个强类型的资源类，用于查找本地化的字符串等。
+    /// </summary>
+    // 此类是由 StronglyTypedResourceBuilder
+    // 类通过类似于 ResGen 或 Visual Studio 的工具自动生成的。
+    // 若要添加或移除成员，请编辑 .ResX 文件，然后重新运行 ResGen
+    // (以 /str 作为命令选项)，或重新生成 VS 项目。
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     public class Resources {
@@ -79,7 +79,7 @@ namespace MonsterHunterStories2.Properties
         }
         
         /// <summary>
-        ///   PlayTime に類似しているローカライズされた文字列を検索します。
+        ///   查找类似 PlayTime 的本地化字符串。
         /// </summary>
         public static string MainBasicPlayTime {
             get {
@@ -88,7 +88,7 @@ namespace MonsterHunterStories2.Properties
         }
         
         /// <summary>
-        ///   Body Type に類似しているローカライズされた文字列を検索します。
+        ///   查找类似 Body Type 的本地化字符串。
         /// </summary>
         public static string MainCharacterBodyType {
             get {
@@ -169,6 +169,33 @@ namespace MonsterHunterStories2.Properties
         }
         
         /// <summary>
+        ///   查找类似 Append Egg 的本地化字符串。
+        /// </summary>
+        public static string MainEggAppendEgg {
+            get {
+                return ResourceManager.GetString("MainEggAppendEgg", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Copy Hex 的本地化字符串。
+        /// </summary>
+        public static string MainEggCopyHex {
+            get {
+                return ResourceManager.GetString("MainEggCopyHex", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Paste Hex 的本地化字符串。
+        /// </summary>
+        public static string MainEggPasteHex {
+            get {
+                return ResourceManager.GetString("MainEggPasteHex", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Smell 的本地化字符串。
         /// </summary>
         public static string MainEggSmell {
@@ -205,11 +232,56 @@ namespace MonsterHunterStories2.Properties
         }
         
         /// <summary>
+        ///   查找类似 Stack 的本地化字符串。
+        /// </summary>
+        public static string MainEggStack {
+            get {
+                return ResourceManager.GetString("MainEggStack", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Stack Max 的本地化字符串。
+        /// </summary>
+        public static string MainEggStackMax {
+            get {
+                return ResourceManager.GetString("MainEggStackMax", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Gene 的本地化字符串。
         /// </summary>
         public static string MainEggTabGene {
             get {
                 return ResourceManager.GetString("MainEggTabGene", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Unlock 的本地化字符串。
+        /// </summary>
+        public static string MainEggUnlock {
+            get {
+                return ResourceManager.GetString("MainEggUnlock", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Body 的本地化字符串。
+        /// </summary>
+        public static string MainEquipmentArmorBody {
+            get {
+                return ResourceManager.GetString("MainEquipmentArmorBody", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Decorative parts 的本地化字符串。
+        /// </summary>
+        public static string MainEquipmentArmorDecorative {
+            get {
+                return ResourceManager.GetString("MainEquipmentArmorDecorative", resourceCulture);
             }
         }
         
@@ -237,6 +309,42 @@ namespace MonsterHunterStories2.Properties
         public static string MainEquipmentTabWeapon {
             get {
                 return ResourceManager.GetString("MainEquipmentTabWeapon", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Rarity 的本地化字符串。
+        /// </summary>
+        public static string MainEquipmentTalismanRarity {
+            get {
+                return ResourceManager.GetString("MainEquipmentTalismanRarity", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Skill 1 的本地化字符串。
+        /// </summary>
+        public static string MainEquipmentTalismanSkill1 {
+            get {
+                return ResourceManager.GetString("MainEquipmentTalismanSkill1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Skill 2 的本地化字符串。
+        /// </summary>
+        public static string MainEquipmentTalismanSkill2 {
+            get {
+                return ResourceManager.GetString("MainEquipmentTalismanSkill2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Type 的本地化字符串。
+        /// </summary>
+        public static string MainEquipmentType {
+            get {
+                return ResourceManager.GetString("MainEquipmentType", resourceCulture);
             }
         }
         
@@ -295,6 +403,15 @@ namespace MonsterHunterStories2.Properties
         }
         
         /// <summary>
+        ///   查找类似 Append/Search Item 的本地化字符串。
+        /// </summary>
+        public static string MainItemAppend {
+            get {
+                return ResourceManager.GetString("MainItemAppend", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 _About 的本地化字符串。
         /// </summary>
         public static string MainMenuAbout {
@@ -349,7 +466,7 @@ namespace MonsterHunterStories2.Properties
         }
         
         /// <summary>
-        ///   CurrentHP に類似しているローカライズされた文字列を検索します。
+        ///   查找类似 CurrentHP 的本地化字符串。
         /// </summary>
         public static string MainMonsterCurrentHP {
             get {
@@ -358,7 +475,7 @@ namespace MonsterHunterStories2.Properties
         }
         
         /// <summary>
-        ///   Dragon Attack に類似しているローカライズされた文字列を検索します。
+        ///   查找类似 Dragon Attack 的本地化字符串。
         /// </summary>
         public static string MainMonsterDragonAttack {
             get {
@@ -367,7 +484,7 @@ namespace MonsterHunterStories2.Properties
         }
         
         /// <summary>
-        ///   Dragon Defense に類似しているローカライズされた文字列を検索します。
+        ///   查找类似 Dragon Defense 的本地化字符串。
         /// </summary>
         public static string MainMonsterDragonDefense {
             get {
@@ -376,7 +493,7 @@ namespace MonsterHunterStories2.Properties
         }
         
         /// <summary>
-        ///   Fire Attack に類似しているローカライズされた文字列を検索します。
+        ///   查找类似 Fire Attack 的本地化字符串。
         /// </summary>
         public static string MainMonsterFireAttack {
             get {
@@ -385,7 +502,7 @@ namespace MonsterHunterStories2.Properties
         }
         
         /// <summary>
-        ///   Fire Defense に類似しているローカライズされた文字列を検索します。
+        ///   查找类似 Fire Defense 的本地化字符串。
         /// </summary>
         public static string MainMonsterFireDefense {
             get {
@@ -394,7 +511,7 @@ namespace MonsterHunterStories2.Properties
         }
         
         /// <summary>
-        ///   HP に類似しているローカライズされた文字列を検索します。
+        ///   查找类似 HP 的本地化字符串。
         /// </summary>
         public static string MainMonsterHP {
             get {
@@ -403,7 +520,7 @@ namespace MonsterHunterStories2.Properties
         }
         
         /// <summary>
-        ///   Ice Attack に類似しているローカライズされた文字列を検索します。
+        ///   查找类似 Ice Attack 的本地化字符串。
         /// </summary>
         public static string MainMonsterIceAttack {
             get {
@@ -412,7 +529,7 @@ namespace MonsterHunterStories2.Properties
         }
         
         /// <summary>
-        ///   Ice Defense に類似しているローカライズされた文字列を検索します。
+        ///   查找类似 Ice Defense 的本地化字符串。
         /// </summary>
         public static string MainMonsterIceDefense {
             get {
@@ -421,7 +538,7 @@ namespace MonsterHunterStories2.Properties
         }
         
         /// <summary>
-        ///   MaxHP に類似しているローカライズされた文字列を検索します。
+        ///   查找类似 MaxHP 的本地化字符串。
         /// </summary>
         public static string MainMonsterMaxHP {
             get {
@@ -430,7 +547,7 @@ namespace MonsterHunterStories2.Properties
         }
         
         /// <summary>
-        ///   Speed に類似しているローカライズされた文字列を検索します。
+        ///   查找类似 Speed 的本地化字符串。
         /// </summary>
         public static string MainMonsterMaxSpeed {
             get {
@@ -439,7 +556,7 @@ namespace MonsterHunterStories2.Properties
         }
         
         /// <summary>
-        ///   Name に類似しているローカライズされた文字列を検索します。
+        ///   查找类似 Name 的本地化字符串。
         /// </summary>
         public static string MainMonsterName {
             get {
@@ -448,7 +565,7 @@ namespace MonsterHunterStories2.Properties
         }
         
         /// <summary>
-        ///   Normal Attack に類似しているローカライズされた文字列を検索します。
+        ///   查找类似 Normal Attack 的本地化字符串。
         /// </summary>
         public static string MainMonsterNormalAttack {
             get {
@@ -457,7 +574,7 @@ namespace MonsterHunterStories2.Properties
         }
         
         /// <summary>
-        ///   Normal Defense に類似しているローカライズされた文字列を検索します。
+        ///   查找类似 Normal Defense 的本地化字符串。
         /// </summary>
         public static string MainMonsterNormalDefense {
             get {
@@ -466,7 +583,7 @@ namespace MonsterHunterStories2.Properties
         }
         
         /// <summary>
-        ///   RideAction に類似しているローカライズされた文字列を検索します。
+        ///   查找类似 RideAction 的本地化字符串。
         /// </summary>
         public static string MainMonsterRideAction {
             get {
@@ -475,7 +592,25 @@ namespace MonsterHunterStories2.Properties
         }
         
         /// <summary>
-        ///   Bonus に類似しているローカライズされた文字列を検索します。
+        ///   查找类似 Stack 的本地化字符串。
+        /// </summary>
+        public static string MainMonsterStack {
+            get {
+                return ResourceManager.GetString("MainMonsterStack", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Stack Max 的本地化字符串。
+        /// </summary>
+        public static string MainMonsterStackMax {
+            get {
+                return ResourceManager.GetString("MainMonsterStackMax", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Bonus 的本地化字符串。
         /// </summary>
         public static string MainMonsterTabBonus {
             get {
@@ -484,7 +619,7 @@ namespace MonsterHunterStories2.Properties
         }
         
         /// <summary>
-        ///   Gene に類似しているローカライズされた文字列を検索します。
+        ///   查找类似 Gene 的本地化字符串。
         /// </summary>
         public static string MainMonsterTabGene {
             get {
@@ -493,7 +628,7 @@ namespace MonsterHunterStories2.Properties
         }
         
         /// <summary>
-        ///   Info に類似しているローカライズされた文字列を検索します。
+        ///   查找类似 Info 的本地化字符串。
         /// </summary>
         public static string MainMonsterTabInfo {
             get {
@@ -502,7 +637,7 @@ namespace MonsterHunterStories2.Properties
         }
         
         /// <summary>
-        ///   Thunder Attack に類似しているローカライズされた文字列を検索します。
+        ///   查找类似 Thunder Attack 的本地化字符串。
         /// </summary>
         public static string MainMonsterThunderAttack {
             get {
@@ -511,7 +646,7 @@ namespace MonsterHunterStories2.Properties
         }
         
         /// <summary>
-        ///   Thunder Defense に類似しているローカライズされた文字列を検索します。
+        ///   查找类似 Thunder Defense 的本地化字符串。
         /// </summary>
         public static string MainMonsterThunderDefense {
             get {
@@ -520,7 +655,7 @@ namespace MonsterHunterStories2.Properties
         }
         
         /// <summary>
-        ///   Type に類似しているローカライズされた文字列を検索します。
+        ///   查找类似 Type 的本地化字符串。
         /// </summary>
         public static string MainMonsterType {
             get {
@@ -529,7 +664,16 @@ namespace MonsterHunterStories2.Properties
         }
         
         /// <summary>
-        ///   Water Attack に類似しているローカライズされた文字列を検索します。
+        ///   查找类似 Unlock 的本地化字符串。
+        /// </summary>
+        public static string MainMonsterUnlock {
+            get {
+                return ResourceManager.GetString("MainMonsterUnlock", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Water Attack 的本地化字符串。
         /// </summary>
         public static string MainMonsterWaterAttack {
             get {
@@ -538,7 +682,7 @@ namespace MonsterHunterStories2.Properties
         }
         
         /// <summary>
-        ///   Water Defense に類似しているローカライズされた文字列を検索します。
+        ///   查找类似 Water Defense 的本地化字符串。
         /// </summary>
         public static string MainMonsterWaterDefense {
             get {
@@ -547,7 +691,16 @@ namespace MonsterHunterStories2.Properties
         }
         
         /// <summary>
-        ///   Basic に類似しているローカライズされた文字列を検索します。
+        ///   查找类似 None 的本地化字符串。
+        /// </summary>
+        public static string MainNoneType {
+            get {
+                return ResourceManager.GetString("MainNoneType", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Basic 的本地化字符串。
         /// </summary>
         public static string MainTabBasic {
             get {
@@ -597,60 +750,6 @@ namespace MonsterHunterStories2.Properties
         public static string MainTabMonster {
             get {
                 return ResourceManager.GetString("MainTabMonster", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   查找类似 Bow 的本地化字符串。
-        /// </summary>
-        public static string MainWeaponB {
-            get {
-                return ResourceManager.GetString("MainWeaponB", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   查找类似 Gunlance 的本地化字符串。
-        /// </summary>
-        public static string MainWeaponG {
-            get {
-                return ResourceManager.GetString("MainWeaponG", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   查找类似 Great Sword 的本地化字符串。
-        /// </summary>
-        public static string MainWeaponGS {
-            get {
-                return ResourceManager.GetString("MainWeaponGS", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   查找类似 Hammer 的本地化字符串。
-        /// </summary>
-        public static string MainWeaponH {
-            get {
-                return ResourceManager.GetString("MainWeaponH", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   查找类似 Hunting Horn 的本地化字符串。
-        /// </summary>
-        public static string MainWeaponHH {
-            get {
-                return ResourceManager.GetString("MainWeaponHH", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   查找类似 Sword &amp;amp; Shield 的本地化字符串。
-        /// </summary>
-        public static string MainWeaponSS {
-            get {
-                return ResourceManager.GetString("MainWeaponSS", resourceCulture);
             }
         }
     }

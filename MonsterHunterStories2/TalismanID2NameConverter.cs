@@ -14,7 +14,7 @@ namespace MonsterHunterStories2
 		{
 			uint id = (uint)value;
 			String name = Info.Instance().Search(Info.Instance().Talisman, id)?.Value;
-			if (id == 0) name = "None";
+			if (id == 0) name = Properties.Resources.MainNoneType;
 			if (String.IsNullOrEmpty(name)) name = "ID: " + id.ToString();
 			return name;
 		}
