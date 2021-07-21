@@ -76,10 +76,10 @@
     <Compile Include="Monster.cs" />
     <Compile Include="KeyValuesInfo.cs" />
     <Compile Include="MonsterID2NameConverter.cs" />
-    <Compile Include="Properties\Resources.zh-CN.Designer.cs">
+    <Compile Include="Properties\Resources.zh.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.zh-CN.resx</DependentUpon>
+      <DependentUpon>Resources.zh.resx</DependentUpon>
     </Compile>
     <Compile Include="RaidActionID2NameConverter.cs" />
     <Compile Include="SaveData.cs" />
@@ -129,9 +129,9 @@
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Resources.zh-CN.resx">
+    <EmbeddedResource Include="Properties\Resources.zh.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.zh-CN.Designer.cs</LastGenOutput>
+      <LastGenOutput>Resources.zh.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
