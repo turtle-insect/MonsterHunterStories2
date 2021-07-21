@@ -45,7 +45,9 @@ namespace MonsterHunterStories2
 			set 
 			{
 				Util.WriteNumber(mAddress + 40, 2, value, 0, 0xFFFF);
+				AddRarity(value, Skill2);
 				PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Skill1)));
+				
 			}
 		}
 
@@ -55,6 +57,7 @@ namespace MonsterHunterStories2
 			set
 			{
 				Util.WriteNumber(mAddress + 42, 2, value, 0, 0xFFFF);
+				AddRarity(Skill1, value);
 				PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Skill2)));
 			}
 		}
@@ -62,8 +65,39 @@ namespace MonsterHunterStories2
 		public uint Rarity
 		{
 			get { return SaveData.Instance().ReadNumber(mAddress + 36, 1); }
-			set { Util.WriteNumber(mAddress + 36, 1, value, 0, 7); }
+			set
+			{
+				Util.WriteNumber(mAddress + 36, 1, value, 0, 7);
+				PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Rarity)));
+			}
 		}
-
+		private uint CalculateRarity(uint skill)
+		{
+			uint rarity = 0;
+            if (skill == 3015 || skill == 3017 || skill == 3106 || skill == 3108 || skill == 3110)
+            {
+				rarity = 2;
+			}
+			else if(skill > 2999 && skill < 3014)
+			{
+				rarity = (skill + 1) % 5;
+			}
+			else if(skill > 3018 && skill < 3105)
+            {
+				rarity = (skill - 3) % 5;
+            }
+			else if(skill > 3111 && skill < 3316)
+            {
+				rarity = (skill - 1) % 5;
+			}
+			return rarity;
+		}
+		private void AddRarity(uint skill1,uint skill2)
+        {
+			uint rarity1 = CalculateRarity(skill1);
+			uint rarity2 = CalculateRarity(skill2);
+			if (rarity1 == 0 && rarity2 == 0) Rarity = 0;
+			else Rarity = rarity1 + rarity2 - 1;
+		}
 	}
 }
