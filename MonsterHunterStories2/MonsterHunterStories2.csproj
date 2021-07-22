@@ -69,6 +69,7 @@
     <Compile Include="EggAddress2HexStringConverter.cs" />
     <Compile Include="Gene.cs" />
     <Compile Include="GeneID2NameConverter.cs" />
+    <Compile Include="Guide.cs" />
     <Compile Include="ILineAnalysis.cs" />
     <Compile Include="Info.cs" />
     <Compile Include="Item.cs" />

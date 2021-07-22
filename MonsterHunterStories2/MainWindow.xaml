@@ -59,6 +59,7 @@
                     <Grid.RowDefinitions>
                         <RowDefinition/>
                         <RowDefinition/>
+                        <RowDefinition/>
                         <RowDefinition Height="12*"/>
                     </Grid.RowDefinitions>
                     <Label Content="{x:Static prop:Resources.MainBasicPlayTime}"/>
@@ -74,6 +75,7 @@
                     </Grid>
                     <Label Grid.Row="1" Content="{x:Static prop:Resources.MainBasicMoney}"/>
                     <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding Money, UpdateSourceTrigger=PropertyChanged}"/>
+                    <Button Grid.Row="2" Grid.Column="1" Content="All Guide" Click="ButtonBaseGuide_Click"></Button>
                 </Grid>
             </TabItem>
             <TabItem Header="{x:Static prop:Resources.MainTabCharacter}">

@@ -12,6 +12,7 @@ namespace MonsterHunterStories2
 		public ObservableCollection<Character> Characters { get; set; } = new ObservableCollection<Character>();
 		public ObservableCollection<Monster> Monsters { get; set; } = new ObservableCollection<Monster>();
 		public ObservableCollection<Egg> Eggs { get; set; } = new ObservableCollection<Egg>();
+		public ObservableCollection<Guide> Guides { get; set; } = new ObservableCollection<Guide>();
 		public ViewModel()
 		{
 			foreach(var itemInfo in Info.Instance().Item)
@@ -63,6 +64,12 @@ namespace MonsterHunterStories2
 			{
 				Talisman Talisman = new Talisman(Util.TALISMAN_ADDRESS + Util.TALISMAN_SIZE * i);
 				Talismans.Add(Talisman);
+			}
+
+			for (uint i = 0; i < Util.Guide_COUNT; i++)
+			{
+				Guide guide = new Guide(Util.Guide_ADDRESS + Util.Guide_SIZE * i);
+				Guides.Add(guide);
 			}
 		}
 

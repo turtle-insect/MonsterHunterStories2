@@ -279,5 +279,18 @@ namespace MonsterHunterStories2
 			SaveData.Instance().Open(filename);
 			DataContext = new ViewModel();
 		}
+
+		private void ButtonBaseGuide_Click(object sender, RoutedEventArgs e)
+		{
+			ViewModel viewmodel = DataContext as ViewModel;
+			if (viewmodel == null) return;
+			foreach(Guide x in viewmodel.Guides)
+            {
+				if (x == null) return;
+				x.Get = true;
+				x.Lv = 5;
+			}
+			MessageBox.Show("Success");
+		}
 	}
 }

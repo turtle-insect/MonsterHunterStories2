@@ -35,6 +35,11 @@ namespace MonsterHunterStories2
 		public const uint ITEMSETTING_ADDRESS = 0x12B68;
 		public const uint MONEY_ADDRESS = 0x48;
 		public const uint ITEM_ADDRESS = 0x4C;
+		//Debug
+		public const uint Guide_ADDRESS = 0x2CB37C;
+		public const uint Guide_COUNT = 512;
+		public const uint Guide_SIZE = 48;
+
 		public static void WriteNumber(uint address, uint size, uint value, uint min, uint max)
 		{
 			if (value < min) value = min;
