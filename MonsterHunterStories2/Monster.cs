@@ -239,10 +239,16 @@ namespace MonsterHunterStories2
 			get { return SaveData.Instance().ReadNumber(mAddress + 180, 1); }
 			set { Util.WriteNumber(mAddress + 180, 1, value, 0, 0xFF); }
 		}
-		public uint KinshipGauge
+		
+		public uint LifetimeBattles
 		{
-			get { return SaveData.Instance().ReadNumber(mAddress + 400, 1); }
-			set { Util.WriteNumber(mAddress + 400, 1, value, 0, 100); }
+			get { return SaveData.Instance().ReadNumber(mAddress + 392, 4); }
+			set { Util.WriteNumber(mAddress + 392, 4, value, 0, 999); }
+		}
+		public uint BattlesWon
+		{
+			get { return SaveData.Instance().ReadNumber(mAddress + 400, 4); }
+			set { Util.WriteNumber(mAddress + 400, 4, value, 0, SaveData.Instance().ReadNumber(mAddress + 392, 4)); }
 		}
 	}
 }

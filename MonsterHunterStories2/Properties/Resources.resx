@@ -255,6 +255,9 @@
   <data name="MainMonsterAllKinshipMax" xml:space="preserve">
     <value>All Kinship Max</value>
   </data>
+  <data name="MainMonsterBattlesWon" xml:space="preserve">
+    <value>Battles Won</value>
+  </data>
   <data name="MainMonsterCurrentHP" xml:space="preserve">
     <value>CurrentHP</value>
   </data>
@@ -279,8 +282,8 @@
   <data name="MainMonsterIceDefense" xml:space="preserve">
     <value>Ice Defense</value>
   </data>
-  <data name="MainMonsterKinshipGauge" xml:space="preserve">
-    <value>Kinship Gauge</value>
+  <data name="MainMonsterLifetimeBattles" xml:space="preserve">
+    <value>Lifetime Battles</value>
   </data>
   <data name="MainMonsterMaxHP" xml:space="preserve">
     <value>MaxHP</value>

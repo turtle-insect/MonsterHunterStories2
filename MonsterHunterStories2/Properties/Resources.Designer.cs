@@ -475,6 +475,15 @@ namespace MonsterHunterStories2.Properties {
         }
         
         /// <summary>
+        ///   查找类似 Battles Won 的本地化字符串。
+        /// </summary>
+        public static string MainMonsterBattlesWon {
+            get {
+                return ResourceManager.GetString("MainMonsterBattlesWon", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 CurrentHP 的本地化字符串。
         /// </summary>
         public static string MainMonsterCurrentHP {
@@ -547,11 +556,11 @@ namespace MonsterHunterStories2.Properties {
         }
         
         /// <summary>
-        ///   查找类似 Kinship Gauge 的本地化字符串。
+        ///   查找类似 Lifetime Battles 的本地化字符串。
         /// </summary>
-        public static string MainMonsterKinshipGauge {
+        public static string MainMonsterLifetimeBattles {
             get {
-                return ResourceManager.GetString("MainMonsterKinshipGauge", resourceCulture);
+                return ResourceManager.GetString("MainMonsterLifetimeBattles", resourceCulture);
             }
         }
         
