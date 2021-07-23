@@ -252,6 +252,9 @@
   <data name="MainMenuFileSaveAs" xml:space="preserve">
     <value>Save _As...</value>
   </data>
+  <data name="MainMonsterAllKinshipMax" xml:space="preserve">
+    <value>All Kinship Max</value>
+  </data>
   <data name="MainMonsterCurrentHP" xml:space="preserve">
     <value>CurrentHP</value>
   </data>
@@ -275,6 +278,9 @@
   </data>
   <data name="MainMonsterIceDefense" xml:space="preserve">
     <value>Ice Defense</value>
+  </data>
+  <data name="MainMonsterKinshipGauge" xml:space="preserve">
+    <value>Kinship Gauge</value>
   </data>
   <data name="MainMonsterMaxHP" xml:space="preserve">
     <value>MaxHP</value>

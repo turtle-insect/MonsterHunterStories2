@@ -292,5 +292,20 @@ namespace MonsterHunterStories2
 			}
 			MessageBox.Show("Success");
 		}
+
+		private void ButtonBaseAllKinship(object sender, RoutedEventArgs e)
+		{
+			ViewModel viewmodel = DataContext as ViewModel;
+			if (viewmodel == null) return;
+			foreach (Monster x in viewmodel.Monsters)
+			{
+				if (x == null) return;
+				if(x.ID != 0)
+                {
+					x.KinshipGauge = 100;
+                }
+			}
+			MessageBox.Show("Success");
+		}
 	}
 }

@@ -75,7 +75,7 @@
                     </Grid>
                     <Label Grid.Row="1" Content="{x:Static prop:Resources.MainBasicMoney}"/>
                     <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding Money, UpdateSourceTrigger=PropertyChanged}"/>
-                    <Button Grid.Row="2" Grid.Column="1" Content="All Guide" Click="ButtonBaseGuide_Click"></Button>
+                    <!--<Button Grid.Row="2" Grid.Column="1" Content="All Guide" Click="ButtonBaseGuide_Click"></Button>-->
                 </Grid>
             </TabItem>
             <TabItem Header="{x:Static prop:Resources.MainTabCharacter}">
@@ -154,7 +154,10 @@
                         <ColumnDefinition/>
                         <ColumnDefinition Width="1.5*"/>
                     </Grid.ColumnDefinitions>
-                    <ListBox x:Name="ListBoxMonster" ItemsSource="{Binding Monsters}" DisplayMemberPath="Name"/>
+                    <DockPanel>
+                        <Button DockPanel.Dock="Bottom" Content="{x:Static prop:Resources.MainMonsterAllKinshipMax}" Click="ButtonBaseAllKinship"></Button>
+                        <ListBox x:Name="ListBoxMonster" ItemsSource="{Binding Monsters}" DisplayMemberPath="Name"/>
+                    </DockPanel>
                     <Grid Grid.Column="1">
                         <Grid.Resources>
                             <local:MonsterID2NameConverter x:Key="MonsterID2NameConverter"/>
@@ -196,6 +199,8 @@
                             <Button DockPanel.Dock="Right" Content="..." Click="ButtonChoiceRaidAction2_Click"/>
                             <Label Content="{Binding ElementName=ListBoxMonster, Path=SelectedItem.RideAction2, Converter={StaticResource RaidActionID2NameConverter}}"/>
                         </DockPanel>
+                        <Label Grid.Row="6" Content="{x:Static prop:Resources.MainMonsterKinshipGauge}"/>
+                        <TextBox Grid.Row="6" Grid.Column="1" Text="{Binding ElementName=ListBoxMonster, Path=SelectedItem.KinshipGauge, UpdateSourceTrigger=PropertyChanged}"/>
                     </Grid>
                     <TabControl Grid.Column="2">
                         <TabItem Header="{x:Static prop:Resources.MainMonsterTabGene}">

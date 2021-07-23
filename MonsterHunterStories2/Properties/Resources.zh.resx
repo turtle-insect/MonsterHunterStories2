@@ -252,6 +252,9 @@
   <data name="MainMenuFileSaveAs" xml:space="preserve">
     <value>另存为...(_A)</value>
   </data>
+  <data name="MainMonsterAllKinshipMax" xml:space="preserve">
+    <value>所有随从牵绊最大</value>
+  </data>
   <data name="MainMonsterCurrentHP" xml:space="preserve">
     <value>当前生命值</value>
   </data>
@@ -275,6 +278,9 @@
   </data>
   <data name="MainMonsterIceDefense" xml:space="preserve">
     <value>冰属性防御</value>
+  </data>
+  <data name="MainMonsterKinshipGauge" xml:space="preserve">
+    <value>牵绊值</value>
   </data>
   <data name="MainMonsterMaxHP" xml:space="preserve">
     <value>最大生命值</value>

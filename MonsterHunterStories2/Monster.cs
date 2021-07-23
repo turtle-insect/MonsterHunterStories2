@@ -239,5 +239,10 @@ namespace MonsterHunterStories2
 			get { return SaveData.Instance().ReadNumber(mAddress + 180, 1); }
 			set { Util.WriteNumber(mAddress + 180, 1, value, 0, 0xFF); }
 		}
+		public uint KinshipGauge
+		{
+			get { return SaveData.Instance().ReadNumber(mAddress + 400, 1); }
+			set { Util.WriteNumber(mAddress + 400, 1, value, 0, 100); }
+		}
 	}
 }
