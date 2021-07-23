@@ -302,8 +302,8 @@ namespace MonsterHunterStories2
 				if (x == null) return;
 				if(x.ID != 0)
                 {
-					x.BattlesWon = 100;
 					x.LifetimeBattles = 300;
+					//x.BattlesWon = 100;
                 }
 			}
 			MessageBox.Show("Success");
