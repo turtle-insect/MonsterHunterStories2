@@ -31,13 +31,13 @@ https://docs.google.com/spreadsheets/d/1QzM9X34IfACPtRa_yWq2BZUidWJqs0l2K_Gs2023
 
 # Execution Requirements
 * Windows OS
-* .NET Framework 4.8
+* [.NET 10](https://dotnet.microsoft.com/en-us/download/dotnet/10.0)
 * SaveDate Backup
 * SaveDate Restore
 
 # Build Environment
-* Windows 10(64bit)
-* Visual Studio 2019
+* Windows 11(64bit)
+* Visual Studio 2026
 
 # Step to Edit
 * SaveData Backup
