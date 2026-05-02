@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace MonsterHunterStories2
+﻿namespace MonsterHunterStories2
 {
 	class KeyValuesInfo : ILineAnalysis, IComparable
 	{
