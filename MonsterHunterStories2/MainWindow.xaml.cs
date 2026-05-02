@@ -1,12 +1,19 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using System.Text;
 using System.Windows;
 using System.Windows.Controls;
-using Microsoft.Win32;
+using System.Windows.Data;
+using System.Windows.Documents;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
+using System.Windows.Shapes;
 
 namespace MonsterHunterStories2
 {
 	/// <summary>
-	/// MainWindow.xaml の相互作用ロジック
+	/// Interaction logic for MainWindow.xaml
 	/// </summary>
 	public partial class MainWindow : Window
 	{
@@ -59,12 +66,6 @@ namespace MonsterHunterStories2
 			Close();
 		}
 
-		private void MenuItemAbout_Click(object sender, RoutedEventArgs e)
-		{
-			var dlg = new AboutWindow();
-			dlg.ShowDialog();
-		}
-
 		private void ButtonChoiceItem_Click(object sender, RoutedEventArgs e)
 		{
 			uint id = ChoiceDialog(ChoiceWindow.eType.TYPE_ITEM, 0);
@@ -72,9 +73,9 @@ namespace MonsterHunterStories2
 			if (viewmodel == null) return;
 
 			// 重複チェック
-			for(int i = 0; i < viewmodel.Items.Count; i++)
+			for (int i = 0; i < viewmodel.Items.Count; i++)
 			{
-				if(viewmodel.Items[i].ID == id)
+				if (viewmodel.Items[i].ID == id)
 				{
 					ListBoxItem.SelectedIndex = i;
 					return;
@@ -144,8 +145,8 @@ namespace MonsterHunterStories2
 			SaveData.Instance().WriteNumber(Util.EGG_COUNT_ADDRESS, 1, count + 1);
 		}
 
-        private void ButtonCopyEggHex_Click(object sender, RoutedEventArgs e)
-        {
+		private void ButtonCopyEggHex_Click(object sender, RoutedEventArgs e)
+		{
 			Clipboard.SetText(All_Hex.Text);
 		}
 
@@ -183,14 +184,14 @@ namespace MonsterHunterStories2
 
 		private void ButtonMonsterGeneStackMax_Click(object sender, RoutedEventArgs e)
 		{
-			Monster monster = ListBoxMonster.SelectedItem as Monster;			
+			Monster monster = ListBoxMonster.SelectedItem as Monster;
 			if (monster == null) return;
 
 			foreach (var gene in monster.Genes)
 			{
 				gene.Stack = 2;
 			}
-        }
+		}
 
 		private void ButtonMonsterGeneUnlock_Click(object sender, RoutedEventArgs e)
 		{
