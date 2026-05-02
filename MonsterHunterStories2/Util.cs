@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace MonsterHunterStories2
+﻿namespace MonsterHunterStories2
 {
 	class Util
 	{
